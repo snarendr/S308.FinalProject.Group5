@@ -55,6 +55,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="ExistingMemberSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FeaturesPricing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -62,6 +70,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExistingMemberSearch.xaml.cs">
+      <DependentUpon>ExistingMemberSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FeaturesPricing.xaml.cs">
+      <DependentUpon>FeaturesPricing.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
@@ -74,7 +88,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PricingManagement.xaml">
+    <Page Include="MembershipPricing.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -86,8 +100,8 @@
     <Compile Include="MembershipSales.xaml.cs">
       <DependentUpon>MembershipSales.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PricingManagement.xaml.cs">
-      <DependentUpon>PricingManagement.xaml</DependentUpon>
+    <Compile Include="MembershipPricing.xaml.cs">
+      <DependentUpon>MembershipPricing.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

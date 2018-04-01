@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="MainMenu" Height="300" Width="300">
+        Title="MainMenu" Height="300" Width="300" Background="#FFBF3417">
     <Grid>
         <Image x:Name="imgLogo" HorizontalAlignment="Left" Height="100" Margin="20,10,0,0" VerticalAlignment="Top" Width="100" Source="Images/MSNLogo.png"/>
+        <GroupBox x:Name="groupBox" Header="GroupBox" HorizontalAlignment="Left" Margin="35,137,0,0" VerticalAlignment="Top" BorderBrush="White" Height="104" Width="232" Foreground="White"/>
 
     </Grid>
 </Window>
