@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainMenu" Height="300" Width="300">
     <Grid>
-        
+        <Image x:Name="imgLogo" HorizontalAlignment="Left" Height="100" Margin="20,10,0,0" VerticalAlignment="Top" Width="100" Source="Images/MSNLogo.png"/>
+
     </Grid>
 </Window>
