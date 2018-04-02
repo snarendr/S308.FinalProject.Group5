@@ -16,7 +16,7 @@
         </ComboBox>
         <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="249,195,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="button1" Content="Button" HorizontalAlignment="Left" Margin="484,71,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="71,264,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="71,269,0,0" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="172,279,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
         <Label x:Name="label1" Content="Label" HorizontalAlignment="Left" Margin="88,318,0,0" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="185,327,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
