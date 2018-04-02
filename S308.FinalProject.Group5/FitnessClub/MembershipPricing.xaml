@@ -8,6 +8,21 @@
         Title="MembershipPricing" Height="605" Width="600" Background="#FFBF3417">
     <Grid>
         <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="28,20,0,0" VerticalAlignment="Top" Width="100" Source="Images/MSNLogo.png"/>
+        <ComboBox x:Name="cmbMembershipType" HorizontalAlignment="Left" Margin="158,152,0,0" VerticalAlignment="Top" Width="170">
+            <ComboBoxItem/>
+            <ComboBoxItem Content="Individual 1 Month"/>
+            <ComboBoxItem Content="Individual 12 Month"/>
+            <ComboBoxItem Content="Two Person 1 Month"/>
+            <ComboBoxItem Content="Two Person 12 Month"/>
+            <ComboBoxItem Content="Family 1 Month"/>
+            <ComboBoxItem Content="Family 12 Month"/>
+            <ComboBoxItem/>
+        </ComboBox>
+        <Label x:Name="lblMembershipType" Content="Select Membership Type:" HorizontalAlignment="Left" Margin="10,148,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="253,194,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="lblCurrentPrice" Content="Current Price:" HorizontalAlignment="Left" Margin="51,250,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="txbCurrentPrice" HorizontalAlignment="Left" Margin="158,255,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="489,79,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>
