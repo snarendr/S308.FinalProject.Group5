@@ -19,10 +19,15 @@
             <ComboBoxItem/>
         </ComboBox>
         <Label x:Name="lblMembershipType" Content="Select Membership Type:" HorizontalAlignment="Left" Margin="10,148,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="253,194,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label x:Name="lblCurrentPrice" Content="Current Price:" HorizontalAlignment="Left" Margin="51,250,0,0" VerticalAlignment="Top"/>
-        <TextBlock x:Name="txbCurrentPrice" HorizontalAlignment="Left" Margin="158,255,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="489,79,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="253,203,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="lblCurrentPrice" Content="Current Price:" HorizontalAlignment="Left" Margin="88,302,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="txbCurrentPrice" HorizontalAlignment="Left" Margin="195,307,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="388,71,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="lblUpdatePrice" Content="Update Price:" HorizontalAlignment="Left" Margin="89,344,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txbUpdatePrice" HorizontalAlignment="Left" Height="23" Margin="184,347,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblSelectedMembership" Content="Selected Membership:" HorizontalAlignment="Left" Margin="88,276,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="txbSelectedMembership" HorizontalAlignment="Left" Margin="236,281,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <GroupBox x:Name="groupBox" Header="Update Membership Pricing" HorizontalAlignment="Left" Margin="36,247,0,0" VerticalAlignment="Top" BorderBrush="White" Height="171" Width="293" Foreground="White"/>
 
     </Grid>
 </Window>
