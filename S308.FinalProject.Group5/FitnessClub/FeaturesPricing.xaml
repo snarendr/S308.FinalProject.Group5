@@ -14,6 +14,14 @@
             <ComboBoxItem Content="Personal Training Plan"/>
             <ComboBoxItem Content="Locker Rental"/>
         </ComboBox>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="249,195,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="button1" Content="Button" HorizontalAlignment="Left" Margin="484,71,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="71,264,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="172,279,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="Label" HorizontalAlignment="Left" Margin="88,318,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="185,327,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="Label" HorizontalAlignment="Left" Margin="301,333,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="385,344,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>
