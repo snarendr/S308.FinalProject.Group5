@@ -27,7 +27,7 @@
         <TextBox x:Name="txbUpdatePrice" HorizontalAlignment="Left" Height="23" Margin="184,347,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lblSelectedMembership" Content="Selected Membership:" HorizontalAlignment="Left" Margin="88,276,0,0" VerticalAlignment="Top"/>
         <TextBlock x:Name="txbSelectedMembership" HorizontalAlignment="Left" Margin="236,281,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-        <GroupBox x:Name="groupBox" Header="Update Membership Pricing" HorizontalAlignment="Left" Margin="36,247,0,0" VerticalAlignment="Top" BorderBrush="White" Height="171" Width="293" Foreground="White"/>
+        <GroupBox x:Name="grpUpdatePricing" Header="Update Membership Pricing" HorizontalAlignment="Left" Margin="36,247,0,0" VerticalAlignment="Top" BorderBrush="White" Height="171" Width="293" Foreground="White"/>
 
     </Grid>
 </Window>
