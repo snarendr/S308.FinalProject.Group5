@@ -5,9 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="MembershipRegistration" Height="400" Width="500">
+        Title="MembershipRegistration" Height="400" Width="550" Background="#FFBF3417">
     <Grid>
-        <Image x:Name="i" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="10,10,0,0" Source="Images/MSNLogo.png"/>
+        <Image x:Name="imgLogo" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="10,10,0,0" Source="Images/MSNLogo.png"/>
+        <Label x:Name="lblFirstName" Content="First Name:" HorizontalAlignment="Left" Margin="9,121,0,0" VerticalAlignment="Top" Foreground="#FFF0E9E9"/>
+        <Label x:Name="lblLastName" Content="Last Name:" HorizontalAlignment="Left" Margin="10,156,0,0" VerticalAlignment="Top" Foreground="#FFFDF6F6"/>
+        <Label x:Name="lblCreditType" Content="Credit Card Type:" HorizontalAlignment="Left" Margin="10,191,0,0" VerticalAlignment="Top" Foreground="#FFFBF7F7"/>
+        <Label x:Name="lblCreditCardNum" Content="Credit Card Number:" HorizontalAlignment="Left" Margin="10,225,0,0" VerticalAlignment="Top" Foreground="#FFF7F1F1"/>
+        <Label x:Name="lblPhone" Content="Phone Number:" HorizontalAlignment="Left" Margin="282,121,0,0" VerticalAlignment="Top" Foreground="#FFF7E4E4"/>
+        <Label x:Name="lblEmail" Content="Email Address:" HorizontalAlignment="Left" Margin="282,147,0,0" VerticalAlignment="Top" Foreground="#FFF5EBEB"/>
+        <Label x:Name="lblGender" Content="Gender:" HorizontalAlignment="Left" Margin="282,172,0,0" VerticalAlignment="Top" Foreground="#FFF5EBEB"/>
+        <Label x:Name="lblAge" Content="Age:" HorizontalAlignment="Left" Margin="282,199,0,0" VerticalAlignment="Top" Foreground="#FFF1E9E9"/>
+        <Label x:Name="lblWeight" Content="Weight:" HorizontalAlignment="Left" Margin="282,229,0,0" VerticalAlignment="Top" Foreground="#FFFBF2F2"/>
+        <Label x:Name="lblPersonalFitGoal" Content="Personal Fitness Goal:" HorizontalAlignment="Left" Margin="9,264,0,0" VerticalAlignment="Top" Foreground="#FFFBF9F9"/>
+        <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="23" Margin="84,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="23" Margin="84,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtCredCardNum" HorizontalAlignment="Left" Height="23" Margin="129,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131"/>
+        <ComboBox x:Name="cmbCredCardType" HorizontalAlignment="Left" Margin="116,194,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem x:Name="cmbOption1" Content="Visa" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem x:Name="cmbOption2" Content="MasterCard" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem x:Name="cmbOption3" Content="American Express" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem x:Name="cmbOption4" Content="Discover" HorizontalAlignment="Left" Width="118"/>
+        </ComboBox>
+        <CheckBox x:Name="chbAthPer" Content="Athletic Performance" HorizontalAlignment="Left" Margin="139,270,0,0" VerticalAlignment="Top" Foreground="#FFFBF0F0"/>
+        <CheckBox x:Name="chbOverHealth" Content="Overall Health" HorizontalAlignment="Left" Margin="139,290,0,0" VerticalAlignment="Top" Foreground="#FFFBEEEE"/>
+        <CheckBox x:Name="chbST" Content="Strength Training" HorizontalAlignment="Left" Margin="139,310,0,0" VerticalAlignment="Top" Foreground="#FFF7EFEF"/>
+        <CheckBox x:Name="chbWeightLoss" Content="Weight Loss" HorizontalAlignment="Left" Margin="139,330,0,0" VerticalAlignment="Top" Foreground="#FFFDF6F6"/>
+        <CheckBox x:Name="chbWeightMgmt" Content="Weight Managment" HorizontalAlignment="Left" Margin="139,350,0,0" VerticalAlignment="Top" Foreground="#FFF9F3F3"/>
+        <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Height="23" Margin="380,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="380,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <RadioButton x:Name="rdbMale" Content="Male" HorizontalAlignment="Left" Margin="338,179,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rdbFemale" Content="Female" HorizontalAlignment="Left" Margin="388,179,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="321,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtWeight" HorizontalAlignment="Left" Height="23" Margin="333,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblWeightDesc" Content="(lbs)" HorizontalAlignment="Left" Margin="296,246,0,0" VerticalAlignment="Top" FontStyle="Italic" Foreground="#FFF1E7E7"/>
+        <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Left" Margin="366,285,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="366,315,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="lblTitle" Content="New Member &#xD;&#xA;Registration Form" HorizontalAlignment="Left" Margin="84,10,0,0" VerticalAlignment="Top" FontSize="29.333" Foreground="#FFFBF4F4" Height="90" Width="244"/>
+        <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="442,10,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="442,47,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>
