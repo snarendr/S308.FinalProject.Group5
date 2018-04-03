@@ -5,8 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="MemberInformation" Height="300" Width="300">
+        Title="MemberInformation" Height="403.361" Width="518.487">
+
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="50*"/>
+        <ColumnDefinition Width="0*"/>
+        <ColumnDefinition Width="467*"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox x:Name="groupBox" Header="Search Criteria " HorizontalAlignment="Left" Height="131" Margin="10,19,0,0" VerticalAlignment="Top" Width="232" Grid.ColumnSpan="3" Foreground="White"/>
+        <Label x:Name="lblLastName" Content="Last Name: " HorizontalAlignment="Left" Height="30" Margin="48,44,0,0" VerticalAlignment="Top" Width="68" Grid.ColumnSpan="3" Foreground="White"/>
+        <Label x:Name="lblPhoneNumber" Content="Phone Number:" HorizontalAlignment="Left" Height="30" Margin="19,99,0,0" VerticalAlignment="Top" Width="97" Grid.ColumnSpan="3" Foreground="White"/>
+        <Label x:Name="lblEmail" Content="Email:" HorizontalAlignment="Left" Height="30" Margin="21,74,0,0" VerticalAlignment="Top" Width="45" RenderTransformOrigin="1.951,0.722" Grid.Column="2" Foreground="White"/>
+        <TextBox x:Name="txtLastNameInput" HorizontalAlignment="Left" Height="21" Margin="71,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" Grid.Column="2"/>
+        <TextBox x:Name="txtPhoneNumberInput" HorizontalAlignment="Left" Height="21" Margin="71,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" Grid.Column="2"/>
+        <TextBox x:Name="txtEmailInput" HorizontalAlignment="Left" Height="21" Margin="71,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" Grid.Column="2"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="109" Margin="-18,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="535" Grid.ColumnSpan="3"/>
+        <Button x:Name="bttnSearch" Content="Search" HorizontalAlignment="Left" Height="29" Margin="10,155,0,0" VerticalAlignment="Top" Width="121" Grid.ColumnSpan="3"/>
+        <Button x:Name="bttnClear" Content="Clear" HorizontalAlignment="Left" Height="29" Margin="86,155,0,0" VerticalAlignment="Top" Width="106" Grid.Column="2"/>
+        <Button x:Name="bttnMainMenu" Content="Main Menu" HorizontalAlignment="Left" VerticalAlignment="Top" Width="104" Grid.Column="2" Margin="353,10,0,0" Height="33" />
+        <Label x:Name="lblType" Content="Type" HorizontalAlignment="Left" Height="30" Margin="4,189,0,0" VerticalAlignment="Top" Width="46"/>
+        <Label x:Name="lblFirstName" Content="Fname" HorizontalAlignment="Left" Height="30" Margin="39,189,0,0" VerticalAlignment="Top" Width="46" Grid.ColumnSpan="3"/>
+        <Label x:Name="lblLastNameOuput" Content="Lname" HorizontalAlignment="Right" Height="30" Margin="0,189,386,0" VerticalAlignment="Top" Width="46" Grid.Column="2"/>
+        <Label x:Name="lblDate" Content="Date" HorizontalAlignment="Left" Height="30" Margin="81,189,0,0" VerticalAlignment="Top" Width="46" Grid.Column="2"/>
+        <Label x:Name="lblFeatures" Content="Features" HorizontalAlignment="Left" Height="30" Margin="110,189,0,0" VerticalAlignment="Top" Width="72" Grid.Column="2"/>
+        <Label x:Name="lblCost" Content="Cost" HorizontalAlignment="Left" Height="30" Margin="161,189,0,0" VerticalAlignment="Top" Width="46" Grid.Column="2"/>
+        <Label x:Name="lblPhone" Content="Phone" HorizontalAlignment="Left" Height="30" Margin="191,189,0,0" VerticalAlignment="Top" Width="46" Grid.Column="2"/>
+        <Label x:Name="lblEmailOutput" Content="Email" HorizontalAlignment="Left" Height="30" Margin="237,189,0,0" VerticalAlignment="Top" Width="46" Grid.Column="2"/>
+        <Label x:Name="lblGender" Content="Gender" HorizontalAlignment="Left" Height="30" Margin="283,189,0,0" VerticalAlignment="Top" Width="61" Grid.Column="2"/>
+        <Label x:Name="lblAge" Content="Age" HorizontalAlignment="Left" Height="30" Margin="344,189,0,0" VerticalAlignment="Top" Width="46" Grid.Column="2"/>
+        <Label x:Name="lblWeight" Content="Weight" HorizontalAlignment="Left" Height="30" Margin="375,189,0,0" VerticalAlignment="Top" Width="61" Grid.Column="2"/>
+        <Label x:Name="lblGoal" Content="Goal" HorizontalAlignment="Right" Height="30" Margin="0,189,0,0" VerticalAlignment="Top" Width="46" Grid.Column="2"/>" VerticalAlignment="Top" Width="104" Grid.Column="2" Margin="286,267,0,0" Height="33" />
+
     </Grid>
 </Window>
+
