@@ -5,8 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="MembershipSales" Height="300" Width="300">
+        Title="MembershipSales" Height="400" Width="500" Background="#FFBF3417">
     <Grid>
-        
+        <Image x:Name="imgLogo" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Source="Images/MSNLogo.png"/>
+        <Label x:Name="lblMemType" Content="Membership Type:" HorizontalAlignment="Left" Margin="11,96,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
+        <Label x:Name="lblStartDate" Content="Start Date:" HorizontalAlignment="Left" Margin="11,122,0,0" VerticalAlignment="Top" Foreground="#FFF7F3F3"/>
+        <Label x:Name="lblEndDate" Content="End Date:" HorizontalAlignment="Left" Margin="11,153,0,0" VerticalAlignment="Top" Foreground="#FFEEE0E0"/>
+        <Label x:Name="lblAddFeat" Content="Additional Features:" HorizontalAlignment="Left" Margin="11,179,0,0" VerticalAlignment="Top" Foreground="#FFF9F1F1"/>
+        <ComboBox x:Name="cmbMemType" HorizontalAlignment="Left" Margin="124,100,0,0" VerticalAlignment="Top" Width="176">
+            <ComboBoxItem x:Name="cmbOption1" Content="Individual 1 Month ($9.99)" HorizontalAlignment="Left" Width="176" Margin="0,0,-2,0"/>
+            <ComboBoxItem x:Name="cmbOption2" Content="Individual 12 Month ($100)" HorizontalAlignment="Left" Width="176" Margin="0,0,-2,0"/>
+            <ComboBoxItem x:Name="cmbOption3" Content="Two Person 1 Month ($14.99)" HorizontalAlignment="Left" Width="173"/>
+            <ComboBoxItem x:Name="cmbOption4" Content="Two Person 12 Month ($150)" HorizontalAlignment="Left" Width="174"/>
+            <ComboBoxItem x:Name="cmbOption5" Content="Family 1 Month ($19.99)" HorizontalAlignment="Left" Width="174"/>
+            <ComboBoxItem x:Name="cmbOption6" Content="Family 12 Month ($200)" HorizontalAlignment="Left" Width="174"/>
+        </ComboBox>
+        <DatePicker x:Name="dtpStart" HorizontalAlignment="Left" Margin="82,127,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="dtpEnd" HorizontalAlignment="Left" Margin="82,156,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="chbTraining" Content="Training" HorizontalAlignment="Left" Margin="131,185,0,0" VerticalAlignment="Top" Foreground="#FFF5EEEE"/>
+        <CheckBox x:Name="chbLockRental" Content="Locker Rental" HorizontalAlignment="Left" Margin="210,185,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.205,0.454" Foreground="#FFF3E9E9"/>
+        <Label x:Name="lblMemTypeResHead" Content="Membership Type:" HorizontalAlignment="Left" Margin="11,251,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
+        <Label x:Name="lblStartDateResHead" Content="Start Date:" HorizontalAlignment="Left" Margin="11,270,0,0" VerticalAlignment="Top" Foreground="#FFF7F3F3"/>
+        <Label x:Name="lblEndDateResHead" Content="End Date:" HorizontalAlignment="Left" Margin="11,296,0,0" VerticalAlignment="Top" Foreground="#FFEEE0E0"/>
+        <Label x:Name="lblAddFeatResHead" Content="Additional Features:" HorizontalAlignment="Left" Margin="185,270,0,0" VerticalAlignment="Top" Foreground="#FFF9F1F1"/>
+        <Label x:Name="lblSubTotalHead" Content="Subtotal:" HorizontalAlignment="Left" Margin="243,252,0,0" VerticalAlignment="Top" Foreground="#FFF5E9E9"/>
+        <Label x:Name="lblMemTypeResult" Content="Label" HorizontalAlignment="Left" Margin="124,252,0,0" VerticalAlignment="Top" Foreground="#FFF0DFDF"/>
+        <Label x:Name="lblStartDateResult" Content="Label" HorizontalAlignment="Left" Margin="82,270,0,0" VerticalAlignment="Top" Foreground="#FFF3E7E7"/>
+        <Label x:Name="lblEndDateResult" Content="Label" HorizontalAlignment="Left" Margin="72,296,0,0" VerticalAlignment="Top" Foreground="#FFF0E7E7"/>
+        <Label x:Name="lblSubtotalResult" Content="Label" HorizontalAlignment="Left" Margin="300,251,0,0" VerticalAlignment="Top" Foreground="#FFF7F1F1"/>
+        <Label x:Name="lblAddFeatResult" Content="Label" HorizontalAlignment="Left" Margin="300,270,0,0" VerticalAlignment="Top" Foreground="#FFF3E4E4"/>
+        <Label x:Name="lblTotalResHead" Content="Total:" HorizontalAlignment="Left" Margin="261,296,0,0" VerticalAlignment="Top" Foreground="#FFF7F1F1"/>
+        <Label x:Name="lblTotalResult" Content="Label" HorizontalAlignment="Left" Margin="300,296,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.251,-0.094" Foreground="#FFF7F3F3"/>
+        <Button x:Name="btnQuote" Content="Quote" HorizontalAlignment="Left" Margin="278,214,0,0" VerticalAlignment="Top" Width="75"/>
+
     </Grid>
 </Window>
