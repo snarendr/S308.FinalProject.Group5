@@ -10,9 +10,9 @@
         <Image x:Name="imgMSN" HorizontalAlignment="Left" Height="100" Margin="21,10,0,0" VerticalAlignment="Top" Width="100" Source="Images/MSNLogo.png"/>
         <Label x:Name="lblSelectFeature" Content="Select Additional Feature:" HorizontalAlignment="Left" Margin="41,149,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="cmbSelectFeatures" HorizontalAlignment="Left" Margin="205,153,0,0" VerticalAlignment="Top" Width="120" TabIndex="0">
-            <ComboBoxItem/>
-            <ComboBoxItem Content="Personal Training Plan"/>
-            <ComboBoxItem Content="Locker Rental"/>
+            <ComboBoxItem x:Name="cbiSelectFeature" Content="Please Select a Feature Below"/>
+            <ComboBoxItem x:Name="cbiPersonalTrainingPlan" Content="Personal Training Plan"/>
+            <ComboBoxItem x:Name="cbiLockerRental" Content="Locker Rental"/>
         </ComboBox>
         <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="250,189,0,0" VerticalAlignment="Top" Width="75" TabIndex="1" IsTabStop="False"/>
         <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="507,19,0,0" VerticalAlignment="Top" Width="75" TabIndex="4"/>

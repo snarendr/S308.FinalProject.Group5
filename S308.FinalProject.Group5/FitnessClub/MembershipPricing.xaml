@@ -9,14 +9,13 @@
     <Grid>
         <Image x:Name="imgMSN" HorizontalAlignment="Left" Height="100" Margin="28,20,0,0" VerticalAlignment="Top" Width="100" Source="Images/MSNLogo.png"/>
         <ComboBox x:Name="cmbMembershipType" HorizontalAlignment="Left" Margin="158,212,0,0" VerticalAlignment="Top" Width="170" TabIndex="0">
-            <ComboBoxItem/>
-            <ComboBoxItem Content="Individual 1 Month"/>
-            <ComboBoxItem Content="Individual 12 Month"/>
-            <ComboBoxItem Content="Two Person 1 Month"/>
-            <ComboBoxItem Content="Two Person 12 Month"/>
-            <ComboBoxItem Content="Family 1 Month"/>
-            <ComboBoxItem Content="Family 12 Month"/>
-            <ComboBoxItem/>
+            <ComboBoxItem x:Name="cbiSelectMembership" Content="Please select a membership type" IsSelected="True"/>
+            <ComboBoxItem x:Name="cbiIndividualMonth" Content="Individual 1 Month"/>
+            <ComboBoxItem x:Name="cbiIndividual12Month" Content="Individual 12 Month"/>
+            <ComboBoxItem x:Name="cbiTwoPersonMonth" Content="Two Person 1 Month"/>
+            <ComboBoxItem x:Name="cbiTwoPerson12Month" Content="Two Person 12 Month"/>
+            <ComboBoxItem x:Name="cbiFamilyMonth" Content="Family 1 Month"/>
+            <ComboBoxItem x:Name="cbiFamily12Month" Content="Family 12 Month"/>
         </ComboBox>
         <Label x:Name="lblMembershipType" Content="Select Membership Type:" HorizontalAlignment="Left" Margin="10,208,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="253,263,0,0" VerticalAlignment="Top" Width="75" TabIndex="1"/>
@@ -27,7 +26,7 @@
         <TextBox x:Name="txbUpdatePrice" HorizontalAlignment="Left" Height="23" Margin="187,396,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" TextChanged="txbUpdatePrice_TextChanged" Text="24.99" TabIndex="2"/>
         <Label x:Name="lblSelectedMembership" Content="Selected Membership:" HorizontalAlignment="Left" Margin="42,331,0,0" VerticalAlignment="Top"/>
         <TextBlock x:Name="txbSelectedMembership" HorizontalAlignment="Left" Margin="184,338,0,0" TextWrapping="Wrap" Text="Family 1 Month" VerticalAlignment="Top"/>
-        <GroupBox x:Name="grpUpdatePricing" Header="Update Membership Pricing" HorizontalAlignment="Left" Margin="28,309,0,0" VerticalAlignment="Top" BorderBrush="White" Height="171" Width="293" Foreground="White"/>
+        <GroupBox x:Name="grpUpdatePricing" Header="Update Membership Pricing" HorizontalAlignment="Left" Margin="10,304,0,0" VerticalAlignment="Top" BorderBrush="White" Height="172" Width="293" Foreground="White" IsManipulationEnabled="True"/>
         <Button x:Name="btnUpdatePrice" Content="Update Price" HorizontalAlignment="Left" Margin="191,437,0,0" VerticalAlignment="Top" Width="85" Click="button_Click" TabIndex="3"/>
         <TextBlock x:Name="txbInstructions" HorizontalAlignment="Left" Margin="10,143,0,0" TextWrapping="Wrap" Text="Instructions" VerticalAlignment="Top" Height="60" Width="403"/>
 

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MembershipSales" Height="400" Width="500" Background="#FFBF3417">
     <Grid>
-        <Image x:Name="imgLogo" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Source="Images/MSNLogo.png"/>
+        <Image x:Name="imgMSN" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Source="Images/MSNLogo.png"/>
         <Label x:Name="lblMemType" Content="Membership Type:" HorizontalAlignment="Left" Margin="11,96,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
         <Label x:Name="lblStartDate" Content="Start Date:" HorizontalAlignment="Left" Margin="11,122,0,0" VerticalAlignment="Top" Foreground="#FFF7F3F3"/>
         <Label x:Name="lblEndDate" Content="End Date:" HorizontalAlignment="Left" Margin="11,153,0,0" VerticalAlignment="Top" Foreground="#FFEEE0E0"/>
