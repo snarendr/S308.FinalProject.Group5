@@ -1,14 +1,19 @@
-﻿<Window x:Class="FitnessClub.MainMenu"
+﻿<Window x:Name="winMainMenu" x:Class="FitnessClub.MainMenu"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="MainMenu" Height="300" Width="300" Background="#FFBF3417">
+        Title="Main Menu" Height="300" Width="300" Background="#FFBF3417">
     <Grid>
         <Image x:Name="imgLogo" HorizontalAlignment="Left" Height="100" Margin="20,10,0,0" VerticalAlignment="Top" Width="100" Source="Images/MSNLogo.png"/>
-        <GroupBox x:Name="groupBox" Header="GroupBox" HorizontalAlignment="Left" Margin="35,137,0,0" VerticalAlignment="Top" BorderBrush="White" Height="104" Width="232" Foreground="White"/>
+        <Button x:Name="btnMemberInformation" Content="Member Information" HorizontalAlignment="Left" Margin="20,139,0,0" VerticalAlignment="Top" Width="122"/>
+        <Button x:Name="btnFeaturesPricing" Content="Features Pricing" HorizontalAlignment="Left" Margin="66,210,0,0" VerticalAlignment="Top" Width="129"/>
+        <Button x:Name="btnMembershipSales" Content="Membership Sales" HorizontalAlignment="Left" Margin="66,110,0,0" VerticalAlignment="Top" Width="114"/>
+        <Button x:Name="btnMembershipPricing" Content="Membership Pricing" HorizontalAlignment="Left" Margin="20,176,0,0" VerticalAlignment="Top" Width="144"/>
+        <Button x:Name="btnMembershipRegistration" Content="Membership Registration" HorizontalAlignment="Left" Margin="138,69,0,0" VerticalAlignment="Top" Width="125"/>
+        <Button x:Name="btnMemberSearch" Content="Member Search" HorizontalAlignment="Left" Margin="180,152,0,0" VerticalAlignment="Top" Width="92"/>
 
     </Grid>
 </Window>
