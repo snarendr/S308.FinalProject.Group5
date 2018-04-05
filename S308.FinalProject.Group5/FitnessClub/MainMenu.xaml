@@ -5,16 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="Main Menu" Height="445" Width="450" Background="#FFBF3417" ResizeMode="CanMinimize">
+        Title="Main Menu" Height="400" Width="748" Background="#FFBF3417" ResizeMode="CanMinimize">
     <Grid>
-        <Image x:Name="imgLogo" HorizontalAlignment="Left" Height="100" Margin="20,10,0,0" VerticalAlignment="Top" Width="100" Source="Images/MSNLogo.png"/>
-        <Button x:Name="btnMemberInformation" Content="Member Information" HorizontalAlignment="Left" Margin="20,253,0,0" VerticalAlignment="Top" Width="145" Height="40"/>
-        <Button x:Name="btnFeaturesPricing" Content="Features Pricing" HorizontalAlignment="Left" Margin="242,224,0,0" VerticalAlignment="Top" Width="145" Height="40"/>
-        <Button x:Name="btnMembershipSales" Content="Membership Sales" HorizontalAlignment="Left" Margin="20,133,0,0" VerticalAlignment="Top" Width="145" Height="40"/>
-        <Button x:Name="btnMembershipPricing" Content="Membership Pricing" HorizontalAlignment="Left" Margin="242,269,0,0" VerticalAlignment="Top" Width="145" Height="40"/>
-        <Button x:Name="btnMembershipRegistration" Content="Membership Registration" HorizontalAlignment="Left" Margin="20,194,0,0" VerticalAlignment="Top" Width="145" Height="40"/>
-        <Button x:Name="btnMemberSearch" Content="Member Search" HorizontalAlignment="Left" Margin="20,309,0,0" VerticalAlignment="Top" Width="145" Height="40"/>
-        <Image x:Name="imgFitnessCenter" HorizontalAlignment="Left" Height="132" Margin="223,0,-4,0" VerticalAlignment="Top" Width="225" Source="Images/FitnessCenterImg.jpg"/>
+        <GroupBox x:Name="grpSales_Membership_Copy" Header="Pricing Management" HorizontalAlignment="Left" Height="149" Margin="484,195,0,0" VerticalAlignment="Top" Width="219" Foreground="White"/>
+
+        <GroupBox x:Name="grpSales_Membership" Header="Sales and Membership" HorizontalAlignment="Left" Height="131" Margin="51,197,0,0" VerticalAlignment="Top" Width="356" Foreground="White"/>
+        <Image x:Name="imgLogo" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Source="Images/MSNLogo.png"/>
+        <Button x:Name="btnMemberInformation" Content="Member Information" HorizontalAlignment="Left" Margin="154,270,0,0" VerticalAlignment="Top" Width="145" Height="40"/>
+        <Button x:Name="btnFeaturesPricing" Content="Features Pricing" HorizontalAlignment="Left" Margin="525,218,0,0" VerticalAlignment="Top" Width="145" Height="40"/>
+        <Button x:Name="btnMembershipSales" Content="Membership Sales" HorizontalAlignment="Left" Margin="71,218,0,0" VerticalAlignment="Top" Width="145" Height="40"/>
+        <Button x:Name="btnMembershipPricing" Content="Membership Pricing" HorizontalAlignment="Left" Margin="525,270,0,0" VerticalAlignment="Top" Width="145" Height="40"/>
+        <Button x:Name="btnMembershipRegistration" Content="Membership Registration" HorizontalAlignment="Left" Margin="240,218,0,0" VerticalAlignment="Top" Width="145" Height="40"/>
+        <Image x:Name="imgFitnessCenter" HorizontalAlignment="Left" Margin="215,6,0,181" Width="304" Source="Images/FitnessCenterImg.jpg"/>
 
     </Grid>
 </Window>
