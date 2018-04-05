@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="Membership Pricing" Height="605" Width="600" Background="#FFBF3417" ResizeMode="CanMinimize">
     <Grid>
-        <Image x:Name="imgMSN" HorizontalAlignment="Left" Height="100" Margin="28,20,0,0" VerticalAlignment="Top" Width="100" Source="Images/MSNLogo.png"/>
-        <ComboBox x:Name="cmbMembershipType" HorizontalAlignment="Left" Margin="158,212,0,0" VerticalAlignment="Top" Width="170" TabIndex="0">
+        <Image x:Name="imgMSN" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Source="Images/MSNLogo.png"/>
+        <ComboBox x:Name="cmbMembershipType" HorizontalAlignment="Left" Margin="172,152,0,0" VerticalAlignment="Top" Width="225" TabIndex="0">
             <ComboBoxItem x:Name="cbiSelectMembership" Content="Please select a membership type" IsSelected="True"/>
             <ComboBoxItem x:Name="cbiIndividualMonth" Content="Individual 1 Month"/>
             <ComboBoxItem x:Name="cbiIndividual12Month" Content="Individual 12 Month"/>
@@ -17,19 +17,21 @@
             <ComboBoxItem x:Name="cbiFamilyMonth" Content="Family 1 Month"/>
             <ComboBoxItem x:Name="cbiFamily12Month" Content="Family 12 Month"/>
         </ComboBox>
-        <Label x:Name="lblMembershipType" Content="Select Membership Type:" HorizontalAlignment="Left" Margin="10,208,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="253,263,0,0" VerticalAlignment="Top" Width="75" TabIndex="1"/>
-        <Label x:Name="lblCurrentPrice" Content="Current Price:" HorizontalAlignment="Left" Margin="88,362,0,0" VerticalAlignment="Top"/>
-        <TextBlock x:Name="txbCurrentPrice" HorizontalAlignment="Left" Margin="187,369,0,0" TextWrapping="Wrap" Text="$19.99" VerticalAlignment="Top"/>
-        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="507,10,0,0" VerticalAlignment="Top" Width="75" TabIndex="4"/>
-        <Label x:Name="lblUpdatePrice" Content="Update Price:" HorizontalAlignment="Left" Margin="89,393,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txbUpdatePrice" HorizontalAlignment="Left" Height="23" Margin="187,396,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" TextChanged="txbUpdatePrice_TextChanged" Text="24.99" TabIndex="2"/>
-        <Label x:Name="lblSelectedMembership" Content="Selected Membership:" HorizontalAlignment="Left" Margin="42,331,0,0" VerticalAlignment="Top"/>
-        <TextBlock x:Name="txbSelectedMembership" HorizontalAlignment="Left" Margin="184,338,0,0" TextWrapping="Wrap" Text="Family 1 Month" VerticalAlignment="Top"/>
-        <GroupBox x:Name="grpUpdatePricing" Header="Update Membership Pricing" HorizontalAlignment="Left" Margin="10,304,0,0" VerticalAlignment="Top" BorderBrush="White" Height="172" Width="293" Foreground="White" IsManipulationEnabled="True"/>
-        <Button x:Name="btnUpdatePrice" Content="Update Price" HorizontalAlignment="Left" Margin="191,437,0,0" VerticalAlignment="Top" Width="85" Click="button_Click" TabIndex="3"/>
-        <TextBlock x:Name="txbInstructions" HorizontalAlignment="Left" Margin="10,143,0,0" TextWrapping="Wrap" Text="Instructions" VerticalAlignment="Top" Height="60" Width="403"/>
-        <Image x:Name="imgValuePricing" HorizontalAlignment="Left" Height="100" Margin="203,38,0,0" VerticalAlignment="Top" Width="100" Source="Images/ValuePricingImg.jpg"/>
+        <Label x:Name="lblMembershipType" Content="Select Membership Type:" HorizontalAlignment="Left" Margin="24,148,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
+        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="172,194,0,0" VerticalAlignment="Top" Width="75" TabIndex="1"/>
+        <Label x:Name="lblCurrentPrice" Content="Current Price:" HorizontalAlignment="Left" Margin="108,293,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
+        <TextBlock x:Name="txbCurrentPrice" HorizontalAlignment="Left" Margin="207,300,0,0" TextWrapping="Wrap" Text="$19.99" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
+        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="509,10,0,0" VerticalAlignment="Top" Width="75" TabIndex="4"/>
+        <Label x:Name="lblUpdatePrice" Content="Update Price:" HorizontalAlignment="Left" Margin="109,324,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
+        <TextBox x:Name="txbUpdatePrice" HorizontalAlignment="Left" Height="23" Margin="207,327,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" TextChanged="txbUpdatePrice_TextChanged" Text="24.99" TabIndex="2"/>
+        <Label x:Name="lblSelectedMembership" Content="Selected Membership:" HorizontalAlignment="Left" Margin="62,262,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
+        <TextBlock x:Name="txbSelectedMembership" HorizontalAlignment="Left" Margin="204,269,0,0" TextWrapping="Wrap" Text="Family 1 Month" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
+        <GroupBox x:Name="grpUpdatePricing" Header="Update Existing Price" HorizontalAlignment="Left" Margin="24,234,0,0" VerticalAlignment="Top" BorderBrush="White" Height="172" Width="293" Foreground="White" IsManipulationEnabled="True"/>
+        <Button x:Name="btnUpdatePrice" Content="Update Price" HorizontalAlignment="Left" Margin="211,368,0,0" VerticalAlignment="Top" Width="85" Click="button_Click" TabIndex="3"/>
+        <TextBlock x:Name="txbInstructions" HorizontalAlignment="Left" Margin="100,82,0,0" TextWrapping="Wrap" Text="Instructions" VerticalAlignment="Top" Height="60" Width="335" Foreground="#FFF9F9F9"/>
+        <Image x:Name="imgValuePricing" HorizontalAlignment="Left" Height="113" Margin="465,42,0,0" VerticalAlignment="Top" Width="119" Source="Images/ValuePricingImg.jpg"/>
+        <Label x:Name="lblTitle" Content="Manage Membership Pricing" HorizontalAlignment="Left" Margin="101,22,0,0" VerticalAlignment="Top" Foreground="#FFF5EBEB" Height="60" Width="386" FontSize="26.667"/>
+        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="100,368,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>
