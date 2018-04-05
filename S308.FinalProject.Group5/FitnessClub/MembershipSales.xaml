@@ -39,7 +39,7 @@
         <Button x:Name="btnQuote" Content="Quote" HorizontalAlignment="Left" Margin="278,214,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="407,69,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="btnApprove" Content="Approve" HorizontalAlignment="Left" Margin="300,341,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="394,341,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="394,341,0,0" VerticalAlignment="Top" Width="75"/>
         <Label x:Name="lblTitle" Content="Membership Sales Quote" HorizontalAlignment="Left" Margin="92,17,0,0" VerticalAlignment="Top" Foreground="#FFF5EBEB" Height="60" Width="310" FontSize="26.667"/>
 
     </Grid>

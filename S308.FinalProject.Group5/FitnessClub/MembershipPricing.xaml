@@ -23,11 +23,11 @@
         <TextBlock x:Name="txbCurrentPrice" HorizontalAlignment="Left" Margin="207,300,0,0" TextWrapping="Wrap" Text="$19.99" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
         <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="509,10,0,0" VerticalAlignment="Top" Width="75" TabIndex="4"/>
         <Label x:Name="lblUpdatePrice" Content="Update Price:" HorizontalAlignment="Left" Margin="109,324,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
-        <TextBox x:Name="txbUpdatePrice" HorizontalAlignment="Left" Height="23" Margin="207,327,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" TextChanged="txbUpdatePrice_TextChanged" Text="24.99" TabIndex="2"/>
+        <TextBox x:Name="txbUpdatePrice" HorizontalAlignment="Left" Height="23" Margin="207,327,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="24.99" TabIndex="2"/>
         <Label x:Name="lblSelectedMembership" Content="Selected Membership:" HorizontalAlignment="Left" Margin="62,262,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
         <TextBlock x:Name="txbSelectedMembership" HorizontalAlignment="Left" Margin="204,269,0,0" TextWrapping="Wrap" Text="Family 1 Month" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
-        <GroupBox x:Name="grpUpdatePricing" Header="Update Existing Price" HorizontalAlignment="Left" Margin="24,234,0,0" VerticalAlignment="Top" BorderBrush="White" Height="172" Width="293" Foreground="White" IsManipulationEnabled="True"/>
-        <Button x:Name="btnUpdatePrice" Content="Update Price" HorizontalAlignment="Left" Margin="211,368,0,0" VerticalAlignment="Top" Width="85" Click="button_Click" TabIndex="3"/>
+        <GroupBox x:Name="grpUpdatePricing" Header="Update Existing Price" HorizontalAlignment="Left" Margin="109,427,0,-22" VerticalAlignment="Top" BorderBrush="White" Height="171" Width="293" Foreground="White" IsManipulationEnabled="True"/>
+        <Button x:Name="btnUpdatePrice" Content="Update Price" HorizontalAlignment="Left" Margin="211,368,0,0" VerticalAlignment="Top" Width="85" TabIndex="3"/>
         <TextBlock x:Name="txbInstructions" HorizontalAlignment="Left" Margin="100,82,0,0" TextWrapping="Wrap" Text="Instructions" VerticalAlignment="Top" Height="60" Width="335" Foreground="#FFF9F9F9"/>
         <Image x:Name="imgValuePricing" HorizontalAlignment="Left" Height="113" Margin="465,42,0,0" VerticalAlignment="Top" Width="119" Source="Images/ValuePricingImg.jpg"/>
         <Label x:Name="lblTitle" Content="Manage Membership Pricing" HorizontalAlignment="Left" Margin="101,22,0,0" VerticalAlignment="Top" Foreground="#FFF5EBEB" Height="60" Width="386" FontSize="26.667"/>
