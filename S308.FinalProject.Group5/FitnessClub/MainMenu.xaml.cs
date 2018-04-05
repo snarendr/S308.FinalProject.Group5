@@ -3,6 +3,7 @@
 //Value Pricing Image Source: http://spcmechanical.com/value-engineering-2/
 //Locker Rental Image Source: https://www.disneybyage.com/typhoon-lagoon-blizzard-beach-disney-water-park/locker-map-icon/
 //Personal Training Image Source: https://maxvo2.com/content/images/fitness-icons/personal-trainer-icon-med-black.svg
+//Fitness Center Image Source: https://www.canstockphoto.com/illustration/fitness-center.html
 
 using System;
 using System.Collections.Generic;

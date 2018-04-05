@@ -5,15 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="Main Menu" Height="300" Width="300" Background="#FFBF3417">
+        Title="Main Menu" Height="445" Width="450" Background="#FFBF3417">
     <Grid>
         <Image x:Name="imgLogo" HorizontalAlignment="Left" Height="100" Margin="20,10,0,0" VerticalAlignment="Top" Width="100" Source="Images/MSNLogo.png"/>
-        <Button x:Name="btnMemberInformation" Content="Member Information" HorizontalAlignment="Left" Margin="20,139,0,0" VerticalAlignment="Top" Width="122"/>
-        <Button x:Name="btnFeaturesPricing" Content="Features Pricing" HorizontalAlignment="Left" Margin="66,210,0,0" VerticalAlignment="Top" Width="129"/>
-        <Button x:Name="btnMembershipSales" Content="Membership Sales" HorizontalAlignment="Left" Margin="66,110,0,0" VerticalAlignment="Top" Width="114"/>
+        <Button x:Name="btnMemberInformation" Content="Member Information" HorizontalAlignment="Left" Margin="242,179,0,0" VerticalAlignment="Top" Width="122"/>
+        <Button x:Name="btnFeaturesPricing" Content="Features Pricing" HorizontalAlignment="Left" Margin="242,216,0,0" VerticalAlignment="Top" Width="129"/>
+        <Button x:Name="btnMembershipSales" Content="Membership Sales" HorizontalAlignment="Left" Margin="20,137,0,0" VerticalAlignment="Top" Width="114"/>
         <Button x:Name="btnMembershipPricing" Content="Membership Pricing" HorizontalAlignment="Left" Margin="20,176,0,0" VerticalAlignment="Top" Width="144"/>
-        <Button x:Name="btnMembershipRegistration" Content="Membership Registration" HorizontalAlignment="Left" Margin="138,69,0,0" VerticalAlignment="Top" Width="125"/>
-        <Button x:Name="btnMemberSearch" Content="Member Search" HorizontalAlignment="Left" Margin="180,152,0,0" VerticalAlignment="Top" Width="92"/>
+        <Button x:Name="btnMembershipRegistration" Content="Membership Registration" HorizontalAlignment="Left" Margin="20,213,0,0" VerticalAlignment="Top" Width="146"/>
+        <Button x:Name="btnMemberSearch" Content="Member Search" HorizontalAlignment="Left" Margin="242,142,0,0" VerticalAlignment="Top" Width="92"/>
+        <Image x:Name="imgFitnessCenter" HorizontalAlignment="Left" Height="100" Margin="135,10,0,0" VerticalAlignment="Top" Width="207" Source="Images/FitnessCenterImg.jpg"/>
 
     </Grid>
 </Window>
