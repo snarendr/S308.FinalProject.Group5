@@ -25,6 +25,8 @@
         <GroupBox x:Name="grpUpdatePricing" Header="Update Feature Pricing" HorizontalAlignment="Left" Margin="41,251,0,0" VerticalAlignment="Top" BorderBrush="White" Height="171" Width="293" Foreground="White"/>
         <Button x:Name="btnUpdatePrice" Content="Update Price" HorizontalAlignment="Left" Margin="161,388,0,0" VerticalAlignment="Top" Width="90" TabIndex="3"/>
         <TextBlock x:Name="txbInstructions" HorizontalAlignment="Left" Margin="40,115,0,0" TextWrapping="Wrap" Text="Instructions:" VerticalAlignment="Top" Height="37" Width="480"/>
+        <Image x:Name="imgPersonalTrainning" HorizontalAlignment="Left" Height="98" Margin="224,30,0,0" VerticalAlignment="Top" Width="124" Source="Images/PersonalTrainingImg.png"/>
+        <Image x:Name="imgLockerRental" HorizontalAlignment="Left" Height="100" Margin="372,30,0,0" VerticalAlignment="Top" Width="100" Source="Images/LockerRentalImg.png"/>
 
     </Grid>
 </Window>

@@ -29,6 +29,7 @@
         <GroupBox x:Name="grpUpdatePricing" Header="Update Membership Pricing" HorizontalAlignment="Left" Margin="10,304,0,0" VerticalAlignment="Top" BorderBrush="White" Height="172" Width="293" Foreground="White" IsManipulationEnabled="True"/>
         <Button x:Name="btnUpdatePrice" Content="Update Price" HorizontalAlignment="Left" Margin="191,437,0,0" VerticalAlignment="Top" Width="85" Click="button_Click" TabIndex="3"/>
         <TextBlock x:Name="txbInstructions" HorizontalAlignment="Left" Margin="10,143,0,0" TextWrapping="Wrap" Text="Instructions" VerticalAlignment="Top" Height="60" Width="403"/>
+        <Image x:Name="imgValuePricing" HorizontalAlignment="Left" Height="100" Margin="203,38,0,0" VerticalAlignment="Top" Width="100" Source="Images/ValuePricingImg.jpg"/>
 
     </Grid>
 </Window>

@@ -136,9 +136,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\ValuePricingImg.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\MSNLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\LockerRentalImg.png" />
+    <Resource Include="Images\PersonalTrainingImg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
