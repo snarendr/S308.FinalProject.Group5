@@ -21,7 +21,7 @@
         <Image x:Name="imgLogo" HorizontalAlignment="Left" Height="95" VerticalAlignment="Top" Width="111" Source="Images/MSNLogo.png" RenderTransformOrigin="0.812,0.564"/>
         <Label x:Name="lblTitle" Content="Existing  Member Search" HorizontalAlignment="Left" Margin="86,10,0,0" VerticalAlignment="Top" Foreground="#FFF5EBEB" Height="60" Width="310" FontSize="26.667"/>
         <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="241" Margin="405,133,0,0" VerticalAlignment="Top" Width="318" TabIndex="6" Grid.ColumnSpan="3">
-            <ListBoxItem Content="John Doe                Doe@indiana.edu           630 999 8989" Selected="ListBoxItem_Selected"/>
+            <ListBoxItem Content="John Doe                Doe@indiana.edu           630 999 8989" />
         </ListBox>
         <Button x:Name="bttnClearTwo" Content="Clear" HorizontalAlignment="Left" Height="30" Margin="598,379,0,0" VerticalAlignment="Top" Width="100" TabIndex="7" Grid.ColumnSpan="2"/>
         <Button x:Name="bttnSelect" Content="Select" HorizontalAlignment="Left" Height="30" Margin="428,379,0,0" VerticalAlignment="Top" Width="100" TabIndex="6"/>
