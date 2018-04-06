@@ -39,7 +39,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <TextBlock x:Name="txtbDescription" HorizontalAlignment="Left" Margin="86,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="102" Width="333" Foreground="#FFF7F5F5" Text="This window allows the user to look up user information by entering their Last Name, Email , and or/Phone Number. Once the search button is clicked all the user information should be filled in below."/>
-        <TextBox x:Name="txtSample" HorizontalAlignment="Left" Height="35" Margin="0,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="771" TextChanged="textBox_TextChanged"/>
+        <TextBox x:Name="txtSample" HorizontalAlignment="Left" Height="35" Margin="0,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="771" TextChanged="textBox_TextChanged" Text="Two      John            Doe              4/6/2018    5/6/2019   $100   $100        N/A           Two   5/6/2018     6309998989              Male       150        N/A"/>
 
     </Grid>
 </Window>
