@@ -1,4 +1,7 @@
-﻿using System;
+﻿//MSN Logo Source: https://www.apk4now.com/apk/1424/msn-health-amp-fitness-workouts
+//Locker Rental Image Source: https://www.disneybyage.com/typhoon-lagoon-blizzard-beach-disney-water-park/locker-map-icon/
+//Personal Training Image Source: https://maxvo2.com/content/images/fitness-icons/personal-trainer-icon-med-black.svg
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

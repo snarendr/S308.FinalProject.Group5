@@ -1,4 +1,6 @@
-﻿using System;
+﻿//MSN Logo Source: https://www.apk4now.com/apk/1424/msn-health-amp-fitness-workouts
+//Value Pricing Image Source: http://spcmechanical.com/value-engineering-2/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
