@@ -13,7 +13,7 @@
         <Label x:Name="lblMemType" Content="Membership Type:" HorizontalAlignment="Left" Margin="10,164,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9" Height="27" Width="123"/>
         <Label x:Name="lblStartDate" Content="Start Date:" HorizontalAlignment="Left" Margin="11,192,0,0" VerticalAlignment="Top" Foreground="#FFF7F3F3" Height="27" Width="71"/>
         <Label x:Name="lblEndDate" Content="End Date:" HorizontalAlignment="Left" Margin="381,170,0,0" VerticalAlignment="Top" Foreground="#FFEEE0E0" Height="27" Width="65"/>
-        <Label x:Name="lblAddFeat" Content="Additional Features:" HorizontalAlignment="Left" Margin="380,190,0,0" VerticalAlignment="Top" Foreground="#FFF9F1F1" Height="27" Width="129"/>
+        <Label x:Name="lblAddFeat" Content="Additional Features:" HorizontalAlignment="Left" Margin="381,195,0,0" VerticalAlignment="Top" Foreground="#FFF9F1F1" Height="27" Width="129"/>
         <ComboBox x:Name="cmbMemType" HorizontalAlignment="Left" Margin="144,169,0,0" VerticalAlignment="Top" Width="208" Height="23" SelectedIndex="0" TabIndex="0">
             <ComboBoxItem x:Name="cbiDefault" Content="Please select a membership type" HorizontalAlignment="Left" Width="196" IsSelected="True"/>
             <ComboBoxItem x:Name="cbiIndOneMonth" Content="Individual 1 Month ($9.99)" HorizontalAlignment="Left" Width="176" Margin="0,0,-2,0"/>
@@ -32,13 +32,13 @@
         <Label x:Name="lblEndDateResHead" Content="End Date:" HorizontalAlignment="Left" Margin="46,334,0,0" VerticalAlignment="Top" Foreground="#FFEEE0E0" Height="42" Width="101"/>
         <Label x:Name="lblAddFeatResHead" Content="Additional Features:" HorizontalAlignment="Left" Margin="370,293,0,0" VerticalAlignment="Top" Foreground="#FFF9F1F1" Height="41" Width="189"/>
         <Label x:Name="lblSubTotalHead" Content="Subtotal:" HorizontalAlignment="Left" Margin="370,262,0,0" VerticalAlignment="Top" Foreground="#FFF5E9E9" Height="41" Width="94"/>
-        <Label x:Name="lblMemTypeResult" Content="Individual 1 Month ($9.99)" HorizontalAlignment="Left" Margin="176,265,0,0" VerticalAlignment="Top" Foreground="#FFF0DFDF" Height="41" Width="156"/>
+        <Label x:Name="lblMemTypeResult" Content="Individual 1 Month ($9.99)" HorizontalAlignment="Left" Margin="176,263,0,0" VerticalAlignment="Top" Foreground="#FFF0DFDF" Height="41" Width="156"/>
         <Label x:Name="lblStartDateResult" Content="01/01/2018" HorizontalAlignment="Left" Margin="176,293,0,0" VerticalAlignment="Top" Foreground="#FFF3E7E7" Height="41" Width="83"/>
         <Label x:Name="lblEndDateResult" Content="02/01/2018" HorizontalAlignment="Left" Margin="176,334,0,0" VerticalAlignment="Top" Foreground="#FFF0E7E7" Height="42" Width="83"/>
         <Label x:Name="lblSubtotalResult" Content="$9.99" HorizontalAlignment="Left" Margin="520,261,0,0" VerticalAlignment="Top" Foreground="#FFF7F1F1" Height="42" Width="62"/>
-        <Label x:Name="lblAddFeatResult" Content="None" HorizontalAlignment="Left" Margin="520,293,0,0" VerticalAlignment="Top" Foreground="#FFF3E4E4" Height="41" Width="62"/>
+        <Label x:Name="lblAddFeatResult" Content="Training  - $5.00/month" HorizontalAlignment="Left" Margin="520,293,0,0" VerticalAlignment="Top" Foreground="#FFF3E4E4" Height="41" Width="140"/>
         <Label x:Name="lblTotalResHead" Content="Total:" HorizontalAlignment="Left" Margin="370,334,0,0" VerticalAlignment="Top" Foreground="#FFF7F1F1" Height="42" Width="64"/>
-        <Label x:Name="lblTotalResult" Content="$9.99" HorizontalAlignment="Left" Margin="520,334,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.251,-0.094" Foreground="#FFF7F3F3" Height="42" Width="62"/>
+        <Label x:Name="lblTotalResult" Content="$14.99" HorizontalAlignment="Left" Margin="520,334,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.251,-0.094" Foreground="#FFF7F3F3" Height="42" Width="62"/>
         <Button x:Name="btnQuote" Content="Quote" HorizontalAlignment="Left" Margin="318,231,0,0" VerticalAlignment="Top" Width="84" Height="21" TabIndex="5"/>
         <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="636,10,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="btnApprove" Content="Approve" HorizontalAlignment="Left" Margin="542,444,0,0" VerticalAlignment="Top" Width="75" TabIndex="6"/>
