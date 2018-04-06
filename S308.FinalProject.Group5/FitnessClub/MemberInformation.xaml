@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="MemberInformation" Height="500" Width="750" Background="#FFBF3417">
+        Title="MemberInformation" Height="550" Width="800" Background="#FFBF3417">
     <Grid>
         <GroupBox x:Name="groupBox" Header="Search Criteria " HorizontalAlignment="Left" Height="131" Margin="419,10,0,0" VerticalAlignment="Top" Width="279" Foreground="White"/>
         <Label x:Name="lblLastName" Content="Last Name: " HorizontalAlignment="Left" Height="30" Margin="419,44,0,0" VerticalAlignment="Top" Width="68" Foreground="White"/>
@@ -19,7 +19,7 @@
         <Button x:Name="bttnMainMenu" Content="Main Menu" HorizontalAlignment="Left" VerticalAlignment="Top" Width="104" Margin="638,154,0,0" Height="33" />
         <Image x:Name="imgLogo" HorizontalAlignment="Left" Height="95" VerticalAlignment="Top" Width="111" Source="Images/MSNLogo.png" RenderTransformOrigin="0.812,0.564"/>
         <Label x:Name="lblTitle" Content="Membership Information" HorizontalAlignment="Left" Margin="86,10,0,0" VerticalAlignment="Top" Foreground="#FFF5EBEB" Height="60" Width="310" FontSize="26.667"/>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="265" Margin="0,194,0,0" VerticalAlignment="Top" Width="742" SelectionChanged="dataGrid_SelectionChanged" CanUserResizeColumns="False">
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="325" Margin="0,194,0,0" VerticalAlignment="Top" Width="792" CanUserResizeColumns="False" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Type" FontSize="9"/>
                 <DataGridTextColumn Header="First Name" FontSize="10"/>
@@ -38,6 +38,7 @@
                 <DataGridTextColumn Header="Goal" FontSize="10"/>
             </DataGrid.Columns>
         </DataGrid>
+        <TextBlock x:Name="txtbDescription" HorizontalAlignment="Left" Margin="86,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="102" Width="333" Foreground="#FFF7F5F5" Text="This window allows the user to look up user information by entering their Last Name, Email , and or/Phone Number. Once the search button is clicked all the user information should be filled in below."/>
 
     </Grid>
 </Window>
