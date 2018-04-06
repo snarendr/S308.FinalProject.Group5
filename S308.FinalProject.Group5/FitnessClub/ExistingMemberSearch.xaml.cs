@@ -25,9 +25,7 @@ namespace FitnessClub
             InitializeComponent();
         }
 
-        private void txtPhoneNumberInput_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
-        }
+
     }
 }
