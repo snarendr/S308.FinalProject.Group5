@@ -88,11 +88,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Membership Registration.xaml">
+    <Page Include="MembershipRegistration.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Membership Sales.xaml">
+    <Page Include="MembershipSales.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -104,11 +104,11 @@
     <Compile Include="MembershipPricing.xaml.cs">
       <DependentUpon>MembershipPricing.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Membership Registration.xaml.cs">
-      <DependentUpon>Membership Registration.xaml</DependentUpon>
+    <Compile Include="MembershipRegistration.xaml.cs">
+      <DependentUpon>MembershipRegistration.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Membership Sales.xaml.cs">
-      <DependentUpon>Membership Sales.xaml</DependentUpon>
+    <Compile Include="MembershipSales.xaml.cs">
+      <DependentUpon>MembershipSales.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
