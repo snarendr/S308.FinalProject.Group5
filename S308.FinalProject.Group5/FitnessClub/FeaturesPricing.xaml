@@ -9,7 +9,7 @@
     <Grid>
         <Image x:Name="imgMSN" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Source="Images/MSNLogo.png"/>
         <Label x:Name="lblSelectFeature" Content="Select Additional Feature:" HorizontalAlignment="Left" Margin="45,289,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
-        <ComboBox x:Name="cmbSelectFeatures" HorizontalAlignment="Left" Margin="209,293,0,0" VerticalAlignment="Top" Width="120" TabIndex="0">
+        <ComboBox x:Name="cmbSelectFeatures" HorizontalAlignment="Left" Margin="209,293,0,0" VerticalAlignment="Top" Width="172" TabIndex="0">
             <ComboBoxItem x:Name="cbiSelectFeature" Content="Please Select a Feature Below"/>
             <ComboBoxItem x:Name="cbiPersonalTrainingPlan" Content="Personal Training Plan"/>
             <ComboBoxItem x:Name="cbiLockerRental" Content="Locker Rental"/>
