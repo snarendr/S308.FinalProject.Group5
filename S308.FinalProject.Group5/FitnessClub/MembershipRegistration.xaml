@@ -10,8 +10,8 @@
         <Image x:Name="imgLogo" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Source="Images/MSNLogo.png"/>
         <Label x:Name="lblFirstName" Content="First Name:" HorizontalAlignment="Left" Margin="7,143,0,0" VerticalAlignment="Top" Foreground="#FFF0E9E9" Height="34" Width="93"/>
         <Label x:Name="lblLastName" Content="Last Name:" HorizontalAlignment="Left" Margin="8,189,0,0" VerticalAlignment="Top" Foreground="#FFFDF6F6" Height="34" Width="92"/>
-        <Label x:Name="lblCreditType" Content="Credit Card Type:" HorizontalAlignment="Left" Margin="8,235,0,0" VerticalAlignment="Top" Foreground="#FFFBF7F7" Height="34" Width="134"/>
-        <Label x:Name="lblCreditCardNum" Content="Credit Card Number:" HorizontalAlignment="Left" Margin="8,279,0,0" VerticalAlignment="Top" Foreground="#FFF7F1F1" Height="35" Width="158"/>
+        <Label x:Name="lblCreditType" Content="Credit Card Type:" HorizontalAlignment="Left" Margin="8,235,0,0" VerticalAlignment="Top" Foreground="#FFFBF7F7" Height="34" Width="108"/>
+        <Label x:Name="lblCreditCardNum" Content="Credit Card Number:" HorizontalAlignment="Left" Margin="8,279,0,0" VerticalAlignment="Top" Foreground="#FFF7F1F1" Height="35" Width="120"/>
         <Label x:Name="lblPhone" Content="Phone Number:" HorizontalAlignment="Left" Margin="369,143,0,0" VerticalAlignment="Top" Foreground="#FFF7E4E4" Height="34" Width="123"/>
         <Label x:Name="lblEmail" Content="Email Address:" HorizontalAlignment="Left" Margin="369,177,0,0" VerticalAlignment="Top" Foreground="#FFF5EBEB" Height="34" Width="115"/>
         <Label x:Name="lblGender" Content="Gender:" HorizontalAlignment="Left" Margin="369,210,0,0" VerticalAlignment="Top" Foreground="#FFF5EBEB" Height="34" Width="68"/>
@@ -20,8 +20,8 @@
         <Label x:Name="lblPersonalFitGoal" Content="Personal Fitness Goal:" HorizontalAlignment="Left" Margin="7,331,0,0" VerticalAlignment="Top" Foreground="#FFFBF9F9" Height="34" Width="166"/>
         <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="30" Margin="106,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
         <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="30" Margin="106,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
-        <TextBox x:Name="txtCredCardNum" HorizontalAlignment="Left" Height="31" Margin="166,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174"/>
-        <ComboBox x:Name="cmbCredCardType" HorizontalAlignment="Left" Margin="149,239,0,0" VerticalAlignment="Top" Width="159" Height="29">
+        <TextBox x:Name="txtCredCardNum" HorizontalAlignment="Left" Height="31" Margin="133,279,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174"/>
+        <ComboBox x:Name="cmbCredCardType" HorizontalAlignment="Left" Margin="116,235,0,0" VerticalAlignment="Top" Width="159" Height="29">
             <ComboBoxItem x:Name="cmbOption1" Content="Visa" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem x:Name="cmbOption2" Content="MasterCard" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem x:Name="cmbOption3" Content="American Express" HorizontalAlignment="Left" Width="118"/>
@@ -37,7 +37,7 @@
         <RadioButton x:Name="rdbMale" Content="Male" HorizontalAlignment="Left" Margin="443,219,0,0" VerticalAlignment="Top" Height="20" Width="60"/>
         <RadioButton x:Name="rdbFemale" Content="Female" HorizontalAlignment="Left" Margin="510,219,0,0" VerticalAlignment="Top" Height="20" Width="75"/>
         <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="30" Margin="421,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
-        <TextBox x:Name="txtWeight" HorizontalAlignment="Left" Height="30" Margin="437,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
+        <TextBox x:Name="txtWeight" HorizontalAlignment="Left" Height="30" Margin="421,289,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
         <Label x:Name="lblWeightDesc" Content="(lbs)" HorizontalAlignment="Left" Margin="388,307,0,0" VerticalAlignment="Top" FontStyle="Italic" Foreground="#FFF1E7E7" Height="34" Width="42"/>
         <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Left" Margin="480,358,0,0" VerticalAlignment="Top" Width="100" Height="26"/>
         <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="480,398,0,0" VerticalAlignment="Top" Width="100" Height="26"/>
