@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="Membership Pricing" Height="500" Width="750" Background="#FFBF3417" ResizeMode="CanMinimize">
     <Grid>
+        <GroupBox x:Name="grpUpdatePricing" Header="Update Existing Price" HorizontalAlignment="Left" Margin="421,231,0,0" VerticalAlignment="Top" BorderBrush="White" Height="171" Width="293" Foreground="White" IsManipulationEnabled="True"/>
         <Image x:Name="imgMSN" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Source="Images/MSNLogo.png"/>
         <ComboBox x:Name="cmbMembershipType" HorizontalAlignment="Left" Margin="175,283,0,0" VerticalAlignment="Top" Width="225" TabIndex="0">
             <ComboBoxItem x:Name="cbiSelectMembership" Content="Please select a membership type" IsSelected="True"/>
@@ -26,7 +27,6 @@
         <TextBox x:Name="txbUpdatePrice" HorizontalAlignment="Left" Height="23" Margin="572,325,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="24.99" TabIndex="2"/>
         <Label x:Name="lblSelectedMembership" Content="Selected Membership:" HorizontalAlignment="Left" Margin="427,260,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
         <TextBlock x:Name="txbSelectedMembership" HorizontalAlignment="Left" Margin="569,267,0,0" TextWrapping="Wrap" Text="Family 1 Month" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
-        <GroupBox x:Name="grpUpdatePricing" Header="Update Existing Price" HorizontalAlignment="Left" Margin="421,231,0,0" VerticalAlignment="Top" BorderBrush="White" Height="171" Width="293" Foreground="White" IsManipulationEnabled="True"/>
         <Button x:Name="btnUpdatePrice" Content="Update Price" HorizontalAlignment="Left" Margin="570,360,0,0" VerticalAlignment="Top" Width="100" TabIndex="3" Height="30"/>
         <TextBlock x:Name="txbInstructions" HorizontalAlignment="Left" Margin="100,79,0,0" TextWrapping="Wrap" Text="Instructions: To update the price for a membership type, please select the membership type in the dropdown menu below and click submit. The current price for the selected membership type will appear in the update existing price box. To change the current price, type a new price in the update price textbox and click the update price button. A message box will appear to confirm the new price for the selected membership. " VerticalAlignment="Top" Height="88" Width="460" Foreground="#FFF9F9F9"/>
         <Image x:Name="imgValuePricing" HorizontalAlignment="Left" Height="136" Margin="580,44,0,0" VerticalAlignment="Top" Width="153" Source="Images/ValuePricingImg.jpg"/>
