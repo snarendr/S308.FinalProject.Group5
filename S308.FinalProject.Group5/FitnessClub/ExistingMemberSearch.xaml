@@ -22,6 +22,7 @@
         <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="241" Margin="405,133,0,0" VerticalAlignment="Top" Width="318"/>
         <Button x:Name="bttnClearTwo" Content="Clear" HorizontalAlignment="Left" Height="30" Margin="598,379,0,0" VerticalAlignment="Top" Width="100"/>
         <Button x:Name="bttnSelect" Content="Select" HorizontalAlignment="Left" Height="30" Margin="428,379,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBlock x:Name="txtbDescription" HorizontalAlignment="Left" Margin="86,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="71" Width="333" Foreground="#FFF7F5F5" Text="This window allows the user to check if their is already an existing member by searching the members Last Name, Email, and/or Phone Number. "/>
 
     </Grid>
 </Window>
