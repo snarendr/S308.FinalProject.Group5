@@ -18,26 +18,27 @@
         <Label x:Name="lblAge" Content="Age:" HorizontalAlignment="Left" Margin="369,245,0,0" VerticalAlignment="Top" Foreground="#FFF1E9E9" Height="34" Width="45"/>
         <Label x:Name="lblWeight" Content="Weight:" HorizontalAlignment="Left" Margin="369,285,0,0" VerticalAlignment="Top" Foreground="#FFFBF2F2" Height="34" Width="68"/>
         <Label x:Name="lblPersonalFitGoal" Content="Personal Fitness Goal:" HorizontalAlignment="Left" Margin="7,331,0,0" VerticalAlignment="Top" Foreground="#FFFBF9F9" Height="34" Width="166"/>
-        <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="30" Margin="106,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
-        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="30" Margin="106,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
-        <TextBox x:Name="txtCredCardNum" HorizontalAlignment="Left" Height="31" Margin="133,279,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174"/>
-        <ComboBox x:Name="cmbCredCardType" HorizontalAlignment="Left" Margin="116,235,0,0" VerticalAlignment="Top" Width="159" Height="29">
-            <ComboBoxItem x:Name="cmbOption1" Content="Visa" HorizontalAlignment="Left" Width="118"/>
-            <ComboBoxItem x:Name="cmbOption2" Content="MasterCard" HorizontalAlignment="Left" Width="118"/>
-            <ComboBoxItem x:Name="cmbOption3" Content="American Express" HorizontalAlignment="Left" Width="118"/>
-            <ComboBoxItem x:Name="cmbOption4" Content="Discover" HorizontalAlignment="Left" Width="118"/>
+        <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="30" Margin="106,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Text="Dan"/>
+        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="30" Margin="106,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Text="Benjamin"/>
+        <TextBox x:Name="txtCredCardNum" HorizontalAlignment="Left" Height="31" Margin="133,279,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Text="4802-5555-5555-5555"/>
+        <ComboBox x:Name="cmbCredCardType" HorizontalAlignment="Left" Margin="116,235,0,0" VerticalAlignment="Top" Width="188" Height="29" SelectedIndex="1">
+            <ComboBoxItem x:Name="cbiDefault" Content="Please select a Credit Card type" HorizontalAlignment="Left" Width="197" Margin="0,0,-11,0"/>
+            <ComboBoxItem x:Name="cbiVisa" Content="Visa" HorizontalAlignment="Left" Width="148"/>
+            <ComboBoxItem x:Name="cbiMasterCard" Content="MasterCard" HorizontalAlignment="Left" Width="148"/>
+            <ComboBoxItem x:Name="cbiAMEX" Content="American Express" HorizontalAlignment="Left" Width="148"/>
+            <ComboBoxItem x:Name="cbiDiscover" Content="Discover" HorizontalAlignment="Left" Width="148"/>
         </ComboBox>
         <CheckBox x:Name="chbAthPer" Content="Athletic Performance" HorizontalAlignment="Left" Margin="179,339,0,0" VerticalAlignment="Top" Foreground="#FFFBF0F0" Height="19" Width="173"/>
         <CheckBox x:Name="chbOverHealth" Content="Overall Health" HorizontalAlignment="Left" Margin="179,365,0,0" VerticalAlignment="Top" Foreground="#FFFBEEEE" Height="19" Width="125"/>
         <CheckBox x:Name="chbST" Content="Strength Training" HorizontalAlignment="Left" Margin="179,391,0,0" VerticalAlignment="Top" Foreground="#FFF7EFEF" Height="20" Width="148"/>
         <CheckBox x:Name="chbWeightLoss" Content="Weight Loss" HorizontalAlignment="Left" Margin="179,417,0,0" VerticalAlignment="Top" Foreground="#FFFDF6F6" Height="20" Width="111"/>
         <CheckBox x:Name="chbWeightMgmt" Content="Weight Managment" HorizontalAlignment="Left" Margin="179,444,0,0" VerticalAlignment="Top" Foreground="#FFF9F3F3" Height="19" Width="166"/>
-        <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Height="30" Margin="499,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
-        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="31" Margin="499,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
-        <RadioButton x:Name="rdbMale" Content="Male" HorizontalAlignment="Left" Margin="443,219,0,0" VerticalAlignment="Top" Height="20" Width="60"/>
+        <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Height="30" Margin="499,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" Text="800-800-8000"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="31" Margin="499,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" Text="dan@indiana.edu"/>
+        <RadioButton x:Name="rdbMale" Content="Male" HorizontalAlignment="Left" Margin="443,219,0,0" VerticalAlignment="Top" Height="20" Width="60" Focusable="False"/>
         <RadioButton x:Name="rdbFemale" Content="Female" HorizontalAlignment="Left" Margin="510,219,0,0" VerticalAlignment="Top" Height="20" Width="75"/>
-        <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="30" Margin="421,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
-        <TextBox x:Name="txtWeight" HorizontalAlignment="Left" Height="30" Margin="421,289,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
+        <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="30" Margin="421,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" Text="21"/>
+        <TextBox x:Name="txtWeight" HorizontalAlignment="Left" Height="30" Margin="421,289,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" Text="80"/>
         <Label x:Name="lblWeightDesc" Content="(lbs)" HorizontalAlignment="Left" Margin="388,307,0,0" VerticalAlignment="Top" FontStyle="Italic" Foreground="#FFF1E7E7" Height="34" Width="42"/>
         <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Left" Margin="480,358,0,0" VerticalAlignment="Top" Width="100" Height="26"/>
         <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="480,398,0,0" VerticalAlignment="Top" Width="100" Height="26"/>
@@ -46,6 +47,8 @@
         <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="625,47,0,0" VerticalAlignment="Top" Width="75"/>
         <TextBlock x:Name="txtbDescription" HorizontalAlignment="Left" Margin="101,45,0,0" TextWrapping="Wrap" Text="Please enter the information for the new customer. If the customer is already a member, please click the &quot;Existing Member&quot; button to search for their information and automatically input it into this form.  Once all the information is inputed, please click the &quot;Register&quot; button to complete the registration process. " VerticalAlignment="Top" Height="80" Width="479" Foreground="#FFF7F5F5"/>
         <Button x:Name="btnExistingCustomer" Content="Existing Member" HorizontalAlignment="Left" Margin="605,114,0,0" VerticalAlignment="Top" Width="107" Click="button_Click"/>
+        <Label x:Name="lblCCDesc" Content="(xxxx-xxxx-xxxx-xxxx)" HorizontalAlignment="Left" Margin="10,296,0,0" VerticalAlignment="Top" Foreground="#FFF5F0F0" FontStyle="Italic"/>
+        <Label x:Name="lblPhoNumDesc" Content="(xxx-xxx-xxxx)" HorizontalAlignment="Left" Margin="369,159,0,0" VerticalAlignment="Top" Foreground="#FFF1F1F1" FontStyle="Italic"/>
 
     </Grid>
 </Window>
