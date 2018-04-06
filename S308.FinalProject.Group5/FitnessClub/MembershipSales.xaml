@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="Membership Sales" Height="500" Width="750" Background="#FFBF3417">
+        Title="Membership Sales" Height="500" Width="750" Background="#FFBF3417" ResizeMode="CanMinimize">
     <Grid>
         <GroupBox x:Name="groupBox" Header="Quote" HorizontalAlignment="Left" Margin="35,247,0,0" VerticalAlignment="Top" Height="178" Width="657" Foreground="#FFF3E2E2"/>
 
