@@ -18,7 +18,7 @@
             <ComboBoxItem x:Name="cbiFamily12Month" Content="Family 12 Month"/>
         </ComboBox>
         <Label x:Name="lblMembershipType" Content="Select Membership Type:" HorizontalAlignment="Left" Margin="27,275,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
-        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="175,321,0,0" VerticalAlignment="Top" Width="75" TabIndex="1"/>
+        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="175,321,0,0" VerticalAlignment="Top" Width="100" TabIndex="1" Height="30"/>
         <Label x:Name="lblCurrentPrice" Content="Current Price:" HorizontalAlignment="Left" Margin="473,287,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
         <TextBlock x:Name="txbCurrentPrice" HorizontalAlignment="Left" Margin="572,294,0,0" TextWrapping="Wrap" Text="$19.99" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
         <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="659,10,0,0" VerticalAlignment="Top" Width="75" TabIndex="4"/>
@@ -27,11 +27,10 @@
         <Label x:Name="lblSelectedMembership" Content="Selected Membership:" HorizontalAlignment="Left" Margin="427,256,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
         <TextBlock x:Name="txbSelectedMembership" HorizontalAlignment="Left" Margin="569,263,0,0" TextWrapping="Wrap" Text="Family 1 Month" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
         <GroupBox x:Name="grpUpdatePricing" Header="Update Existing Price" HorizontalAlignment="Left" Margin="421,227,0,0" VerticalAlignment="Top" BorderBrush="White" Height="171" Width="293" Foreground="White" IsManipulationEnabled="True"/>
-        <Button x:Name="btnUpdatePrice" Content="Update Price" HorizontalAlignment="Left" Margin="576,362,0,0" VerticalAlignment="Top" Width="85" TabIndex="3"/>
-        <TextBlock x:Name="txbInstructions" HorizontalAlignment="Left" Margin="80,87,0,0" TextWrapping="Wrap" Text="Instructions: To update the price for a membership type, please select the membership type in the dropdown menu below and click submit. The current price for the selected membership type will appear in the update existing price box. To change the current price, type a new price in the update price textbox and click the update price button. A message box will appear to confirm the new price for the selected feature. " VerticalAlignment="Top" Height="79" Width="460" Foreground="#FFF9F9F9"/>
+        <Button x:Name="btnUpdatePrice" Content="Update Price" HorizontalAlignment="Left" Margin="570,356,0,0" VerticalAlignment="Top" Width="100" TabIndex="3" Height="30"/>
+        <TextBlock x:Name="txbInstructions" HorizontalAlignment="Left" Margin="94,69,0,0" TextWrapping="Wrap" Text="Instructions: To update the price for a membership type, please select the membership type in the dropdown menu below and click submit. The current price for the selected membership type will appear in the update existing price box. To change the current price, type a new price in the update price textbox and click the update price button. A message box will appear to confirm the new price for the selected membership. " VerticalAlignment="Top" Height="88" Width="460" Foreground="#FFF9F9F9"/>
         <Image x:Name="imgValuePricing" HorizontalAlignment="Left" Height="151" Margin="559,35,0,0" VerticalAlignment="Top" Width="175" Source="Images/ValuePricingImg.jpg"/>
         <Label x:Name="lblTitle" Content="Manage Membership Pricing" HorizontalAlignment="Left" Margin="101,22,0,0" VerticalAlignment="Top" Foreground="#FFF5EBEB" Height="60" Width="386" FontSize="26.667"/>
-        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="465,362,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>
