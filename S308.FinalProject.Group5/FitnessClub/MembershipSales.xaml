@@ -16,12 +16,12 @@
         <Label x:Name="lblAddFeat" Content="Additional Features:" HorizontalAlignment="Left" Margin="381,195,0,0" VerticalAlignment="Top" Foreground="#FFF9F1F1" Height="27" Width="129"/>
         <ComboBox x:Name="cmbMemType" HorizontalAlignment="Left" Margin="144,169,0,0" VerticalAlignment="Top" Width="208" Height="23" SelectedIndex="0" TabIndex="0">
             <ComboBoxItem x:Name="cbiDefault" Content="Please select a membership type" HorizontalAlignment="Left" Width="196" IsSelected="True"/>
-            <ComboBoxItem x:Name="cbiIndOneMonth" Content="Individual 1 Month ($9.99)" HorizontalAlignment="Left" Width="176" Margin="0,0,-2,0"/>
-            <ComboBoxItem x:Name="cbiIndTweMonth" Content="Individual 12 Month ($100)" HorizontalAlignment="Left" Width="176" Margin="0,0,-2,0"/>
-            <ComboBoxItem x:Name="cbiTPOneMonth" Content="Two Person 1 Month ($14.99)" HorizontalAlignment="Left" Width="173"/>
-            <ComboBoxItem x:Name="cbiTPTweMonth" Content="Two Person 12 Month ($150)" HorizontalAlignment="Left" Width="174"/>
-            <ComboBoxItem x:Name="cbiFamOneMonth" Content="Family 1 Month ($19.99)" HorizontalAlignment="Left" Width="174"/>
-            <ComboBoxItem x:Name="cbiFamTweMonth" Content="Family 12 Month ($200)" HorizontalAlignment="Left" Width="174"/>
+            <ComboBoxItem x:Name="cbiIndOneMonth" Content="Individual 1 Month" HorizontalAlignment="Left" Width="176" Margin="0,0,-2,0"/>
+            <ComboBoxItem x:Name="cbiIndTweMonth" Content="Individual 12 Month" HorizontalAlignment="Left" Width="176" Margin="0,0,-2,0"/>
+            <ComboBoxItem x:Name="cbiTPOneMonth" Content="Two Person 1 Month" HorizontalAlignment="Left" Width="173"/>
+            <ComboBoxItem x:Name="cbiTPTweMonth" Content="Two Person 12 Month" HorizontalAlignment="Left" Width="174"/>
+            <ComboBoxItem x:Name="cbiFamOneMonth" Content="Family 1 Month" HorizontalAlignment="Left" Width="174"/>
+            <ComboBoxItem x:Name="cbiFamTweMonth" Content="Family 12 Month" HorizontalAlignment="Left" Width="174"/>
         </ComboBox>
         <DatePicker x:Name="dtpStart" HorizontalAlignment="Left" Margin="98,196,0,0" VerticalAlignment="Top" Height="26" Width="114" TabIndex="1"/>
         <DatePicker x:Name="dtpEnd" HorizontalAlignment="Left" Margin="468,172,0,0" VerticalAlignment="Top" Height="25" Width="114" TabIndex="2"/>
