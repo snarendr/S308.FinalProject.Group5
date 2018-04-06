@@ -11,9 +11,9 @@
         <Label x:Name="lblLastName" Content="Last Name: " HorizontalAlignment="Left" Height="30" Margin="42,156,0,0" VerticalAlignment="Top" Width="81" Foreground="White" FontSize="14"/>
         <Label x:Name="lblPhoneNumber" Content="Phone Number:" HorizontalAlignment="Left" Height="27" Margin="42,260,0,0" VerticalAlignment="Top" Width="110" Foreground="White" FontSize="14" RenderTransformOrigin="0.244,0.198"/>
         <Label x:Name="lblEmail" Content="Email:" HorizontalAlignment="Left" Height="30" Margin="42,209,0,0" VerticalAlignment="Top" Width="45" RenderTransformOrigin="1.951,0.722" Foreground="White" FontSize="14"/>
-        <TextBox x:Name="txtLastNameInput" HorizontalAlignment="Left" Height="21" Margin="181,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" TabIndex="0"/>
-        <TextBox x:Name="txtPhoneNumberInput" HorizontalAlignment="Left" Height="21" Margin="181,266,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" TabIndex="2"/>
-        <TextBox x:Name="txtEmailInput" HorizontalAlignment="Left" Height="21" Margin="181,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" TabIndex="1"/>
+        <TextBox x:Name="txtLastNameInput" HorizontalAlignment="Left" Height="21" Margin="181,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" TabIndex="0" Text="Doe"/>
+        <TextBox x:Name="txtPhoneNumberInput" HorizontalAlignment="Left" Height="21" Margin="181,266,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" TabIndex="2" Text="630 999 8989"/>
+        <TextBox x:Name="txtEmailInput" HorizontalAlignment="Left" Height="21" Margin="181,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" TabIndex="1" Text="Doe@indiana.edu"/>
         <Button x:Name="bttnSearch" Content="Search" HorizontalAlignment="Left" Height="30" Margin="11,344,0,0" VerticalAlignment="Top" Width="100" TabIndex="3"/>
         <Button x:Name="bttnClear" Content="Clear" HorizontalAlignment="Left" Height="30" Margin="140,344,0,0" VerticalAlignment="Top" Width="100" TabIndex="4"/>
         <Button x:Name="bttnMainMenu" Content="Main Menu" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="270,344,0,0" Height="30" TabIndex="5" />
