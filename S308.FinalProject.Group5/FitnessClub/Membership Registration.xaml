@@ -38,7 +38,7 @@
         <RadioButton x:Name="rdbMale" Content="Male" HorizontalAlignment="Left" Margin="443,219,0,0" VerticalAlignment="Top" Height="20" Width="60" Focusable="False"/>
         <RadioButton x:Name="rdbFemale" Content="Female" HorizontalAlignment="Left" Margin="510,219,0,0" VerticalAlignment="Top" Height="20" Width="75"/>
         <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="30" Margin="421,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" Text="21"/>
-        <TextBox x:Name="txtWeights" HorizontalAlignment="Left" Height="30" Margin="421,289,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" Text="80"/>
+        <TextBox x:Name="txtWeight" HorizontalAlignment="Left" Height="30" Margin="421,289,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" Text="80"/>
         <Label x:Name="lblWeightDesc" Content="(lbs)" HorizontalAlignment="Left" Margin="388,307,0,0" VerticalAlignment="Top" FontStyle="Italic" Foreground="#FFF1E7E7" Height="34" Width="42"/>
         <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Left" Margin="480,358,0,0" VerticalAlignment="Top" Width="100" Height="26"/>
         <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="480,398,0,0" VerticalAlignment="Top" Width="100" Height="26"/>
