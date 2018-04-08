@@ -43,10 +43,10 @@
         <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Left" Margin="480,358,0,0" VerticalAlignment="Top" Width="100" Height="26"/>
         <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="480,398,0,0" VerticalAlignment="Top" Width="100" Height="26"/>
         <Label x:Name="lblTitle" Content="New Member Registration Form" HorizontalAlignment="Left" Margin="98,0,0,0" VerticalAlignment="Top" FontSize="29.333" Foreground="#FFFBF4F4" Height="57" Width="482"/>
-        <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="625,10,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="625,47,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="659,8,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="659,45,0,0" VerticalAlignment="Top" Width="75"/>
         <TextBlock x:Name="txtbDescription" HorizontalAlignment="Left" Margin="101,45,0,0" TextWrapping="Wrap" Text="Please enter the information for the new customer. If the customer is already a member, please click the &quot;Existing Member&quot; button to search for their information and automatically input it into this form.  Once all the information is inputed, please click the &quot;Register&quot; button to complete the registration process. " VerticalAlignment="Top" Height="80" Width="479" Foreground="#FFF7F5F5"/>
-        <Button x:Name="btnExistingCustomer" Content="Existing Member" HorizontalAlignment="Left" Margin="605,114,0,0" VerticalAlignment="Top" Width="107"/>
+        <Button x:Name="btnExistingCustomer" Content="Existing Member" HorizontalAlignment="Left" Margin="551,110,0,0" VerticalAlignment="Top" Width="107"/>
         <Label x:Name="lblCCDesc" Content="(xxxx-xxxx-xxxx-xxxx)" HorizontalAlignment="Left" Margin="10,296,0,0" VerticalAlignment="Top" Foreground="#FFF5F0F0" FontStyle="Italic"/>
         <Label x:Name="lblPhoNumDesc" Content="(xxx-xxx-xxxx)" HorizontalAlignment="Left" Margin="369,159,0,0" VerticalAlignment="Top" Foreground="#FFF1F1F1" FontStyle="Italic"/>
 
