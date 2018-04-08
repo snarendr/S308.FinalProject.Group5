@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
         Title="Membership Registration" Height="500" Width="750" Background="#FFBF3417" ResizeMode="CanMinimize">
-    <Grid>
+    <Grid x:Name="grdMembershipRegistration">
         <Image x:Name="imgLogo" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Source="Images/MSNLogo.png"/>
         <Label x:Name="lblFirstName" Content="First Name:" HorizontalAlignment="Left" Margin="7,143,0,0" VerticalAlignment="Top" Foreground="#FFF0E9E9" Height="34" Width="93"/>
         <Label x:Name="lblLastName" Content="Last Name:" HorizontalAlignment="Left" Margin="8,189,0,0" VerticalAlignment="Top" Foreground="#FFFDF6F6" Height="34" Width="92"/>
@@ -21,7 +21,7 @@
         <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="30" Margin="106,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Text="Dan"/>
         <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="30" Margin="106,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Text="Benjamin"/>
         <TextBox x:Name="txtCredCardNum" HorizontalAlignment="Left" Height="31" Margin="133,279,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Text="4802-5555-5555-5555"/>
-        <ComboBox x:Name="cmbCredCardType" HorizontalAlignment="Left" Margin="116,235,0,0" VerticalAlignment="Top" Width="188" Height="29" SelectedIndex="1">
+        <ComboBox x:Name="cmbCredCardType" HorizontalAlignment="Left" Margin="116,235,0,0" VerticalAlignment="Top" Width="202" Height="29" SelectedIndex="0">
             <ComboBoxItem x:Name="cbiDefault" Content="Please select a Credit Card type" HorizontalAlignment="Left" Width="197" Margin="0,0,-11,0"/>
             <ComboBoxItem x:Name="cbiVisa" Content="Visa" HorizontalAlignment="Left" Width="148"/>
             <ComboBoxItem x:Name="cbiMasterCard" Content="MasterCard" HorizontalAlignment="Left" Width="148"/>
