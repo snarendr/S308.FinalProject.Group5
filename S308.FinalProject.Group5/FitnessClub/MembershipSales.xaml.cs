@@ -1,5 +1,5 @@
 ﻿//MSN Logo Source: https://www.apk4now.com/apk/1424/msn-health-amp-fitness-workouts
-//Price Quote Image Source: https://needtshirtsnow.com/T-shirt-Price-Quote
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
