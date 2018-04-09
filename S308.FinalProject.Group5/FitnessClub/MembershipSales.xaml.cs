@@ -1,4 +1,6 @@
 ﻿//MSN Logo Source: https://www.apk4now.com/apk/1424/msn-health-amp-fitness-workouts
+//Working out picture source: https://classroomclipart.com/clipart/Clipart/Fitness_and_Exercise.htm
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
