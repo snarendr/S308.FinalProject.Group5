@@ -9,9 +9,9 @@
     <Grid x:Name="grdMainMenu">
         <GroupBox x:Name="grpPricingManagement" Header="Pricing Management" HorizontalAlignment="Left" Height="149" Margin="468,249,0,0" VerticalAlignment="Top" Width="219" Foreground="White"/>
 
-        <GroupBox x:Name="grpSales_Membership" Header="Sales and Membership" HorizontalAlignment="Left" Height="131" Margin="34,256,0,0" VerticalAlignment="Top" Width="356" Foreground="White"/>
+        <GroupBox x:Name="grpSales_Membership" Header="Sales and Membership" HorizontalAlignment="Left" Height="149" Margin="34,249,0,0" VerticalAlignment="Top" Width="356" Foreground="White"/>
         <Image x:Name="imgLogo" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Source="Images/MSNLogo.png"/>
-        <Button x:Name="btnMemberInformation" Content="Member Information" HorizontalAlignment="Left" Margin="137,329,0,0" VerticalAlignment="Top" Width="145" Height="40"/>
+        <Button x:Name="btnMemberInformation" Content="Member Information" HorizontalAlignment="Left" Margin="138,335,0,0" VerticalAlignment="Top" Width="145" Height="40"/>
         <Button x:Name="btnFeaturesPricing" Content="Features Pricing" HorizontalAlignment="Left" Margin="504,283,0,0" VerticalAlignment="Top" Width="145" Height="40"/>
         <Button x:Name="btnMembershipSales" Content="Membership Sales" HorizontalAlignment="Left" Margin="54,277,0,0" VerticalAlignment="Top" Width="145" Height="40"/>
         <Button x:Name="btnMembershipPricing" Content="Membership Pricing" HorizontalAlignment="Left" Margin="504,335,0,0" VerticalAlignment="Top" Width="145" Height="40"/>
