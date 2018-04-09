@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
         Title="Features Pricing" Height="500" Width="750" Background="#FFBF3417" ResizeMode="CanMinimize">
-    <Grid>
+    <Grid x:Name="grdFeaturesPricing">
         <GroupBox x:Name="grpUpdatePricing" Header="Update Feature Pricing" HorizontalAlignment="Left" Margin="441,203,0,0" VerticalAlignment="Top" BorderBrush="White" Height="171" Width="293" Foreground="White"/>
         <Image x:Name="imgMSN" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Source="Images/MSNLogo.png"/>
         <Label x:Name="lblSelectFeature" Content="Select Additional Feature:" HorizontalAlignment="Left" Margin="45,261,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>

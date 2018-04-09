@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
         Title="Membership Pricing" Height="500" Width="750" Background="#FFBF3417" ResizeMode="CanMinimize">
-    <Grid>
+    <Grid x:Name="grdMembershipPricing">
         <GroupBox x:Name="grpUpdatePricing" Header="Update Price and Availability" HorizontalAlignment="Left" Margin="405,196,0,0" VerticalAlignment="Top" BorderBrush="White" Height="229" Width="309" Foreground="White" IsManipulationEnabled="True">
             <Label x:Name="lblUpdatePrice_Copy" Content="Membership Availability:" HorizontalAlignment="Left" Margin="4,103,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
         </GroupBox>
