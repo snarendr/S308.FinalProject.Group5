@@ -26,7 +26,7 @@
         <Button x:Name="bttnClearTwo" Content="Clear" HorizontalAlignment="Left" Height="30" Margin="598,379,0,0" VerticalAlignment="Top" Width="100" TabIndex="7" Grid.ColumnSpan="2"/>
         <Button x:Name="bttnSelect" Content="Select" HorizontalAlignment="Left" Height="30" Margin="428,379,0,0" VerticalAlignment="Top" Width="100" TabIndex="6"/>
         <TextBlock x:Name="txtbDescription" HorizontalAlignment="Left" Margin="86,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="71" Width="333" Foreground="#FFF7F5F5" Text="This window allows the user to check if their is already an existing member by searching the members Last Name, Email, and/or Phone Number. "/>
-        <Image x:Name="imgGuy" HorizontalAlignment="Left" Height="123" Margin="504,0,0,0" VerticalAlignment="Top" Width="131" Source="Images/images.jpg"/>
+        <Image x:Name="imgGuy" HorizontalAlignment="Left" Height="123" Margin="504,5,0,0" VerticalAlignment="Top" Width="131" Source="Images/images.jpg"/>
 
     </Grid>
 </Window>
