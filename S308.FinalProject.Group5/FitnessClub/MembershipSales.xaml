@@ -40,7 +40,7 @@
         <Label x:Name="lblTotalResHead" Content="Total:" HorizontalAlignment="Left" Margin="370,357,0,0" VerticalAlignment="Top" Foreground="#FFF7F1F1" Height="42" Width="64"/>
         <Label x:Name="lblTotalResult" Content="$14.99" HorizontalAlignment="Left" Margin="520,357,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.251,-0.094" Foreground="#FFF7F3F3" Height="42" Width="62"/>
         <Button x:Name="btnQuote" Content="Generate Quote" HorizontalAlignment="Left" Margin="312,234,0,0" VerticalAlignment="Top" Width="150" Height="30" TabIndex="5"/>
-        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="651,10,0,0" VerticalAlignment="Top" Width="75" TabIndex="8"/>
+        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="651,10,0,0" VerticalAlignment="Top" Width="75" TabIndex="8" Height="20"/>
         <Button x:Name="btnApprove" Content="Approve" HorizontalAlignment="Left" Margin="217,414,0,0" VerticalAlignment="Top" Width="150" TabIndex="6" Height="30"/>
         <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="409,414,0,0" VerticalAlignment="Top" Width="150" TabIndex="7" Height="30"/>
         <Label x:Name="lblTitle" Content="Membership Sales Quote" HorizontalAlignment="Left" Margin="92,17,0,0" VerticalAlignment="Top" Foreground="#FFF5EBEB" Height="60" Width="310" FontSize="26.667"/>

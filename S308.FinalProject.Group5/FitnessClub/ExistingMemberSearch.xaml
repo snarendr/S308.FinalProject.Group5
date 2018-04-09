@@ -17,7 +17,7 @@
         <TextBox x:Name="txtEmailInput" HorizontalAlignment="Left" Height="21" Margin="181,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" TabIndex="1" Text="Doe@indiana.edu"/>
         <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Height="30" Margin="11,377,0,0" VerticalAlignment="Top" Width="100" TabIndex="3"/>
         <Button x:Name="btnClearSearch" Content="Clear" HorizontalAlignment="Left" Height="30" Margin="140,377,0,0" VerticalAlignment="Top" Width="100" TabIndex="4"/>
-        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="638,7,0,0" Height="21" TabIndex="9" />
+        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="652,7,0,0" Height="20" TabIndex="9" />
         <Image x:Name="imgLogo" HorizontalAlignment="Left" Height="95" VerticalAlignment="Top" Width="111" Source="Images/MSNLogo.png" RenderTransformOrigin="0.812,0.564"/>
         <Label x:Name="lblTitle" Content="Existing Member Search" HorizontalAlignment="Left" Margin="86,10,0,0" VerticalAlignment="Top" Foreground="#FFF5EBEB" Height="60" Width="310" FontSize="26.667"/>
         <ListBox x:Name="lsbExistingMembers" HorizontalAlignment="Left" Height="241" Margin="416,163,0,0" VerticalAlignment="Top" Width="318" TabIndex="6">
@@ -26,7 +26,7 @@
         <Button x:Name="btnClearList" Content="Clear" HorizontalAlignment="Left" Height="30" Margin="607,412,0,0" VerticalAlignment="Top" Width="100" TabIndex="8"/>
         <Button x:Name="bttnSelect" Content="Select" HorizontalAlignment="Left" Height="30" Margin="443,412,0,0" VerticalAlignment="Top" Width="100" TabIndex="7"/>
         <TextBlock x:Name="txtbDescription" HorizontalAlignment="Left" Margin="86,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="101" Width="529" Foreground="#FFF7F5F5" Text="This window allows the user to check if the someone is already an existing member by searching the individuals Last Name, Email, and/or Phone Number. Any individual(s) that meet the search criteria will appear in the list box below. If this individual is already a member, click their record in the list box. Afterwards, click the select button, and this members information will automatically be prefilled into the registration checkout page. If no records are returned, this individual is not already a member. Click the return button to return to the blank registration page. "/>
-        <Image x:Name="imgGuy" HorizontalAlignment="Left" Height="93" Margin="636,42,-2,0" VerticalAlignment="Top" Width="110" Source="Images/images.jpg"/>
+        <Image x:Name="imgGuy" HorizontalAlignment="Left" Height="93" Margin="634,40,0,0" VerticalAlignment="Top" Width="96" Source="Images/images.jpg"/>
         <Label x:Name="lblPhoNumDesc" Content="(xxx-xxx-xxxx)" HorizontalAlignment="Left" Margin="42,301,0,0" VerticalAlignment="Top" Foreground="#FFF1F1F1" FontStyle="Italic"/>
         <Button x:Name="btnReturn" Content="Return" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Margin="274,377,0,0" Height="30" TabIndex="5" />
 
