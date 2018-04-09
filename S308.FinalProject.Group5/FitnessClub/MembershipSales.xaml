@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
         Title="Membership Sales" Height="500" Width="750" Background="#FFBF3417" ResizeMode="CanMinimize">
-    <Grid>
-        <GroupBox x:Name="groupBox" Header="Quote" HorizontalAlignment="Left" Margin="35,247,0,0" VerticalAlignment="Top" Height="178" Width="657" Foreground="#FFF3E2E2"/>
+    <Grid x:Name="grdMembershipSales">
+        <GroupBox x:Name="grbQuote" Header="Quote" HorizontalAlignment="Left" Margin="35,259,0,0" VerticalAlignment="Top" Height="178" Width="657" Foreground="#FFF3E2E2"/>
 
         <Image x:Name="imgMSN" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Source="Images/MSNLogo.png"/>
         <Label x:Name="lblMemType" Content="Membership Type:" HorizontalAlignment="Left" Margin="10,164,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9" Height="27" Width="123"/>
@@ -27,22 +27,22 @@
         <DatePicker x:Name="dtpEnd" HorizontalAlignment="Left" Margin="468,172,0,0" VerticalAlignment="Top" Height="25" Width="114" TabIndex="2"/>
         <CheckBox x:Name="chbTraining" Content="Training" HorizontalAlignment="Left" Margin="522,201,0,0" VerticalAlignment="Top" Foreground="#FFF5EEEE" Height="16" Width="70" TabIndex="3"/>
         <CheckBox x:Name="chbLockRental" Content="Locker Rental" HorizontalAlignment="Left" Margin="611,201,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.205,0.454" Foreground="#FFF3E9E9" Height="16" Width="101" TabIndex="4"/>
-        <Label x:Name="lblMemTypeResHead" Content="Membership Type:" HorizontalAlignment="Left" Margin="46,262,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9" Height="42" Width="178"/>
-        <Label x:Name="lblStartDateResHead" Content="Start Date:" HorizontalAlignment="Left" Margin="46,293,0,0" VerticalAlignment="Top" Foreground="#FFF7F3F3" Height="41" Width="109"/>
-        <Label x:Name="lblEndDateResHead" Content="End Date:" HorizontalAlignment="Left" Margin="46,334,0,0" VerticalAlignment="Top" Foreground="#FFEEE0E0" Height="42" Width="101"/>
-        <Label x:Name="lblAddFeatResHead" Content="Additional Features:" HorizontalAlignment="Left" Margin="370,293,0,0" VerticalAlignment="Top" Foreground="#FFF9F1F1" Height="41" Width="189"/>
-        <Label x:Name="lblSubTotalHead" Content="Subtotal:" HorizontalAlignment="Left" Margin="370,262,0,0" VerticalAlignment="Top" Foreground="#FFF5E9E9" Height="41" Width="94"/>
-        <Label x:Name="lblMemTypeResult" Content="Individual 1 Month ($9.99)" HorizontalAlignment="Left" Margin="176,263,0,0" VerticalAlignment="Top" Foreground="#FFF0DFDF" Height="41" Width="156"/>
-        <Label x:Name="lblStartDateResult" Content="01/01/2018" HorizontalAlignment="Left" Margin="176,293,0,0" VerticalAlignment="Top" Foreground="#FFF3E7E7" Height="41" Width="83"/>
-        <Label x:Name="lblEndDateResult" Content="02/01/2018" HorizontalAlignment="Left" Margin="176,334,0,0" VerticalAlignment="Top" Foreground="#FFF0E7E7" Height="42" Width="83"/>
-        <Label x:Name="lblSubtotalResult" Content="$9.99" HorizontalAlignment="Left" Margin="520,261,0,0" VerticalAlignment="Top" Foreground="#FFF7F1F1" Height="42" Width="62"/>
-        <Label x:Name="lblAddFeatResult" Content="Training  - $5.00/month" HorizontalAlignment="Left" Margin="520,293,0,0" VerticalAlignment="Top" Foreground="#FFF3E4E4" Height="41" Width="140"/>
-        <Label x:Name="lblTotalResHead" Content="Total:" HorizontalAlignment="Left" Margin="370,334,0,0" VerticalAlignment="Top" Foreground="#FFF7F1F1" Height="42" Width="64"/>
-        <Label x:Name="lblTotalResult" Content="$14.99" HorizontalAlignment="Left" Margin="520,334,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.251,-0.094" Foreground="#FFF7F3F3" Height="42" Width="62"/>
-        <Button x:Name="btnQuote" Content="Quote" HorizontalAlignment="Left" Margin="318,231,0,0" VerticalAlignment="Top" Width="84" Height="21" TabIndex="5"/>
-        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="636,10,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btnApprove" Content="Approve" HorizontalAlignment="Left" Margin="542,444,0,0" VerticalAlignment="Top" Width="75" TabIndex="6"/>
-        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="636,444,0,0" VerticalAlignment="Top" Width="75" TabIndex="7"/>
+        <Label x:Name="lblMemTypeResHead" Content="Membership Type:" HorizontalAlignment="Left" Margin="46,274,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9" Height="42" Width="178"/>
+        <Label x:Name="lblStartDateResHead" Content="Start Date:" HorizontalAlignment="Left" Margin="46,305,0,0" VerticalAlignment="Top" Foreground="#FFF7F3F3" Height="41" Width="109"/>
+        <Label x:Name="lblEndDateResHead" Content="End Date:" HorizontalAlignment="Left" Margin="46,346,0,0" VerticalAlignment="Top" Foreground="#FFEEE0E0" Height="42" Width="101"/>
+        <Label x:Name="lblAddFeatResHead" Content="Additional Features:" HorizontalAlignment="Left" Margin="370,305,0,0" VerticalAlignment="Top" Foreground="#FFF9F1F1" Height="41" Width="189"/>
+        <Label x:Name="lblSubTotalHead" Content="Subtotal:" HorizontalAlignment="Left" Margin="370,274,0,0" VerticalAlignment="Top" Foreground="#FFF5E9E9" Height="41" Width="94"/>
+        <Label x:Name="lblMemTypeResult" Content="Individual 1 Month ($9.99)" HorizontalAlignment="Left" Margin="176,275,0,0" VerticalAlignment="Top" Foreground="#FFF0DFDF" Height="41" Width="156"/>
+        <Label x:Name="lblStartDateResult" Content="01/01/2018" HorizontalAlignment="Left" Margin="176,305,0,0" VerticalAlignment="Top" Foreground="#FFF3E7E7" Height="41" Width="83"/>
+        <Label x:Name="lblEndDateResult" Content="02/01/2018" HorizontalAlignment="Left" Margin="176,346,0,0" VerticalAlignment="Top" Foreground="#FFF0E7E7" Height="42" Width="83"/>
+        <Label x:Name="lblSubtotalResult" Content="$9.99" HorizontalAlignment="Left" Margin="520,273,0,0" VerticalAlignment="Top" Foreground="#FFF7F1F1" Height="42" Width="62"/>
+        <Label x:Name="lblAddFeatResult" Content="Training  - $5.00/month" HorizontalAlignment="Left" Margin="520,305,0,0" VerticalAlignment="Top" Foreground="#FFF3E4E4" Height="41" Width="140"/>
+        <Label x:Name="lblTotalResHead" Content="Total:" HorizontalAlignment="Left" Margin="370,346,0,0" VerticalAlignment="Top" Foreground="#FFF7F1F1" Height="42" Width="64"/>
+        <Label x:Name="lblTotalResult" Content="$14.99" HorizontalAlignment="Left" Margin="520,346,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.251,-0.094" Foreground="#FFF7F3F3" Height="42" Width="62"/>
+        <Button x:Name="btnQuote" Content="Generate Quote" HorizontalAlignment="Left" Margin="312,234,0,0" VerticalAlignment="Top" Width="108" Height="21" TabIndex="5"/>
+        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="651,10,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnApprove" Content="Approve" HorizontalAlignment="Left" Margin="523,442,0,0" VerticalAlignment="Top" Width="75" TabIndex="6"/>
+        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="617,442,0,0" VerticalAlignment="Top" Width="75" TabIndex="7"/>
         <Label x:Name="lblTitle" Content="Membership Sales Quote" HorizontalAlignment="Left" Margin="92,17,0,0" VerticalAlignment="Top" Foreground="#FFF5EBEB" Height="60" Width="310" FontSize="26.667"/>
         <TextBlock x:Name="txtbDescription" HorizontalAlignment="Left" Margin="92,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="73" Width="497" Text="Please use this form to register new members into our database. Ask the following criteria and click the &quot;Quote&quot; button. If the Quote at the bottom matches the information given to you by the potential customer, and the total is approved by the customer, click &quot;Approve&quot; to continue in the registration process." Foreground="#FFFDEBEB"/>
         <Image x:Name="imgQuote" HorizontalAlignment="Left" Height="117" Margin="589,37,-15,0" VerticalAlignment="Top" Width="168" Source="Images/QuoteIMG.jpg"/>

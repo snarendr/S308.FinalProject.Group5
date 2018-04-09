@@ -1,7 +1,6 @@
 ﻿//Team 5: Suhas Narendrula, Michael O'Hara, Nathan Jobst
 //MSN Logo Source: https://www.apk4now.com/apk/1424/msn-health-amp-fitness-workouts
 //Fitness Center Image Source: https://www.canstockphoto.com/illustration/fitness-center.html
-
 using System;
 using System.Collections.Generic;
 using System.Linq;

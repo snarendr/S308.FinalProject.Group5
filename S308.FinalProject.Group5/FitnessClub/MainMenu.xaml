@@ -18,7 +18,7 @@
         <Button x:Name="btnMembershipRegistration" Content="Membership Registration" HorizontalAlignment="Left" Margin="223,277,0,0" VerticalAlignment="Top" Width="145" Height="40"/>
         <Image x:Name="imgFitnessCenter" HorizontalAlignment="Left" Margin="223,-43,0,230" Width="304" Source="Images/FitnessCenterImg.jpg"/>
         <Label x:Name="lblTitle" Content="MSN Gym Management System" HorizontalAlignment="Left" Margin="182,189,0,0" VerticalAlignment="Top" Foreground="#FFF5EBEB" Height="60" Width="386" FontSize="26.667"/>
-        <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Margin="599,10,0,0" VerticalAlignment="Top" Width="115" Height="28"/>
+        <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Margin="619,10,0,0" VerticalAlignment="Top" Width="115" Height="28"/>
 
     </Grid>
 </Window>
