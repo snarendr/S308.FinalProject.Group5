@@ -8,7 +8,7 @@
         Title="Membership Pricing" Height="500" Width="750" Background="#FFBF3417" ResizeMode="CanMinimize">
     <Grid x:Name="grdMembershipPricing">
         <GroupBox x:Name="grpUpdatePricing" Header="Update Price and Availability" HorizontalAlignment="Left" Margin="405,196,0,0" VerticalAlignment="Top" BorderBrush="White" Height="229" Width="309" Foreground="White" IsManipulationEnabled="True">
-            <Label x:Name="lblUpdatePrice_Copy" Content="Membership Availability:" HorizontalAlignment="Left" Margin="4,103,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
+            <Label x:Name="lblUpdatePrice_Copy" Content="Membership Availability:" HorizontalAlignment="Left" Margin="4,103,0,0" VerticalAlignment="Top" Foreground="White"/>
         </GroupBox>
         <Image x:Name="imgMSN" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Source="Images/MSNLogo.png"/>
         <ComboBox x:Name="cmbMembershipType" HorizontalAlignment="Left" Margin="166,268,0,0" VerticalAlignment="Top" Width="225" TabIndex="0">
@@ -20,21 +20,21 @@
             <ComboBoxItem x:Name="cbiFamilyMonth" Content="Family 1 Month"/>
             <ComboBoxItem x:Name="cbiFamily12Month" Content="Family 12 Month"/>
         </ComboBox>
-        <Label x:Name="lblMembershipType" Content="Select Membership Type:" HorizontalAlignment="Left" Margin="18,264,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
+        <Label x:Name="lblMembershipType" Content="Select Membership Type:" HorizontalAlignment="Left" Margin="18,264,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="166,310,0,0" VerticalAlignment="Top" Width="100" TabIndex="1" Height="30"/>
-        <Label x:Name="lblCurrentPrice" Content="Current Price:" HorizontalAlignment="Left" Margin="473,252,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
-        <TextBlock x:Name="txbCurrentPrice" HorizontalAlignment="Left" Margin="572,259,0,0" TextWrapping="Wrap" Text="$19.99" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
+        <Label x:Name="lblCurrentPrice" Content="Current Price:" HorizontalAlignment="Left" Margin="473,252,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <TextBlock x:Name="txbCurrentPrice" HorizontalAlignment="Left" Margin="572,259,0,0" TextWrapping="Wrap" Text="$19.99" VerticalAlignment="Top" Foreground="White"/>
         <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="659,10,0,0" VerticalAlignment="Top" Width="75" TabIndex="6" Height="20"/>
-        <Label x:Name="lblUpdatePrice" Content="Update Price:" HorizontalAlignment="Left" Margin="474,283,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
+        <Label x:Name="lblUpdatePrice" Content="Update Price:" HorizontalAlignment="Left" Margin="474,283,0,0" VerticalAlignment="Top" Foreground="White"/>
         <TextBox x:Name="txbUpdatePrice" HorizontalAlignment="Left" Height="23" Margin="572,286,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="24.99" TabIndex="2"/>
-        <Label x:Name="lblSelectedMembership" Content="Selected Membership:" HorizontalAlignment="Left" Margin="427,221,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
-        <TextBlock x:Name="txbSelectedMembership" HorizontalAlignment="Left" Margin="569,228,0,0" TextWrapping="Wrap" Text="Family 1 Month" VerticalAlignment="Top" Foreground="#FFF9F9F9"/>
+        <Label x:Name="lblSelectedMembership" Content="Selected Membership:" HorizontalAlignment="Left" Margin="427,221,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <TextBlock x:Name="txbSelectedMembership" HorizontalAlignment="Left" Margin="569,228,0,0" TextWrapping="Wrap" Text="Family 1 Month" VerticalAlignment="Top" Foreground="White"/>
         <Button x:Name="btnUpdatePrice" Content="Update" HorizontalAlignment="Left" Margin="569,372,0,0" VerticalAlignment="Top" Width="100" TabIndex="5" Height="30"/>
-        <TextBlock x:Name="txbInstructions" HorizontalAlignment="Left" Margin="94,59,0,0" TextWrapping="Wrap" Text="Instructions: To update the price and/or availability for a membership type, please select the membership type in the dropdown menu below and click submit. The current price and availability for the selected membership type will appear. To change the current price, type a new price in the update price textbox . To change the availability, select the appropriate radio button. After making the desired changes, click the update button. A message box will appear to confirm the updates for the selected membership. " VerticalAlignment="Top" Height="101" Width="480" Foreground="#FFF9F9F9"/>
+        <TextBlock x:Name="txbInstructions" HorizontalAlignment="Left" Margin="94,59,0,0" TextWrapping="Wrap" Text="Instructions: To update the price and/or availability for a membership type, please select the membership type in the dropdown menu below and click submit. The current price and availability for the selected membership type will appear. To change the current price, type a new price in the update price textbox . To change the availability, select the appropriate radio button. After making the desired changes, click the update button. A message box will appear to confirm the updates for the selected membership. " VerticalAlignment="Top" Height="101" Width="480" Foreground="#FFFDEBEB"/>
         <Image x:Name="imgValuePricing" HorizontalAlignment="Left" Height="110" Margin="603,44,0,0" VerticalAlignment="Top" Width="134" Source="Images/ValuePricingImg.jpg"/>
         <Label x:Name="lblTitle" Content="Manage Membership Pricing" HorizontalAlignment="Left" Margin="91,6,0,0" VerticalAlignment="Top" Foreground="#FFF5EBEB" Height="60" Width="463" FontSize="30"/>
-        <RadioButton x:Name="rdbNotOffered" Content="Not Offered" HorizontalAlignment="Left" Margin="569,341,0,0" VerticalAlignment="Top" IsChecked="True" TabIndex="4"/>
-        <RadioButton x:Name="rdbOffered" Content="Offered" HorizontalAlignment="Left" Margin="569,321,0,0" VerticalAlignment="Top" IsChecked="True" TabIndex="3"/>
+        <RadioButton x:Name="rdbNotOffered" Content="Not Offered" HorizontalAlignment="Left" Margin="569,341,0,0" VerticalAlignment="Top" IsChecked="True" TabIndex="4" Foreground="White"/>
+        <RadioButton x:Name="rdbOffered" Content="Offered" HorizontalAlignment="Left" Margin="569,321,0,0" VerticalAlignment="Top" IsChecked="True" TabIndex="3" Foreground="White"/>
 
     </Grid>
 </Window>
