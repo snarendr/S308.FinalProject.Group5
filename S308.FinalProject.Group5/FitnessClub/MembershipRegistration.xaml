@@ -35,7 +35,7 @@
         <CheckBox x:Name="chbWeightMgmt" Content="Weight Managment" HorizontalAlignment="Left" Margin="179,444,0,0" VerticalAlignment="Top" Foreground="White" Height="19" Width="166" TabIndex="8"/>
         <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Height="30" Margin="499,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" Text="800-800-8000" TabIndex="10"/>
         <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="31" Margin="499,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" Text="dan@indiana.edu" TabIndex="11"/>
-        <RadioButton x:Name="rdbMale" Content="Male" HorizontalAlignment="Left" Margin="443,219,0,0" VerticalAlignment="Top" Height="20" Width="60" Focusable="False" TabIndex="12" Foreground="White"/>
+        <RadioButton x:Name="rdbMale" Content="Male" HorizontalAlignment="Left" Margin="443,219,0,0" VerticalAlignment="Top" Height="20" Width="60" Focusable="False" TabIndex="12" Foreground="White" IsChecked="True"/>
         <RadioButton x:Name="rdbFemale" Content="Female" HorizontalAlignment="Left" Margin="510,219,0,0" VerticalAlignment="Top" Height="20" Width="75" TabIndex="13" Foreground="White"/>
         <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="30" Margin="421,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Text="21" TabIndex="15"/>
         <TextBox x:Name="txtWeight" HorizontalAlignment="Left" Height="30" Margin="421,289,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Text="80" TabIndex="16"/>
