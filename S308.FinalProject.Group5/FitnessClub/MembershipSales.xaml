@@ -7,15 +7,18 @@
         mc:Ignorable="d"
         Title="Membership Sales" Height="500" Width="750" Background="#FFBF3417" ResizeMode="CanMinimize">
     <Grid x:Name="grdMembershipSales">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <GroupBox x:Name="grbQuote" Header="Quote" HorizontalAlignment="Left" Margin="35,267,0,0" VerticalAlignment="Top" Height="129" Width="657" Foreground="#FFF3E2E2"/>
 
         <Image x:Name="imgMSN" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Source="Images/MSNLogo.png"/>
         <Label x:Name="lblMemType" Content="Membership Type:" HorizontalAlignment="Left" Margin="10,164,0,0" VerticalAlignment="Top" Foreground="#FFF9F9F9" Height="27" Width="123"/>
-        <Label x:Name="lblStartDate" Content="Start Date:" HorizontalAlignment="Left" Margin="11,195,0,0" VerticalAlignment="Top" Foreground="#FFF7F3F3" Height="27" Width="71"/>
+        <Label x:Name="lblStartDate" Content="Start Date:" HorizontalAlignment="Left" Margin="11,195,0,0" VerticalAlignment="Top" Foreground="#FFF7F3F3" Height="27" Width="71" d:IsLocked="True"/>
         <Label x:Name="lblEndDate" Content="End Date:" HorizontalAlignment="Left" Margin="381,170,0,0" VerticalAlignment="Top" Foreground="#FFEEE0E0" Height="27" Width="65"/>
         <Label x:Name="lblAddFeat" Content="Additional Features:" HorizontalAlignment="Left" Margin="381,195,0,0" VerticalAlignment="Top" Foreground="#FFF9F1F1" Height="27" Width="129"/>
         <ComboBox x:Name="cmbMemType" HorizontalAlignment="Left" Margin="144,169,0,0" VerticalAlignment="Top" Width="208" Height="23" SelectedIndex="0" TabIndex="0">
-            <ComboBoxItem x:Name="cbiDefault" Content="Please select a membership type" HorizontalAlignment="Left" Width="196" IsSelected="True"/>
+            <ComboBoxItem x:Name="cbiSelectMembership" Content="Please select a membership type" HorizontalAlignment="Left" Width="196" IsSelected="True"/>
             <ComboBoxItem x:Name="cbiIndOneMonth" Content="Individual 1 Month" HorizontalAlignment="Left" Width="176" Margin="0,0,-2,0"/>
             <ComboBoxItem x:Name="cbiIndTweMonth" Content="Individual 12 Month" HorizontalAlignment="Left" Width="176" Margin="0,0,-2,0"/>
             <ComboBoxItem x:Name="cbiTPOneMonth" Content="Two Person 1 Month" HorizontalAlignment="Left" Width="173"/>
@@ -45,7 +48,7 @@
         <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="409,414,0,0" VerticalAlignment="Top" Width="150" TabIndex="7" Height="30"/>
         <Label x:Name="lblTitle" Content="Membership Sales Quote" HorizontalAlignment="Left" Margin="92,17,0,0" VerticalAlignment="Top" Foreground="#FFF5EBEB" Height="60" Width="310" FontSize="26.667"/>
         <TextBlock x:Name="txtbDescription" HorizontalAlignment="Left" Margin="92,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="73" Width="497" Text="Please use this form to register new members into our database. Ask the following criteria and click the &quot;Quote&quot; button. If the Quote at the bottom matches the information given to you by the potential customer, and the total is approved by the customer, click &quot;Approve&quot; to continue in the registration process." Foreground="#FFFDEBEB"/>
-        <Image x:Name="imgQuote" HorizontalAlignment="Left" Height="117" Margin="589,37,-15,0" VerticalAlignment="Top" Width="168" Source="Images/QuoteIMG.jpg"/>
+        <Image x:Name="imgQuote" HorizontalAlignment="Left" Height="117" Margin="589,37,-13,0" VerticalAlignment="Top" Width="168" Source="Images/QuoteIMG.jpg"/>
 
     </Grid>
 </Window>

@@ -49,6 +49,10 @@
         <Button x:Name="btnExistingCustomer" Content="Existing Member" HorizontalAlignment="Left" Margin="551,110,0,0" VerticalAlignment="Top" Width="107" TabIndex="9"/>
         <Label x:Name="lblCCDesc" Content="(xxxx-xxxx-xxxx-xxxx)" HorizontalAlignment="Left" Margin="10,296,0,0" VerticalAlignment="Top" Foreground="#FFF5F0F0" FontStyle="Italic"/>
         <Label x:Name="lblPhoNumDesc" Content="(xxx-xxx-xxxx)" HorizontalAlignment="Left" Margin="369,159,0,0" VerticalAlignment="Top" Foreground="#FFF1F1F1" FontStyle="Italic"/>
+        <RadioButton x:Name="rdbNotProvided" Content="Not Provided" HorizontalAlignment="Left" Margin="590,218,0,0" VerticalAlignment="Top" Height="20" Width="98" TabIndex="13"/>
+        <Label x:Name="lblAgeOptional" Content="(optional)" HorizontalAlignment="Left" Margin="476,252,0,0" VerticalAlignment="Top" Foreground="#FFF5F0F0" FontStyle="Italic"/>
+        <Label x:Name="lblWeightOptional" Content="(optional)" HorizontalAlignment="Left" Margin="476,290,0,0" VerticalAlignment="Top" Foreground="#FFF5F0F0" FontStyle="Italic" RenderTransformOrigin="0.546,1.435"/>
+        <Label x:Name="lblGoalOptional" Content="(optional)" HorizontalAlignment="Left" Margin="10,350,0,0" VerticalAlignment="Top" Foreground="#FFF5F0F0" FontStyle="Italic" RenderTransformOrigin="0.546,1.435"/>
 
     </Grid>
 </Window>
