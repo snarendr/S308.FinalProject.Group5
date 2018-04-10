@@ -21,21 +21,21 @@
         <Label x:Name="lblTitle" Content="Membership Information" HorizontalAlignment="Left" Margin="79,6,0,0" VerticalAlignment="Top" Foreground="#FFF5EBEB" Height="60" Width="344" FontSize="30"/>
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="327" Margin="0,194,0,0" VerticalAlignment="Top" Width="792" CanUserResizeColumns="False" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Type" FontSize="9"/>
-                <DataGridTextColumn Header="First Name" FontSize="10"/>
-                <DataGridTextColumn Header="Last Name" FontSize="10"/>
-                <DataGridTextColumn Header="Start Date" FontSize="10"/>
-                <DataGridTextColumn Header="End Date" FontSize="10"/>
-                <DataGridTextColumn Header="Cost" FontSize="10"/>
-                <DataGridTextColumn Header="Subtotal" FontSize="10"/>
-                <DataGridTextColumn Header="Features" FontSize="10"/>
-                <DataGridTextColumn Header="Total Cost" FontSize="10"/>
-                <DataGridTextColumn Header="Expiration Date" FontSize="10"/>
-                <DataGridTextColumn Header="Phone" FontSize="10"/>
-                <DataGridTextColumn Header="Email" FontSize="10"/>
-                <DataGridTextColumn Header="Gender" FontSize="10"/>
-                <DataGridTextColumn Header="Weight" FontSize="10"/>
-                <DataGridTextColumn Header="Goal" FontSize="10"/>
+                <DataGridTextColumn x:Name="dgtType" Header="Type" FontSize="9"/>
+                <DataGridTextColumn x:Name="dgtFirstName" Header="First Name" FontSize="10"/>
+                <DataGridTextColumn x:Name="dgtLastName" Header="Last Name" FontSize="10"/>
+                <DataGridTextColumn x:Name="dgtStartDate" Header="Start Date" FontSize="10"/>
+                <DataGridTextColumn x:Name="dgtEndDate" Header="End Date" FontSize="10"/>
+                <DataGridTextColumn x:Name="dgtCost" Header="Cost" FontSize="10"/>
+                <DataGridTextColumn x:Name="dgtSubtotal" Header="Subtotal" FontSize="10"/>
+                <DataGridTextColumn x:Name="dgtFeatures" Header="Features" FontSize="10"/>
+                <DataGridTextColumn x:Name="dgtTotalCost" Header="Total Cost" FontSize="10"/>
+                <DataGridTextColumn x:Name="dgtExpirationDate" Header="Expiration Date" FontSize="10"/>
+                <DataGridTextColumn x:Name="dgtPhone" Header="Phone" FontSize="10"/>
+                <DataGridTextColumn x:Name="dgtEmail" Header="Email" FontSize="10"/>
+                <DataGridTextColumn x:Name="dgtGender" Header="Gender" FontSize="10"/>
+                <DataGridTextColumn x:Name="dgtWeight" Header="Weight" FontSize="10"/>
+                <DataGridTextColumn x:Name="dgtGoal" Header="Goal" FontSize="10"/>
             </DataGrid.Columns>
         </DataGrid>
         <TextBlock x:Name="txtbDescription" HorizontalAlignment="Left" Margin="86,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="102" Width="310" Foreground="#FFFDEBEB" Text="This window allows the user to look up user information by entering their Last Name, Email , and or/Phone Number. Once the search button is clicked, all the user(s) that meet the search criteria will have their membership information displayed below. "/>
