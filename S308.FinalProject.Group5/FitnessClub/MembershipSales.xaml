@@ -17,7 +17,7 @@
         <Label x:Name="lblStartDate" Content="Start Date:" HorizontalAlignment="Left" Margin="11,195,0,0" VerticalAlignment="Top" Foreground="White" Height="27" Width="71"/>
         <Label x:Name="lblEndDate" Content="End Date:" HorizontalAlignment="Left" Margin="381,170,0,0" VerticalAlignment="Top" Foreground="White" Height="27" Width="65"/>
         <Label x:Name="lblAddFeat" Content="Additional Features:" HorizontalAlignment="Left" Margin="381,195,0,0" VerticalAlignment="Top" Foreground="White" Height="27" Width="129"/>
-        <ComboBox x:Name="cmbMemType" HorizontalAlignment="Left" Margin="144,169,0,0" VerticalAlignment="Top" Width="208" Height="23" SelectedIndex="0" TabIndex="0">
+        <ComboBox x:Name="cmbMemType" HorizontalAlignment="Left" Margin="124,168,0,0" VerticalAlignment="Top" Width="208" Height="23" SelectedIndex="0" TabIndex="0">
             <ComboBoxItem x:Name="cbiSelectMembership" Content="Please select a membership type" HorizontalAlignment="Left" Width="196" IsSelected="True"/>
             <ComboBoxItem x:Name="cbiIndOneMonth" Content="Individual 1 Month" HorizontalAlignment="Left" Width="176" Margin="0,0,-2,0"/>
             <ComboBoxItem x:Name="cbiIndTweMonth" Content="Individual 12 Month" HorizontalAlignment="Left" Width="176" Margin="0,0,-2,0"/>
