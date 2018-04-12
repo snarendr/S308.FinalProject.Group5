@@ -26,12 +26,59 @@ namespace FitnessClub
         {
             InitializeComponent();
         }
-
+        //Allow user to go back to the Main Menu
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)
         {
             MainMenu MainMenuWindow = new MainMenu();
             MainMenuWindow.Show();
             this.Close();
         }
+
+        //Begin the quote measurement
+        private void btnQuote_Click(object sender, RoutedEventArgs e)
+        {
+            //Validate that a membership type was selected
+
+            if (cmbMemType.SelectedIndex == 0)
+            {
+                MessageBox.Show("Please select a membership type to generate a quote.");
+                return;
+            }
+
+            DateTime? datStartDate = dtpStart.SelectedDate;
+            DateTime? datEndDate = dtpEnd.SelectedDate;
+
+            //Validate that a start date was entered
+            if (datStartDate == null)
+            {
+                MessageBox.Show("Please select a start date to generate a quote.");
+                return;
+            }
+            //Validate that an end date was entered
+            if (datEndDate == null)
+            {
+                MessageBox.Show("Please select an end date to generate a quote.");
+                return;
+            }
+
+            if (datStartDate > datEndDate)
+            {
+                MessageBox.Show("End date must be after the start date to generate a quote.");
+                return;
+            }
+
+
+
+            DateTime datTime1 = (DateTime)datStartDate;
+            DateTime datTime2 = (DateTime)datEndDate;
+            TimeSpan? tspInterval = datEndDate - datStartDate;
+
+            
+        }
+
+
+
+
+        
     }
 }
