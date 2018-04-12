@@ -60,15 +60,28 @@ namespace FitnessClub
                 MessageBox.Show("Please select an end date to generate a quote.");
                 return;
             }
-
+            //Validate that the end date is after the start date
             if (datStartDate > datEndDate)
             {
                 MessageBox.Show("End date must be after the start date to generate a quote.");
                 return;
             }
 
+            //Identify the membership type selected and store in a string
+            ComboBoxItem cbiSelectedItem = (ComboBoxItem)cmbMemType.SelectedItem;
+            string strSelection = cbiSelectedItem.Content.ToString();
+
+            //Identify any additional features selected for the quote
+            if()
+            {
+                MessageBox.Show("error.");
+                return;
+            }
+
+            
 
 
+            //idk about these
             DateTime datTime1 = (DateTime)datStartDate;
             DateTime datTime2 = (DateTime)datEndDate;
             TimeSpan? tspInterval = datEndDate - datStartDate;
