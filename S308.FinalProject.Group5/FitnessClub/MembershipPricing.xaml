@@ -24,7 +24,7 @@
         <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="166,310,0,0" VerticalAlignment="Top" Width="100" TabIndex="1" Height="30" Click="btnSubmit_Click"/>
         <Label x:Name="lblCurrentPrice" Content="Current Price:" HorizontalAlignment="Left" Margin="473,252,0,0" VerticalAlignment="Top" Foreground="White"/>
         <TextBlock x:Name="txbCurrentPrice" HorizontalAlignment="Left" Margin="572,259,0,0" TextWrapping="Wrap" Text="$19.99" VerticalAlignment="Top" Foreground="White"/>
-        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="659,10,0,0" VerticalAlignment="Top" Width="75" TabIndex="6" Height="20"/>
+        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="659,10,0,0" VerticalAlignment="Top" Width="75" TabIndex="6" Height="20" Click="btnMainMenu_Click_1"/>
         <Label x:Name="lblUpdatePrice" Content="Update Price:" HorizontalAlignment="Left" Margin="474,283,0,0" VerticalAlignment="Top" Foreground="White"/>
         <TextBox x:Name="txbUpdatePrice" HorizontalAlignment="Left" Height="23" Margin="572,286,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Text="24.99" TabIndex="2"/>
         <Label x:Name="lblSelectedMembership" Content="Selected Membership:" HorizontalAlignment="Left" Margin="427,221,0,0" VerticalAlignment="Top" Foreground="White"/>

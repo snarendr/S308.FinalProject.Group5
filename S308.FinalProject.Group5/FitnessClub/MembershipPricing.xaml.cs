@@ -35,7 +35,7 @@ namespace FitnessClub
             }
         }
 
-        private void btnMainMenu_Click(object sender, RoutedEventArgs e)
+        private void btnMainMenu_Click_1(object sender, RoutedEventArgs e)
         {
             MainMenu MainMenuWindow = new MainMenu();
             MainMenuWindow.Show();
