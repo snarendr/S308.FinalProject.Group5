@@ -31,5 +31,12 @@ namespace FitnessClub
             MainMenuWindow.Show();
             this.Close();
         }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            MembershipSales MemberShipSalesWindow = new MembershipSales();
+            MemberShipSalesWindow.Show();
+            this.Close();
+        }
     }
 }
