@@ -16,7 +16,7 @@
         <TextBox x:Name="txtEmailInput" HorizontalAlignment="Left" Height="21" Margin="561,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" TabIndex="1" Text="Doe@indiana.edu"/>
         <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Height="30" Margin="493,157,0,0" VerticalAlignment="Top" Width="100" TabIndex="3"/>
         <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Height="30" Margin="602,157,0,0" VerticalAlignment="Top" Width="100" TabIndex="4"/>
-        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="710,4,0,0" Height="20" TabIndex="5" />
+        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="710,4,0,0" Height="20" TabIndex="5" Click="btnMainMenu_Click" />
         <Image x:Name="imgLogo" HorizontalAlignment="Left" Height="95" VerticalAlignment="Top" Width="111" Source="Images/MSNLogo.png" RenderTransformOrigin="0.812,0.564"/>
         <Label x:Name="lblTitle" Content="Membership Information" HorizontalAlignment="Left" Margin="79,6,0,0" VerticalAlignment="Top" Foreground="#FFF5EBEB" Height="60" Width="344" FontSize="30"/>
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="327" Margin="0,194,0,0" VerticalAlignment="Top" Width="792" CanUserResizeColumns="False" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible">

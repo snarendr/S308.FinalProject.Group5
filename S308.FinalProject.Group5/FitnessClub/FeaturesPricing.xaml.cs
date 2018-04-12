@@ -34,6 +34,15 @@ namespace FitnessClub
                 MessageBox.Show("Please select a feature to change the price of.");
                 return;
             }
+
+            
+        }
+
+        private void btnMainMenu_Click(object sender, RoutedEventArgs e)
+        {
+            MainMenu MainMenuWindow = new MainMenu();
+            MainMenuWindow.Show();
+            this.Close();
         }
     }
 }
