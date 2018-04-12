@@ -26,5 +26,14 @@ namespace FitnessClub
         {
             InitializeComponent();
         }
+
+        private void btnSubmit_Click(object sender, RoutedEventArgs e)
+        {
+            if(cmbSelectFeatures.SelectedIndex == 0)
+            {
+                MessageBox.Show("Please select a feature to change the price of.");
+                return;
+            }
+        }
     }
 }

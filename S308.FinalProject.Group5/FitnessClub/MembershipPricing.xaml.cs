@@ -25,5 +25,14 @@ namespace FitnessClub
         {
             InitializeComponent();
         }
+
+        private void btnSubmit_Click(object sender, RoutedEventArgs e)
+        {
+            if(cmbMembershipType.SelectedIndex == 0)
+            {
+                MessageBox.Show("Please select a membership type to modify.");
+                return;
+            }
+        }
     }
 }

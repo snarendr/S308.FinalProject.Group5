@@ -21,7 +21,7 @@
             <ComboBoxItem x:Name="cbiFamily12Month" Content="Family 12 Month"/>
         </ComboBox>
         <Label x:Name="lblMembershipType" Content="Select Membership Type:" HorizontalAlignment="Left" Margin="18,264,0,0" VerticalAlignment="Top" Foreground="White"/>
-        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="166,310,0,0" VerticalAlignment="Top" Width="100" TabIndex="1" Height="30"/>
+        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="166,310,0,0" VerticalAlignment="Top" Width="100" TabIndex="1" Height="30" Click="btnSubmit_Click"/>
         <Label x:Name="lblCurrentPrice" Content="Current Price:" HorizontalAlignment="Left" Margin="473,252,0,0" VerticalAlignment="Top" Foreground="White"/>
         <TextBlock x:Name="txbCurrentPrice" HorizontalAlignment="Left" Margin="572,259,0,0" TextWrapping="Wrap" Text="$19.99" VerticalAlignment="Top" Foreground="White"/>
         <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="659,10,0,0" VerticalAlignment="Top" Width="75" TabIndex="6" Height="20"/>

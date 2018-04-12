@@ -8,16 +8,17 @@
         Title="Main Menu" Height="500" Width="750" Background="#FFBF3417" ResizeMode="CanMinimize">
     <Grid x:Name="grdMainMenu">
 
+        <GroupBox x:Name="grpPricingManagement" Header="Pricing Management" HorizontalAlignment="Left" Height="150" Margin="392,249,0,0" VerticalAlignment="Top" Width="270" Foreground="White"/>
+
         <GroupBox x:Name="grpSales_Membership" Header="Sales and Membership" HorizontalAlignment="Left" Height="150" Margin="75,249,0,0" VerticalAlignment="Top" Width="270" Foreground="White"/>
         <Image x:Name="imgMSN" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Source="Images/MSNLogo.png"/>
-        <Button x:Name="btnMemberInformation" Content="Member Information" HorizontalAlignment="Left" Margin="134,335,0,0" VerticalAlignment="Top" Width="145" Height="40" TabIndex="1"/>
-        <Button x:Name="btnFeaturesPricing" Content="Features Pricing" HorizontalAlignment="Left" Margin="461,335,0,0" VerticalAlignment="Top" Width="145" Height="40" TabIndex="3"/>
-        <Button x:Name="btnMembershipSales" Content="Membership Sales" HorizontalAlignment="Left" Margin="134,277,0,0" VerticalAlignment="Top" Width="145" Height="40" TabIndex="0"/>
-        <Button x:Name="btnMembershipPricing" Content="Membership Pricing" HorizontalAlignment="Left" Margin="461,277,0,0" VerticalAlignment="Top" Width="145" Height="40" TabIndex="2"/>
+        <Button x:Name="btnMemberInformation" Content="Member Information" HorizontalAlignment="Left" Margin="134,335,0,0" VerticalAlignment="Top" Width="145" Height="40" TabIndex="1" Click="btnMemberInformation_Click"/>
+        <Button x:Name="btnFeaturesPricing" Content="Features Pricing" HorizontalAlignment="Left" Margin="461,335,0,0" VerticalAlignment="Top" Width="145" Height="40" TabIndex="3" Click="btnFeaturesPricing_Click"/>
+        <Button x:Name="btnMembershipSales" Content="Membership Sales" HorizontalAlignment="Left" Margin="134,277,0,0" VerticalAlignment="Top" Width="145" Height="40" TabIndex="0" Click="btnMembershipSales_Click"/>
+        <Button x:Name="btnMembershipPricing" Content="Membership Pricing" HorizontalAlignment="Left" Margin="461,277,0,0" VerticalAlignment="Top" Width="145" Height="40" TabIndex="2" Click="btnMembershipPricing_Click"/>
         <Image x:Name="imgFitnessCenter" Margin="209,7,209,275" Width="326" Source="Images/FitnessCenterImg.jpg"/>
         <Label x:Name="lblTitle" Content="MSN Gym Management System" Margin="148,196,148,0" VerticalAlignment="Top" Foreground="#FFF5EBEB" Height="60" Width="448" FontSize="30"/>
         <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Margin="605,13,0,0" VerticalAlignment="Top" Width="120" Height="30" TabIndex="4"/>
-        <GroupBox x:Name="grpPricingManagement" Header="Pricing Management" HorizontalAlignment="Left" Height="150" Margin="392,249,0,0" VerticalAlignment="Top" Width="270" Foreground="White"/>
 
     </Grid>
 </Window>

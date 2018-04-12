@@ -26,5 +26,33 @@ namespace FitnessClub
         {
             InitializeComponent();
         }
+
+        private void btnMembershipSales_Click(object sender, RoutedEventArgs e)
+        {
+            MembershipSales MemberShipSalesWindow = new MembershipSales();
+            MemberShipSalesWindow.Show();
+            this.Close();
+        }
+
+        private void btnMemberInformation_Click(object sender, RoutedEventArgs e)
+        {
+            MemberInformation MemberInformationWindow = new MemberInformation();
+            MemberInformationWindow.Show();
+            this.Close();
+        }
+
+        private void btnMembershipPricing_Click(object sender, RoutedEventArgs e)
+        {
+            MembershipPricing MembershipPricingWindow = new MembershipPricing();
+            MembershipPricingWindow.Show();
+            this.Close();
+        }
+
+        private void btnFeaturesPricing_Click(object sender, RoutedEventArgs e)
+        {
+            FeaturesPricing FeaturesPricingWindow = new FeaturesPricing();
+            FeaturesPricingWindow.Show();
+            this.Close();
+        }
     }
 }
