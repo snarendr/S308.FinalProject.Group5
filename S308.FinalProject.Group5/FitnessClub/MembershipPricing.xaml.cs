@@ -13,6 +13,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace FitnessClub
 {
@@ -21,6 +23,8 @@ namespace FitnessClub
     /// </summary>
     public partial class MembershipPricing : Window
     {
+        string strFilePath = @"\..\..\Data\Membership.Json";
+        List<Membership> MembershipList = new List<Membership>;
         public MembershipPricing()
         {
             InitializeComponent();
@@ -33,6 +37,31 @@ namespace FitnessClub
                 MessageBox.Show("Please select a membership type to modify.");
                 return;
             }
+
+            string strMembershipType = cmbMembershipType.SelectedItem.ToString();
+
+            try
+            {
+                string jsonData = File.ReadAllText(strFilePath);
+                MembershipList = JsonConvert.DeserializeObject<List<Membership>>(jsonData);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in import process: " + ex.Message);
+            }
+
+            var membershipQuery =
+                from m in MembershipList
+                where (m.Type == strMembershipType)
+                select m;
+
+           
+             
+             
+                   
+
+
+
         }
 
         private void btnMainMenu_Click_1(object sender, RoutedEventArgs e)
