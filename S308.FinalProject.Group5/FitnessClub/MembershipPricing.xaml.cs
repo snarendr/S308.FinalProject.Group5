@@ -32,7 +32,11 @@ namespace FitnessClub
         //
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
-            if(cmbMembershipType.SelectedIndex == 0)
+
+            txbUpdatePrice.Text = "";
+            rdbOffered.IsChecked = true;
+
+            if (cmbMembershipType.SelectedIndex == 0)
             {
                 MessageBox.Show("Please select a membership type to modify.");
                 return;
@@ -61,8 +65,13 @@ namespace FitnessClub
             foreach (Membership m in membershipQuery)
             {
                 txbCurrentPrice.Text = m.Price.ToString("C2");
-                rdbOffered.IsEnabled = m.Available;
 
+                if (m.Available)
+                {
+                    rdbOffered.IsChecked = true;
+                }
+                else
+                    rdbNotOffered.IsChecked = true;                          
             }
 
 
@@ -83,7 +92,15 @@ namespace FitnessClub
             string strMembershipType = cbiMembershipType.Content.ToString();
 
             double dblUpdatedPrice = Convert.ToDouble(txbUpdatePrice.Text);
-            bool bolOffered = rdbOffered.IsEnabled;
+
+            bool bolOffered;
+            if (rdbOffered.IsChecked == true)
+            {
+                bolOffered = true;
+
+            }
+            else
+                bolOffered = false;
 
             var membershipQuery =
              from m in MembershipList
@@ -108,6 +125,22 @@ namespace FitnessClub
                 MessageBox.Show("Error in export process " + ex.Message);
             }
 
+            var membershipQuery2 =
+             from m in MembershipList
+             where (m.Type) == strMembershipType
+             select m;
+
+            foreach (Membership m in membershipQuery2)
+            {
+                txbCurrentPrice.Text = m.Price.ToString("C2");
+
+                if (m.Available)
+                {
+                    rdbOffered.IsChecked = true;
+                }
+                else
+                    rdbNotOffered.IsChecked = true;
+            }
 
 
         }
