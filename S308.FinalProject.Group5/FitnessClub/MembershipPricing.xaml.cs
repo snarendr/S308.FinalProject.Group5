@@ -29,7 +29,7 @@ namespace FitnessClub
         {
             InitializeComponent();
         }
-
+        //
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
             if(cmbMembershipType.SelectedIndex == 0)
@@ -52,7 +52,7 @@ namespace FitnessClub
 
             var membershipQuery =
                 from m in MembershipList
-                where (m.Type.ToString() == strMembershipType)
+                where (m.Type == strMembershipType)
                 select m;
             
             foreach(Membership m in membershipQuery)
