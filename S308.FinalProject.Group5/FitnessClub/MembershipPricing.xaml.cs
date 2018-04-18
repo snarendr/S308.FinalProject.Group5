@@ -23,13 +23,13 @@ namespace FitnessClub
     /// </summary>
     public partial class MembershipPricing : Window
     {
-        string strFilePath = @"..\..\..\Data\membership.json";
+        string strFilePath = @"..\..\Data\membership.json";
         List<Membership> MembershipList = new List<Membership>();
         public MembershipPricing()
         {
             InitializeComponent();
         }
-
+        //
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
             if(cmbMembershipType.SelectedIndex == 0)
@@ -52,7 +52,7 @@ namespace FitnessClub
 
             var membershipQuery =
                 from m in MembershipList
-                where (m.Type.ToString() == strMembershipType)
+                where (m.Type == strMembershipType)
                 select m;
             
             foreach(Membership m in membershipQuery)
