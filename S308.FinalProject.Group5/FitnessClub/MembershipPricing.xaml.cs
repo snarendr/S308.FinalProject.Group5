@@ -24,7 +24,7 @@ namespace FitnessClub
     public partial class MembershipPricing : Window
     {
         string strFilePath = @"\..\..\Data\Membership.Json";
-        List<Membership> MembershipList = new List<Membership>;
+        List<Membership> MembershipList = new List<Membership>();
         public MembershipPricing()
         {
             InitializeComponent();
@@ -53,7 +53,11 @@ namespace FitnessClub
             var membershipQuery =
                 from m in MembershipList
                 where (m.Type == strMembershipType)
-                select m;
+                select m.ToString();
+                txbSelectedMembership.Text = Membership m.ToString() in membershipQuery; 
+
+           
+
 
            
              

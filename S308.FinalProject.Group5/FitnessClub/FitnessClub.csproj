@@ -78,6 +78,7 @@
     <Compile Include="ExistingMemberSearch.xaml.cs">
       <DependentUpon>ExistingMemberSearch.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Feature.cs" />
     <Compile Include="FeaturesPricing.xaml.cs">
       <DependentUpon>FeaturesPricing.xaml</DependentUpon>
     </Compile>
