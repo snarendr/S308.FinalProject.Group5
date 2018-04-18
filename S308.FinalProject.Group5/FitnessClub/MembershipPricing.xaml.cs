@@ -23,7 +23,7 @@ namespace FitnessClub
     /// </summary>
     public partial class MembershipPricing : Window
     {
-        string strFilePath = @"..\..\..\Data\membership.json";
+        string strFilePath = @"..\..\Data\membership.json";
         List<Membership> MembershipList = new List<Membership>();
         public MembershipPricing()
         {
