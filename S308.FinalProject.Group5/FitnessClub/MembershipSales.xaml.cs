@@ -72,11 +72,7 @@ namespace FitnessClub
             string strSelection = cbiSelectedItem.Content.ToString();
 
             //Identify any additional features selected for the quote
-            if()
-            {
-                MessageBox.Show("error.");
-                return;
-            }
+           
 
             
 
