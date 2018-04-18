@@ -38,8 +38,11 @@ namespace FitnessClub
                 return;
             }
 
-            string strMembershipType = cmbMembershipType.SelectedItem.ToString();
-
+            ComboBoxItem cbiMembershipType;
+            cbiMembershipType = (ComboBoxItem)cmbMembershipType.SelectedItem;
+            string strMembershipType = cbiMembershipType.Content.ToString();
+            txbSelectedMembership.Text = strMembershipType;
+            
             try
             {
                 string jsonData = File.ReadAllText(strFilePath);
@@ -49,16 +52,19 @@ namespace FitnessClub
             {
                 MessageBox.Show("Error in import process: " + ex.Message);
             }
-
+                                           
             var membershipQuery =
-                from m in MembershipList
-                where (m.Type == strMembershipType)
-                select m;
-            
-            foreach(Membership m in membershipQuery)
+              from m in MembershipList
+              where (m.Type) == strMembershipType
+              select m;
+
+            foreach (Membership m in membershipQuery)
             {
-                txbSelectedMembership.Text = m.Type;
+                txbCurrentPrice.Text = m.Price.ToString("C2");
+                rdbOffered.IsEnabled = m.Available;
+
             }
+
 
         }
 
@@ -67,6 +73,43 @@ namespace FitnessClub
             MainMenu MainMenuWindow = new MainMenu();
             MainMenuWindow.Show();
             this.Close();
+        }
+
+        private void btnUpdatePrice_Click(object sender, RoutedEventArgs e)
+        {
+
+            ComboBoxItem cbiMembershipType;
+            cbiMembershipType = (ComboBoxItem)cmbMembershipType.SelectedItem;
+            string strMembershipType = cbiMembershipType.Content.ToString();
+
+            double dblUpdatedPrice = Convert.ToDouble(txbUpdatePrice.Text);
+            bool bolOffered = rdbOffered.IsEnabled;
+
+            var membershipQuery =
+             from m in MembershipList
+             where (m.Type) == strMembershipType
+             select m;
+
+            foreach (Membership m in membershipQuery)
+            {
+                m.Price = dblUpdatedPrice;
+                m.Available = bolOffered;
+            }
+
+            try
+            {
+                string jsonData = JsonConvert.SerializeObject(MembershipList);
+                System.IO.File.WriteAllText(strFilePath, jsonData);
+                MessageBox.Show(strMembershipType + " details have been updated.");
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in export process " + ex.Message);
+            }
+
+
+
         }
     }
 }
