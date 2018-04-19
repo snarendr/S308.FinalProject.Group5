@@ -66,11 +66,11 @@ namespace FitnessClub
             {
                 MessageBox.Show("Error in import process: " + ex.Message);
             }
-            
+
             //Query the membership data and find the membership type that matches the selection from the user                              
             var membershipQuery =
               from m in MembershipList
-              where (m.Type) == "Individual 1 Month"
+              where (m.Type) == strMembershipType
               select m;
 
             //For the membership type that matches the selection by the user, dispaly the current price to the user. Additionally select the radio button that matches the availability of the selected membership. 
@@ -101,6 +101,10 @@ namespace FitnessClub
         private void btnUpdatePrice_Click(object sender, RoutedEventArgs e)
         {
 
+            if(txbUpdatePrice.Text == "" && rdbOffered.IsChecked == false && rdbNotOffered.IsChecked == false )
+
+            if(txbUpdatePrice.Text != "")
+            { }
             ComboBoxItem cbiMembershipType;
             cbiMembershipType = (ComboBoxItem)cmbMembershipType.SelectedItem;
             string strMembershipType = cbiMembershipType.Content.ToString();
