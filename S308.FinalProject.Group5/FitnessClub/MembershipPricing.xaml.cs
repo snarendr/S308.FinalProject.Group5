@@ -80,10 +80,10 @@ namespace FitnessClub
 
                 if (m.Available)
                 {
-                    rdbOffered.IsChecked = true;
+                    txbCurrentAvailability.Text = "Available";
                 }
                 else
-                    rdbNotOffered.IsChecked = true;                          
+                    txbCurrentAvailability.Text = "Not Available";                        
             }
 
             //Display the selected membership type to the user
@@ -100,37 +100,88 @@ namespace FitnessClub
 
         private void btnUpdatePrice_Click(object sender, RoutedEventArgs e)
         {
+            if (cmbMembershipType.SelectedIndex == 0)
+            {
+                MessageBox.Show("Please select a membership type to modify.");
+                return;
+            }
 
-            if(txbUpdatePrice.Text == "" && rdbOffered.IsChecked == false && rdbNotOffered.IsChecked == false )
-
-            if(txbUpdatePrice.Text != "")
-            { }
             ComboBoxItem cbiMembershipType;
             cbiMembershipType = (ComboBoxItem)cmbMembershipType.SelectedItem;
             string strMembershipType = cbiMembershipType.Content.ToString();
 
-            double dblUpdatedPrice = Convert.ToDouble(txbUpdatePrice.Text);
 
-            bool bolOffered;
-            if (rdbOffered.IsChecked == true)
+            if (txbUpdatePrice.Text == "" && rdbOffered.IsChecked == false && rdbNotOffered.IsChecked == false)
             {
-                bolOffered = true;
-
-            }
-            else
-                bolOffered = false;
-
-            var membershipQuery =
-             from m in MembershipList
-             where (m.Type) == strMembershipType
-             select m;
-
-            foreach (Membership m in membershipQuery)
-            {
-                m.Price = dblUpdatedPrice;
-                m.Available = bolOffered;
+                MessageBox.Show("Please enter a price or select an availability option.");
+                return;
             }
 
+            if(txbUpdatePrice.Text != "" && (rdbOffered.IsChecked == true || rdbOffered.IsChecked == true))
+            {
+                double dblUpdatePrice = Convert.ToDouble(txbUpdatePrice.Text);
+                bool bolOffered;
+                if (rdbOffered.IsChecked == true)
+                {
+                    bolOffered = true;
+
+                }
+                else
+                    bolOffered = false;
+
+                var membershipQuery =
+                 from m in MembershipList
+                 where (m.Type) == strMembershipType
+                 select m;
+
+                foreach (Membership m in membershipQuery)
+                {
+                    m.Available = bolOffered;
+                    m.Price = dblUpdatePrice;
+                }
+
+            }
+
+            if (txbUpdatePrice.Text == "")
+            {
+                bool bolOffered;
+                if (rdbOffered.IsChecked == true)
+                {
+                    bolOffered = true;
+
+                }
+                else
+                    bolOffered = false;
+
+                var membershipQuery =
+                 from m in MembershipList
+                 where (m.Type) == strMembershipType
+                 select m;
+
+                foreach (Membership m in membershipQuery)
+                {
+                    m.Available = bolOffered;
+                }
+
+            }
+
+            if (rdbOffered.IsChecked == false && rdbNotOffered.IsChecked == false)
+            {
+                double dblUpdatePrice = Convert.ToDouble(txbUpdatePrice.Text);
+
+                var membershipQuery =
+                 from m in MembershipList
+                 where (m.Type) == strMembershipType
+                 select m;
+
+                foreach (Membership m in membershipQuery)
+                {
+                    m.Price = dblUpdatePrice;
+
+                }
+            
+            }
+             
             try
             {
                 string jsonData = JsonConvert.SerializeObject(MembershipList);
@@ -154,11 +205,15 @@ namespace FitnessClub
 
                 if (m.Available)
                 {
-                    rdbOffered.IsChecked = true;
+                txbCurrentAvailability.Text = "Available";
                 }
                 else
-                    rdbNotOffered.IsChecked = true;
+                txbCurrentAvailability.Text = "Not Available";
             }
+
+            txbUpdatePrice.Text = "";
+            rdbNotOffered.IsChecked = false;
+            rdbOffered.IsChecked = false;
 
 
         }
