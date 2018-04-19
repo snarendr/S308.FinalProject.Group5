@@ -117,7 +117,7 @@ namespace FitnessClub
                 return;
             }
 
-            if(txbUpdatePrice.Text != "" && (rdbOffered.IsChecked == true || rdbOffered.IsChecked == true))
+            if(txbUpdatePrice.Text != "" && (rdbOffered.IsChecked == true || rdbNotOffered.IsChecked == true))
             {
                 double dblUpdatePrice = Convert.ToDouble(txbUpdatePrice.Text);
                 bool bolOffered;
