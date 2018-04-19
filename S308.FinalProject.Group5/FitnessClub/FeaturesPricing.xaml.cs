@@ -35,7 +35,7 @@ namespace FitnessClub
                 return;
             }
 
-            
+                                                           
         }
 
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)

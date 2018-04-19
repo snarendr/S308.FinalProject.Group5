@@ -23,30 +23,40 @@ namespace FitnessClub
     /// </summary>
     public partial class MembershipPricing : Window
     {
+        //Create variable to store the membership json file path
         string strFilePath = @"..\..\Data\membership.json";
+        //Create membership list based on the membership class
         List<Membership> MembershipList = new List<Membership>();
+        
         public MembershipPricing()
         {
             InitializeComponent();
+            //Reset the the update price text box and the radio buttons. 
+            txbUpdatePrice.Text = "";
+            rdbOffered.IsChecked = false;
+            rdbNotOffered.IsChecked = false;
         }
         //
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
 
+            //Reset the the update price text box and the radio buttons. 
             txbUpdatePrice.Text = "";
-            rdbOffered.IsChecked = true;
+            rdbOffered.IsChecked = false;
+            rdbNotOffered.IsChecked = false;
 
+            //Validate that the user has a selected a memebership type
             if (cmbMembershipType.SelectedIndex == 0)
             {
                 MessageBox.Show("Please select a membership type to modify.");
                 return;
             }
 
-            ComboBoxItem cbiMembershipType;
-            cbiMembershipType = (ComboBoxItem)cmbMembershipType.SelectedItem;
+            //Store the comobo box selection in a string variable
+            ComboBoxItem cbiMembershipType = (ComboBoxItem)cmbMembershipType.SelectedItem;
             string strMembershipType = cbiMembershipType.Content.ToString();
-            txbSelectedMembership.Text = strMembershipType;
-            
+
+            //Read membership json file to fill the membership list with the current membership data
             try
             {
                 string jsonData = File.ReadAllText(strFilePath);
@@ -56,12 +66,14 @@ namespace FitnessClub
             {
                 MessageBox.Show("Error in import process: " + ex.Message);
             }
-                                           
+            
+            //Query the membership data and find the membership type that matches the selection from the user                              
             var membershipQuery =
               from m in MembershipList
-              where (m.Type) == strMembershipType
+              where (m.Type) == "Individual 1 Month"
               select m;
 
+            //For the membership type that matches the selection by the user, dispaly the current price to the user. Additionally select the radio button that matches the availability of the selected membership. 
             foreach (Membership m in membershipQuery)
             {
                 txbCurrentPrice.Text = m.Price.ToString("C2");
@@ -74,6 +86,8 @@ namespace FitnessClub
                     rdbNotOffered.IsChecked = true;                          
             }
 
+            //Display the selected membership type to the user
+            txbSelectedMembership.Text = strMembershipType;
 
         }
 
