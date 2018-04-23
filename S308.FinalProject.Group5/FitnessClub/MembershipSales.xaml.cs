@@ -243,13 +243,28 @@ namespace FitnessClub
 
         private void ClearForm()
         {
-            cmbMemType.SelectedIndex = -1;
+            cmbMemType.SelectedIndex = 0;
             chbLockRental.IsChecked = false;
             chbTraining.IsChecked = false;
-            
-            
+            dtpStart.SelectedDate = null;
+            lblMemTypeResult.Content = "";
+            lblStartDateResult.Content = "";
+            lblEndDateResult.Content = "";
+            lblSubtotalResult.Content = "";
+            lblAddFeatResult.Content = "";
+            lblTotalResult.Content = "";
+        }
 
+        private void btnApprove_Click(object sender, RoutedEventArgs e)
+        {
+            if(lblMemTypeResult.Content == "" || lblStartDate.Content == "" || lblEndDateResult.Content == "" || lblSubtotalResult.Content == "" || lblTotalResult.Content == "")
+            {
+                MessageBox.Show("A quote has not been fully generated. A full quote must be provided before approving the quote. Please ensure you have pressed the generate quote button prior to selecting the approve button.");
+                return;
+            }
 
+            MembershipRegistration MembershipRegistrationWindow = new MembershipRegistration();
+            MembershipRegistrationWindow.Show();
         }
     }
 }

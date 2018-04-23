@@ -27,16 +27,16 @@
         <Label x:Name="lblEndDateResHead" Content="End Date:" HorizontalAlignment="Left" Margin="46,357,0,0" VerticalAlignment="Top" Foreground="White" Height="42" Width="101"/>
         <Label x:Name="lblAddFeatResHead" Content="Additional Features:" HorizontalAlignment="Left" Margin="370,316,0,0" VerticalAlignment="Top" Foreground="White" Height="41" Width="189"/>
         <Label x:Name="lblSubTotalHead" Content="Subtotal:" HorizontalAlignment="Left" Margin="370,285,0,0" VerticalAlignment="Top" Foreground="White" Height="41" Width="94"/>
-        <Label x:Name="lblMemTypeResult" Content="Individual 1 Month ($9.99)" HorizontalAlignment="Left" Margin="176,286,0,0" VerticalAlignment="Top" Foreground="White" Height="41" Width="156"/>
-        <Label x:Name="lblStartDateResult" Content="01/01/2018" HorizontalAlignment="Left" Margin="176,316,0,0" VerticalAlignment="Top" Foreground="White" Height="41" Width="83"/>
-        <Label x:Name="lblEndDateResult" Content="02/01/2018" HorizontalAlignment="Left" Margin="176,357,0,0" VerticalAlignment="Top" Foreground="White" Height="42" Width="83"/>
-        <Label x:Name="lblSubtotalResult" Content="$9.99" HorizontalAlignment="Left" Margin="520,284,0,0" VerticalAlignment="Top" Foreground="White" Height="42" Width="62"/>
-        <Label x:Name="lblAddFeatResult" Content="Training  - $5.00/month" HorizontalAlignment="Left" Margin="520,316,0,0" VerticalAlignment="Top" Foreground="White" Height="41" Width="172"/>
+        <Label x:Name="lblMemTypeResult" Content="" HorizontalAlignment="Left" Margin="176,286,0,0" VerticalAlignment="Top" Foreground="White" Height="41" Width="156"/>
+        <Label x:Name="lblStartDateResult" Content="" HorizontalAlignment="Left" Margin="176,316,0,0" VerticalAlignment="Top" Foreground="White" Height="41" Width="83"/>
+        <Label x:Name="lblEndDateResult" Content="" HorizontalAlignment="Left" Margin="176,357,0,0" VerticalAlignment="Top" Foreground="White" Height="42" Width="83"/>
+        <Label x:Name="lblSubtotalResult" Content="" HorizontalAlignment="Left" Margin="520,284,0,0" VerticalAlignment="Top" Foreground="White" Height="42" Width="62"/>
+        <Label x:Name="lblAddFeatResult" Content="" HorizontalAlignment="Left" Margin="520,316,0,0" VerticalAlignment="Top" Foreground="White" Height="41" Width="172"/>
         <Label x:Name="lblTotalResHead" Content="Total:" HorizontalAlignment="Left" Margin="370,357,0,0" VerticalAlignment="Top" Foreground="White" Height="42" Width="64"/>
-        <Label x:Name="lblTotalResult" Content="$14.99" HorizontalAlignment="Left" Margin="520,357,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.251,-0.094" Foreground="White" Height="42" Width="62"/>
+        <Label x:Name="lblTotalResult" Content="" HorizontalAlignment="Left" Margin="520,357,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.251,-0.094" Foreground="White" Height="42" Width="62"/>
         <Button x:Name="btnQuote" Content="Generate Quote" HorizontalAlignment="Left" Margin="312,234,0,0" VerticalAlignment="Top" Width="150" Height="30" TabIndex="5" Click="btnQuote_Click"/>
         <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="651,10,0,0" VerticalAlignment="Top" Width="75" TabIndex="8" Height="20" Click="btnMainMenu_Click"/>
-        <Button x:Name="btnApprove" Content="Approve" HorizontalAlignment="Left" Margin="217,414,0,0" VerticalAlignment="Top" Width="150" TabIndex="6" Height="30"/>
+        <Button x:Name="btnApprove" Content="Approve" HorizontalAlignment="Left" Margin="217,414,0,0" VerticalAlignment="Top" Width="150" TabIndex="6" Height="30" Click="btnApprove_Click"/>
         <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="409,414,0,0" VerticalAlignment="Top" Width="150" TabIndex="7" Height="30" Click="btnClear_Click"/>
         <Label x:Name="lblTitle" Content="Membership Sales Quote" HorizontalAlignment="Left" Margin="92,7,0,0" VerticalAlignment="Top" Foreground="#FFF5EBEB" Height="60" Width="372" FontSize="30"/>
         <TextBlock x:Name="txtbDescription" HorizontalAlignment="Left" Margin="92,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="73" Width="497" Text="Please use this form to register new members into our database. Ask the following criteria and click the &quot;Quote&quot; button. If the Quote at the bottom matches the information given to you by the potential customer, and the total is approved by the customer, click &quot;Approve&quot; to continue in the registration process." Foreground="#FFFDEBEB"/>
