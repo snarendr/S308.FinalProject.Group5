@@ -30,10 +30,11 @@ namespace FitnessClub
         public MembershipSales()
         {
             InitializeComponent();
+            //Call the method to find the available memberships for the combo box.
             AvailableMemberships();
         }
 
-
+        //create method to find the membership types that are currenlty available
         private void AvailableMemberships()
         {
 
@@ -48,22 +49,19 @@ namespace FitnessClub
                 MessageBox.Show("Error in reading available memberships from memberships data file: " + ex.Message);
             }
 
-            //Query the membership                         
+            //Query the membership list to find the memberships that are available                       
             var membershipQuery =
               from m in MembershipList
               where m.Available 
               select m;
 
-            //For the membership type that matches the selection by the user, display the current price to the user. Additionally display the availability to the user. 
+            //For the membership types that are available, add them to the combo box. 
             foreach (Membership m in membershipQuery)
             {
                 cmbMemType.Items.Add(m.Type);
             }
 
         }
-
-
-
         //Allow user to go back to the Main Menu
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)
         {
@@ -106,13 +104,50 @@ namespace FitnessClub
             }
 
             //Identify the membership type selected and store in a string
-            ComboBoxItem cbiSelectedItem = (ComboBoxItem)cmbMemType.SelectedItem;
-            string strSelection = cbiSelectedItem.Content.ToString();
+
+            string strSelection = cmbMemType.SelectedItem.Content.ToString();
 
             //Cacluate the timespan
 
 
-            
+            //Find the details for the membership type
+
+            //Read 
+            try
+            {
+                string jsonData = File.ReadAllText(strFilePath);
+                MembershipList = JsonConvert.DeserializeObject<List<Membership>>(jsonData);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in reading available memberships from memberships data file: " + ex.Message);
+            }
+
+            //Query the membership list to find the selected membership type to quote                     
+            var membershipQuery =
+              from m in MembershipList
+              where m.Type == strSelection
+              select m;
+
+            //For the membership types that are available, add them to the combo box. 
+            foreach (Membership m in membershipQuery)
+            {
+                lblMemTypeResult.Content = m.Type + "($" + m.Price + ")";
+                lblStartDateResult.Content = datStartDate.ToString();
+                lblEndDateResult.Content = datStartDate.ToString();
+            }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
             //idk about these
