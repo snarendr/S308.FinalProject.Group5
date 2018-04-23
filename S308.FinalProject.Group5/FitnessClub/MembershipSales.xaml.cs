@@ -82,15 +82,6 @@ namespace FitnessClub
             }
 
             DateTime? datStartDate = dtpStart.SelectedDate;
-            DateTime? datEndDate = dtpEnd.SelectedDate;
-
-            DateTime datTime1 = (DateTime)datStartDate;
-            DateTime datTime2 = (DateTime)datEndDate;
-            TimeSpan tspInterval = datTime2 - datTime1;
-            double dblIntvertval = tspInterval.Days;
-
-            dblIntvertval = dblIntvertval / 30;
-            dblIntvertval = Math.Ceiling(dblIntvertval);
 
             //Validate that a start date was entered
             if (datStartDate == null)
@@ -98,26 +89,37 @@ namespace FitnessClub
                 MessageBox.Show("Please select a start date to generate a quote.");
                 return;
             }
-            //Validate that an end date was entered
-            if (datEndDate == null)
-            {
-                MessageBox.Show("Please select an end date to generate a quote.");
-                return;
-            }
-            //Validate that the end date is after the start date
-            if (datStartDate > datEndDate)
-            {
-                MessageBox.Show("End date must be after the start date to generate a quote.");
-                return;
-            }
-
             //Identify the membership type selected and store in a string
 
             string strSelection = cmbMemType.SelectedItem.ToString();
+            DateTime datTime1 = (DateTime)datStartDate;
+            DateTime datTime2 = (DateTime)datStartDate;
 
-            //Cacluate the timespan
+            //Cacluate the timespan for the selected membership
+            if (strSelection == "Invidiual 12 Month" || strSelection == "Family 12 Month")
+            {
+                datTime2 = datTime1.AddYears(1);
+
+            }
+            else
+            {
+                datTime2 = datTime2.AddMonths(1);
+            }
 
             
+
+           
+           
+            TimeSpan tspInterval = datTime2 - datTime1;
+            double dblIntvertval = tspInterval.Days;
+
+                
+            
+
+            dblIntvertval = dblIntvertval / 30;
+            dblIntvertval = Math.Ceiling(dblIntvertval);
+
+
             //Find the details for the membership type
 
             //Read 
@@ -141,8 +143,8 @@ namespace FitnessClub
             foreach (Membership m in membershipQuery)
             {
                 lblMemTypeResult.Content = m.Type + "($" + m.Price + " )";
-                lblStartDateResult.Content = datTime1.ToString();
-                lblEndDateResult.Content = datTime2.ToString();
+                lblStartDateResult.Content = datTime1.ToShortDateString();
+                lblEndDateResult.Content = datTime2.ToShortDateString();
                 lblSubtotalResult.Content = (dblIntvertval * m.Price).ToString();
 
             }
