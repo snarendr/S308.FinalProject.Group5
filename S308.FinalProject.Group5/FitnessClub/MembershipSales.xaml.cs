@@ -71,8 +71,8 @@ namespace FitnessClub
             ComboBoxItem cbiSelectedItem = (ComboBoxItem)cmbMemType.SelectedItem;
             string strSelection = cbiSelectedItem.Content.ToString();
 
-            //Identify any additional features selected for the quote
-           
+            //Cacluate the timespan
+
 
             
 

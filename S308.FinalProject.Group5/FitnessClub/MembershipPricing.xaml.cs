@@ -31,30 +31,27 @@ namespace FitnessClub
         public MembershipPricing()
         {
             InitializeComponent();
-            //Reset the the update price text box and the radio buttons. 
+            //Call method to clear the form 
+            ClearForm();
+        }
+        //Delcare method to reset the the update price text box and the radio buttons. 
+        private void ClearForm()
+        {
             txbUpdatePrice.Text = "";
             rdbOffered.IsChecked = false;
             rdbNotOffered.IsChecked = false;
+            cmbMembershipType.SelectedIndex = 0;
         }
-        //
+        //Display the current price and availability the membership selected by the user. 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
-
-            //Reset the the update price text box and the radio buttons. 
-            txbUpdatePrice.Text = "";
-            rdbOffered.IsChecked = false;
-            rdbNotOffered.IsChecked = false;
-
+ 
             //Validate that the user has a selected a memebership type
             if (cmbMembershipType.SelectedIndex == 0)
             {
                 MessageBox.Show("Please select a membership type to modify.");
                 return;
             }
-
-            //Store the comobo box selection in a string variable
-            ComboBoxItem cbiMembershipType = (ComboBoxItem)cmbMembershipType.SelectedItem;
-            string strMembershipType = cbiMembershipType.Content.ToString();
 
             //Read membership json file to fill the membership list with the current membership data
             try
@@ -67,13 +64,17 @@ namespace FitnessClub
                 MessageBox.Show("Error in import process: " + ex.Message);
             }
 
+            //Store the comobo box selection in a string variable
+            ComboBoxItem cbiMembershipType = (ComboBoxItem)cmbMembershipType.SelectedItem;
+            string strMembershipType = cbiMembershipType.Content.ToString();
+
             //Query the membership data and find the membership type that matches the selection from the user                              
             var membershipQuery =
               from m in MembershipList
               where (m.Type) == strMembershipType
               select m;
 
-            //For the membership type that matches the selection by the user, dispaly the current price to the user. Additionally select the radio button that matches the availability of the selected membership. 
+            //For the membership type that matches the selection by the user, display the current price to the user. Additionally display the availability to the user. 
             foreach (Membership m in membershipQuery)
             {
                 txbCurrentPrice.Text = m.Price.ToString("C2");
@@ -89,8 +90,13 @@ namespace FitnessClub
             //Display the selected membership type to the user
             txbSelectedMembership.Text = strMembershipType;
 
-        }
+            //Clear any update information
+            txbUpdatePrice.Text = "";
+            rdbOffered.IsChecked = false;
+            rdbNotOffered.IsChecked = false;
 
+        }
+        //Return the user to the main menu
         private void btnMainMenu_Click_1(object sender, RoutedEventArgs e)
         {
             MainMenu MainMenuWindow = new MainMenu();
@@ -214,8 +220,6 @@ namespace FitnessClub
             txbUpdatePrice.Text = "";
             rdbNotOffered.IsChecked = false;
             rdbOffered.IsChecked = false;
-
-
         }
     }
 }
