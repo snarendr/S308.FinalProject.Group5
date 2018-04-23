@@ -84,6 +84,14 @@ namespace FitnessClub
             DateTime? datStartDate = dtpStart.SelectedDate;
             DateTime? datEndDate = dtpEnd.SelectedDate;
 
+            DateTime datTime1 = (DateTime)datStartDate;
+            DateTime datTime2 = (DateTime)datEndDate;
+            TimeSpan tspInterval = datTime2 - datTime1;
+            double dblIntvertval = tspInterval.Days;
+
+            dblIntvertval = dblIntvertval / 30;
+            dblIntvertval = Math.Ceiling(dblIntvertval);
+
             //Validate that a start date was entered
             if (datStartDate == null)
             {
@@ -105,11 +113,11 @@ namespace FitnessClub
 
             //Identify the membership type selected and store in a string
 
-            string strSelection = cmbMemType.SelectedItem.Content.ToString();
+            string strSelection = cmbMemType.SelectedItem.ToString();
 
             //Cacluate the timespan
 
-
+            
             //Find the details for the membership type
 
             //Read 
@@ -132,9 +140,11 @@ namespace FitnessClub
             //For the membership types that are available, add them to the combo box. 
             foreach (Membership m in membershipQuery)
             {
-                lblMemTypeResult.Content = m.Type + "($" + m.Price + ")";
-                lblStartDateResult.Content = datStartDate.ToString();
-                lblEndDateResult.Content = datStartDate.ToString();
+                lblMemTypeResult.Content = m.Type + "($" + m.Price + " )";
+                lblStartDateResult.Content = datTime1.ToString();
+                lblEndDateResult.Content = datTime2.ToString();
+                lblSubtotalResult.Content = (dblIntvertval * m.Price).ToString();
+
             }
 
 
@@ -151,9 +161,7 @@ namespace FitnessClub
 
 
             //idk about these
-            DateTime datTime1 = (DateTime)datStartDate;
-            DateTime datTime2 = (DateTime)datEndDate;
-            TimeSpan? tspInterval = datEndDate - datStartDate;
+          
 
             
         }
