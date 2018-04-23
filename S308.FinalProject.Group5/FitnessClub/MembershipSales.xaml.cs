@@ -33,11 +33,11 @@ namespace FitnessClub
         public MembershipSales()
         {
             InitializeComponent();
-            //Call the method to find the available memberships for the combo box.
+            //Call the method to find the available memberships for the combo box
             AvailableMemberships();
         }
 
-        //create method to find the membership types that are currenlty available
+        //Create method to find the membership types that are currenlty available
         private void AvailableMemberships()
         {
 
@@ -84,6 +84,7 @@ namespace FitnessClub
                 return;
             }
 
+            //Declare variable to store the start date
             DateTime? datStartDate = dtpStart.SelectedDate;
 
             //Validate that a start date was entered
@@ -93,8 +94,9 @@ namespace FitnessClub
                 return;
             }
             //Identify the membership type selected and store in a string
-
             string strSelection = cmbMemType.SelectedItem.ToString();
+
+            //Convert date and time
             DateTime datTime1 = (DateTime)datStartDate;
             DateTime datTime2 = (DateTime)datStartDate;
 
@@ -109,20 +111,17 @@ namespace FitnessClub
                 datTime2 = datTime2.AddMonths(1);
             }
 
-            
-
-           
-           
+               
             TimeSpan tspInterval = datTime2 - datTime1;
             double dblIntvertval = tspInterval.Days;
 
                 
             
 
-            dblIntvertval = dblIntvertval / 30;
-            dblIntvertval = Math.Ceiling(dblIntvertval);
+            dblintvertval = dblintvertval / 30;
+            dblintvertval = math.ceiling(dblIntvertval);
 
-            double dblFeatureCost = 0;
+            double dblFeatureCost = 0
             string strFeatures = "";
 
             if(chbTraining.IsChecked == true)
