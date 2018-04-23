@@ -20,7 +20,7 @@
             <ComboBoxItem x:Name="cbiSelectMembership" Content="Please select a membership type" HorizontalAlignment="Left" Width="196" IsSelected="True"/>
         </ComboBox>
         <DatePicker x:Name="dtpStart" HorizontalAlignment="Left" Margin="98,199,0,0" VerticalAlignment="Top" Height="26" Width="114" TabIndex="1"/>
-        <CheckBox x:Name="chbTraining" Content="Training" HorizontalAlignment="Left" Margin="516,190,0,0" VerticalAlignment="Top" Foreground="White" Height="16" Width="70" TabIndex="3" IsChecked="True"/>
+        <CheckBox x:Name="chbTraining" Content="Training" HorizontalAlignment="Left" Margin="516,190,0,0" VerticalAlignment="Top" Foreground="White" Height="16" Width="70" TabIndex="3"/>
         <CheckBox x:Name="chbLockRental" Content="Locker Rental" HorizontalAlignment="Left" Margin="605,190,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.205,0.454" Foreground="White" Height="16" Width="101" TabIndex="4"/>
         <Label x:Name="lblMemTypeResHead" Content="Membership Type:" HorizontalAlignment="Left" Margin="46,285,0,0" VerticalAlignment="Top" Foreground="White" Height="42" Width="178"/>
         <Label x:Name="lblStartDateResHead" Content="Start Date:" HorizontalAlignment="Left" Margin="46,316,0,0" VerticalAlignment="Top" Foreground="White" Height="41" Width="109"/>
