@@ -97,34 +97,31 @@ namespace FitnessClub
             string strSelection = cmbMemType.SelectedItem.ToString();
 
             //Convert date and time
-            DateTime datTime1 = (DateTime)datStartDate;
-            DateTime datTime2 = (DateTime)datStartDate;
+            DateTime datStartTime = (DateTime)datStartDate;
 
+            //Declare End Date Variable
+            DateTime datEndTime;
+
+            //Declare variable to store number of membership months
+            byte bytMonths = 0;
+           
             //Cacluate the timespan for the selected membership
             if (strSelection == "Individual 12 Month" || strSelection == "Family 12 Month")
             {
-                datTime2 = datTime1.AddYears(1);
+                datEndTime = datStartTime.AddYears(1);
+                bytMonths = 12;
 
             }
             else
             {
-                datTime2 = datTime2.AddMonths(1);
+                datEndTime = datStartTime.AddMonths(1);
+                bytMonths = 1;
             }
 
-               
-            TimeSpan tspInterval = datTime2 - datTime1;
-            double dblIntvertval = tspInterval.Days;
-
-                
-            
-
-            dblintvertval = dblintvertval / 30;
-            dblintvertval = math.ceiling(dblIntvertval);
-
-            double dblFeatureCost = 0
+            double dblFeatureCost = 0;
             string strFeatures = "";
 
-            if(chbTraining.IsChecked == true)
+            if (chbTraining.IsChecked == true)
             {
                 try
                 {
@@ -148,8 +145,7 @@ namespace FitnessClub
                     strFeatures += f.Type + " ($" + f.price + "/month)";
 
                 }
-
-
+            }
 
                 if (chbLockRental.IsChecked == true)
                 {
@@ -176,13 +172,6 @@ namespace FitnessClub
                     }
                 }
 
-
-               
-
-
-                }
-
-
             //Find the details for the membership type
 
             //Read 
@@ -206,31 +195,14 @@ namespace FitnessClub
             foreach (Membership m in membershipQuery)
             {
                 lblMemTypeResult.Content = m.Type + " ($" + m.Price + ")";
-                lblStartDateResult.Content = datTime1.ToShortDateString();
-                lblEndDateResult.Content = datTime2.ToShortDateString();
-                lblSubtotalResult.Content = (dblIntvertval * m.Price).ToString("C2");
-                lblTotalResult.Content = ((dblIntvertval * m.Price) + (dblFeatureCost * dblIntvertval)).ToString("C2");
+                lblStartDateResult.Content = datStartTime.ToShortDateString();
+                lblEndDateResult.Content = datEndTime.ToShortDateString();
+                lblSubtotalResult.Content = (bytMonths * m.Price).ToString("C2");
+                lblTotalResult.Content = ((bytMonths * m.Price) + (dblFeatureCost * bytMonths)).ToString("C2");
 
             }
 
             lblAddFeatResult.Content = strFeatures;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            //idk about these
-          
-
             
         }
 
