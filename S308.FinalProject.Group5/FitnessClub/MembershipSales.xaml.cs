@@ -51,7 +51,7 @@ namespace FitnessClub
             //Query the membership                         
             var membershipQuery =
               from m in MembershipList
-              where (m.Available) = true
+              where m.Available 
               select m;
 
             //For the membership type that matches the selection by the user, display the current price to the user. Additionally display the availability to the user. 

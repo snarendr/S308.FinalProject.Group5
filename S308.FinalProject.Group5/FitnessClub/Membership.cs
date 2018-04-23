@@ -19,14 +19,7 @@ namespace FitnessClub
             Available = true;
         }
 
-        public Membership(string type, double price, bool available)
-        {
-            Type = type;
-            Price = price;
-            Available = available;
-        }
-            
-
+           
 
         
     }
