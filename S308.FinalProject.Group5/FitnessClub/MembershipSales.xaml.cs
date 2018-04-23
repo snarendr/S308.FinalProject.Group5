@@ -197,8 +197,8 @@ namespace FitnessClub
                 lblMemTypeResult.Content = m.Type + " ($" + m.Price + ")";
                 lblStartDateResult.Content = datStartTime.ToShortDateString();
                 lblEndDateResult.Content = datEndTime.ToShortDateString();
-                lblSubtotalResult.Content = (bytMonths * m.Price).ToString("C2");
-                lblTotalResult.Content = ((bytMonths * m.Price) + (dblFeatureCost * bytMonths)).ToString("C2");
+                lblSubtotalResult.Content = (m.Price).ToString("C2");
+                lblTotalResult.Content = (m.Price+ (dblFeatureCost * bytMonths)).ToString("C2");
 
             }
 
