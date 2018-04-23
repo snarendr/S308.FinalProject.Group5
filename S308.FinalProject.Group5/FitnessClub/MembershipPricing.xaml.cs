@@ -96,6 +96,10 @@ namespace FitnessClub
             rdbNotOffered.IsChecked = false;
 
         }
+
+
+
+
         //Return the user to the main menu
         private void btnMainMenu_Click_1(object sender, RoutedEventArgs e)
         {
@@ -207,6 +211,7 @@ namespace FitnessClub
 
             foreach (Membership m in membershipQuery2)
             {
+                txbSelectedMembership.Text = strMembershipType;
                 txbCurrentPrice.Text = m.Price.ToString("C2");
 
                 if (m.Available)
