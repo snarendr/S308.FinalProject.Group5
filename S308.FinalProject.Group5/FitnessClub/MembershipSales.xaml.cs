@@ -42,7 +42,6 @@ namespace FitnessClub
         //Create method to find the membership types that are currently available
         private void AvailableMemberships()
         {
-
             //Read membership json file to fill the membership list with the current membership data
             try
             {
@@ -54,11 +53,10 @@ namespace FitnessClub
             {
                 MessageBox.Show("Error in reading available memberships from memberships data file: " + ex.Message);
             }
-
             //Query the membership list to find the memberships that are available                       
             var membershipAvailableQuery =
               from m in MembershipList
-              where m.Available 
+              where m.Available
               select m;
 
             //For the membership types that are available, add them to the combo box. 
@@ -66,12 +64,14 @@ namespace FitnessClub
             {
                 cmbMemType.Items.Add(m.Type);
             }
-
         }
         
         //Begin the quote measurement
         private void btnQuote_Click(object sender, RoutedEventArgs e)
         {
+
+            //Declare variable to store the start date
+            DateTime? datStartDate = dtpStart.SelectedDate;
             //Validate that a membership type was selected
 
             if (cmbMemType.SelectedIndex == 0)
@@ -79,9 +79,6 @@ namespace FitnessClub
                 MessageBox.Show("Please select a membership type to generate a quote.");
                 return;
             }
-
-            //Declare variable to store the start date
-            DateTime? datStartDate = dtpStart.SelectedDate;
 
             //Validate that a start date was entered
             if (datStartDate == null)
