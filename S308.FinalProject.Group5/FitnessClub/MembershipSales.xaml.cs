@@ -24,11 +24,13 @@ namespace FitnessClub
     /// </summary>
     public partial class MembershipSales : Window
     {
-        string strFilePath1 = @"..\..\Data\membership.json";
-        string strFilePath2 = @"..\..\Data\feature.json";
+        //Declare strings variables to store the file paths for the membership and feature json files
+        string strFilePathMembership = @"..\..\Data\membership.json";
+        string strFilePathFeature = @"..\..\Data\feature.json";
+
+        //Create lists for the membership and the feature information
         List<Membership> MembershipList = new List<Membership>();
         List<Feature> featureList = new List<Feature>();
-
 
         public MembershipSales()
         {
@@ -37,42 +39,36 @@ namespace FitnessClub
             AvailableMemberships();
         }
 
-        //Create method to find the membership types that are currenlty available
+        //Create method to find the membership types that are currently available
         private void AvailableMemberships()
         {
 
             //Read membership json file to fill the membership list with the current membership data
             try
             {
-                string jsonData = File.ReadAllText(strFilePath1);
+                string jsonData = File.ReadAllText(strFilePathMembership);
                 MembershipList = JsonConvert.DeserializeObject<List<Membership>>(jsonData);
             }
+            //Alert the user if there is an error that occurs during the read process
             catch (Exception ex)
             {
                 MessageBox.Show("Error in reading available memberships from memberships data file: " + ex.Message);
             }
 
             //Query the membership list to find the memberships that are available                       
-            var membershipQuery =
+            var membershipAvailableQuery =
               from m in MembershipList
               where m.Available 
               select m;
 
             //For the membership types that are available, add them to the combo box. 
-            foreach (Membership m in membershipQuery)
+            foreach (Membership m in membershipAvailableQuery)
             {
                 cmbMemType.Items.Add(m.Type);
             }
 
         }
-        //Allow user to go back to the Main Menu
-        private void btnMainMenu_Click(object sender, RoutedEventArgs e)
-        {
-            MainMenu MainMenuWindow = new MainMenu();
-            MainMenuWindow.Show();
-            this.Close();
-        }
-
+        
         //Begin the quote measurement
         private void btnQuote_Click(object sender, RoutedEventArgs e)
         {
@@ -93,7 +89,15 @@ namespace FitnessClub
                 MessageBox.Show("Please select a start date to generate a quote.");
                 return;
             }
-            //Identify the membership type selected and store in a string
+
+            //Validate the start date is not in the past
+            if(datStartDate < DateTime.Today)
+            {
+                MessageBox.Show("Please select a start date that is not before the present date.");
+                return;
+            }
+
+            //Identify the membership type selected and store in a string variable
             string strSelection = cmbMemType.SelectedItem.ToString();
 
             //Convert date and time
@@ -105,7 +109,7 @@ namespace FitnessClub
             //Declare variable to store number of membership months
             byte bytMonths = 0;
            
-            //Cacluate the timespan for the selected membership
+            //Cacluate the timespan for the selected membership - Either add 1 year or 1 month to the start time based on the selected membership. Store the equivalent number of months in a byte variable for usage in calculating additional feature costs. 
             if (strSelection == "Individual 12 Month" || strSelection == "Family 12 Month")
             {
                 datEndTime = datStartTime.AddYears(1);
@@ -118,27 +122,32 @@ namespace FitnessClub
                 bytMonths = 1;
             }
 
+            //Declare variables to store the feature cost and the feature names/details of the selected features
             double dblFeatureCost = 0;
             string strFeatures = "";
 
+            //If the user selected personal training feature, read the json feature file to find the price of training
             if (chbTraining.IsChecked == true)
             {
+                //Read the json feature file and deserialize the information into the feature list
                 try
                 {
-                    string jsonData = File.ReadAllText(strFilePath2);
+                    string jsonData = File.ReadAllText(strFilePathFeature);
                     featureList = JsonConvert.DeserializeObject<List<Feature>>(jsonData);
                 }
+                //Catch any errors that occur and display an error message to the user
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error in reading available memberships from memberships data file: " + ex.Message);
                 }
 
-                //Query the membership list to find the selected membership type to quote                     
+                //Query the feature list to find information pertaining to personal training               
                 var featureQuery =
                   from f in featureList
                   where f.Type == "Personal Training"
                   select f;
-
+                
+                //Find the price of the price of personal training and add the cost to the feature cost variable and add the feature name and cost to the feature string. 
                 foreach (Feature f in featureQuery)
                 {
                     dblFeatureCost += f.price;
@@ -147,45 +156,50 @@ namespace FitnessClub
                 }
             }
 
-                if (chbLockRental.IsChecked == true)
+            //If the user selected the locker rental feature, read the json feature file to find the price of locker rentals
+            if (chbLockRental.IsChecked == true)
+            {
+                //Read the json feature file and deserialize the information into the feature list
+                try
                 {
-                    try
-                    {
-                        string jsonData = File.ReadAllText(strFilePath2);
-                        featureList = JsonConvert.DeserializeObject<List<Feature>>(jsonData);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error in reading available memberships from memberships data file: " + ex.Message);
-                    }
-
-                    //Query the membership list to find the selected membership type to quote                     
-                    var featureQuery2 =
-                      from f in featureList
-                      where f.Type == "Locker Rental"
-                      select f;
-
-                    foreach (Feature f in featureQuery2)
-                    {
-                        dblFeatureCost += f.price;
-                        strFeatures += Environment.NewLine + f.Type + " ($" + f.price + "/month)";
-                    }
+                    string jsonData = File.ReadAllText(strFilePathFeature);
+                    featureList = JsonConvert.DeserializeObject<List<Feature>>(jsonData);
+                }
+                //Catch any errors that occur and display an error message to the user
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error in reading available memberships from memberships data file: " + ex.Message);
                 }
 
-            //Find the details for the membership type
+                //Query the feature list to find information pertaining to locker rentals                    
+                var featureQuery2 =
+                  from f in featureList
+                  where f.Type == "Locker Rental"
+                  select f;
 
-            //Read 
+                //Find the price of the price of locker rentals and add the cost to the current cost in the feature cost variable and add the feature name and cost to the feature string. 
+                foreach (Feature f in featureQuery2)
+                {
+                    dblFeatureCost += f.price;
+                    strFeatures += Environment.NewLine + f.Type + " ($" + f.price + "/month)";
+                }
+            }
+
+            //Find cost information for the selected the membership type
+            //Read the json feature file and deserialize the information into the membership list
             try
             {
-                string jsonData = File.ReadAllText(strFilePath1);
+                string jsonData = File.ReadAllText(strFilePathFeature);
                 MembershipList = JsonConvert.DeserializeObject<List<Membership>>(jsonData);
             }
+
+            //Catch any errors that occur and display an error message to the user
             catch (Exception ex)
             {
                 MessageBox.Show("Error in reading available memberships from memberships data file: " + ex.Message);
             }
 
-            //Query the membership list to find the selected membership type to quote                     
+            //Query the membership list to find the selected membership type                     
             var membershipQuery =
               from m in MembershipList
               where m.Type == strSelection
@@ -198,12 +212,14 @@ namespace FitnessClub
                 lblStartDateResult.Content = datStartTime.ToShortDateString();
                 lblEndDateResult.Content = datEndTime.ToShortDateString();
                 lblSubtotalResult.Content = (m.Price).ToString("C2");
-                lblTotalResult.Content = (m.Price+ (dblFeatureCost * bytMonths)).ToString("C2");
+                lblTotalResult.Content = (m.Price + (dblFeatureCost * bytMonths)).ToString("C2");
 
             }
 
             lblAddFeatResult.Content = strFeatures;
-            
+
+
+
         }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
@@ -236,6 +252,14 @@ namespace FitnessClub
 
             MembershipRegistration MembershipRegistrationWindow = new MembershipRegistration();
             MembershipRegistrationWindow.Show();
+        }
+
+        //Allow user to go back to the Main Menu
+        private void btnMainMenu_Click(object sender, RoutedEventArgs e)
+        {
+            MainMenu MainMenuWindow = new MainMenu();
+            MainMenuWindow.Show();
+            this.Close();
         }
     }
 }
