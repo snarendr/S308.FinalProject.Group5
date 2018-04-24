@@ -142,7 +142,7 @@ namespace FitnessClub
                 //Query the feature list to find information pertaining to personal training               
                 var featureQuery =
                   from f in featureList
-                  where f.Type == "Personal Training"
+                  where f.Type == "Personal Training Plan"
                   select f;
                 
                 //Find the price of the price of personal training and add the cost to the feature cost variable and add the feature name and cost to the feature string. 
