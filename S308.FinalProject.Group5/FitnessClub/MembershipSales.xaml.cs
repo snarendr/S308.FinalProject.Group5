@@ -126,7 +126,7 @@ namespace FitnessClub
             double dblFeatureCost = 0;
             string strFeatures = "";
 
-            //If the user selected personal training feature, read the json feature file to find the price of training
+            //If the user selected the personal training feature, read the json feature file to find the price of training
             if (chbTraining.IsChecked == true)
             {
                 //Read the json feature file and deserialize the information into the feature list
@@ -189,7 +189,7 @@ namespace FitnessClub
             //Read the json feature file and deserialize the information into the membership list
             try
             {
-                string jsonData = File.ReadAllText(strFilePathFeature);
+                string jsonData = File.ReadAllText(strFilePathMembership);
                 MembershipList = JsonConvert.DeserializeObject<List<Membership>>(jsonData);
             }
 
@@ -218,16 +218,15 @@ namespace FitnessClub
 
             lblAddFeatResult.Content = strFeatures;
 
-
-
         }
 
+        //Call clear form method is user selects clear button
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
             ClearForm();
         }
 
-
+        //Clear all form content and reset user selection options
         private void ClearForm()
         {
             cmbMemType.SelectedIndex = 0;
@@ -242,6 +241,7 @@ namespace FitnessClub
             lblTotalResult.Content = "";
         }
 
+        //User selects generate quote button
         private void btnApprove_Click(object sender, RoutedEventArgs e)
         {
             if(lblMemTypeResult.Content == "" || lblStartDate.Content == "" || lblEndDateResult.Content == "" || lblSubtotalResult.Content == "" || lblTotalResult.Content == "")
