@@ -65,7 +65,7 @@ namespace FitnessClub
 
             //Store the comobo box selection in a string variable
             ComboBoxItem cbiFeatureType = (ComboBoxItem)cmbSelectFeatures.SelectedItem;
-            string strFeatureType = cbiSelectFeature.Content.ToString();
+            string strFeatureType = cbiFeatureType.Content.ToString();
 
             //Query the feature list and find the feature type that matches the selection from the user                              
             var featureQuery =
@@ -79,6 +79,78 @@ namespace FitnessClub
                 txbSelectedFeature.Text = f.Type;
                 txbCurrentPrice.Text = f.price.ToString("C2");
             }
+        }
+
+
+
+
+        //User selects update button
+        private void btnUpdatePrice_Click(object sender, RoutedEventArgs e)
+        {
+
+            //Validate that the user has selected a membership type to modify
+            if (cmbSelectFeatures.SelectedIndex == 0)
+            {
+                MessageBox.Show("Please select a feature type to modify.");
+                return;
+            }
+
+            //Find the selected feature type from the user and store the selected feature type as a string in a variable. 
+            ComboBoxItem cbiFeatureType;
+            cbiFeatureType = (ComboBoxItem)cmbSelectFeatures.SelectedItem;
+            string strFeatureType = cbiFeatureType.Content.ToString();
+
+            //Validate that the user has entered an updated price
+            if (txbUpdatePrice.Text == "")
+            {
+                MessageBox.Show("Please enter an updated price.");
+                return;
+            }
+
+            //Declare a double variable to store the updated price from the user
+            double dblUpdatePrice = Convert.ToDouble(txbUpdatePrice.Text);
+
+            //Run a qeuery to find the feature in the feature list that matches the feature selected by the user
+            var featureQuery =
+             from f in FeatureList
+             where (f.Type) == strFeatureType
+             select f;
+
+            //For the membership selected by the user, update the availability as stored in the bool variable and the price as stored in the double variable. 
+            foreach (Feature f in featureQuery)
+            {
+                f.price = dblUpdatePrice;
+            }
+
+
+            //Serialize the updated feature list and overwrite the json file with the updated feature information. Tell the user the feature details have been updated. 
+            try
+            {
+                string jsonData = JsonConvert.SerializeObject(FeatureList);
+                System.IO.File.WriteAllText(strFilePath, jsonData);
+                MessageBox.Show(strFeatureType + " details have been updated.");
+            }
+            //If an export error occurs, notify the user with an error message. 
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in export process " + ex.Message);
+            }
+
+            //Run query to find the membership that was updated from the membership list
+            var featurepNewInformation =
+             from f in FeatureList
+             where (f.Type) == strFeatureType
+             select f;
+
+            //For the updated membership, display the now current price and availability to the user
+            foreach (Feature f in featurepNewInformation)
+            {
+                txbSelectedFeature.Text = strFeatureType;
+                txbCurrentPrice.Text = f.price.ToString("C2");
+            }
+            //Clear the update price textbox
+            txbUpdatePrice.Text = "";
+
         }
 
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)

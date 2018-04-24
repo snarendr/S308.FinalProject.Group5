@@ -1,7 +1,1 @@
-[{
-    "Type": "Personal Training Plan",
-    "Price": "5.00"
-}, {
-    "Type": "Locker Rental",
-    "Price": "1.00"
-}]
+[{"Type":"Personal Training Plan","price":5.1},{"Type":"Locker Rental","price":100.0}]
