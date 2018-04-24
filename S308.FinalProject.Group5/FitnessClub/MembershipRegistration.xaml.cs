@@ -85,6 +85,7 @@ namespace FitnessClub
             }
 
             //add results to membership database
+            //newmemberinformation json file edits
 
         }
     } }
