@@ -51,12 +51,40 @@ namespace FitnessClub
             strEmail = txtEmail.Text;
             strCCNum = txtCredCardNum.Text;
             strPhone = txtPhone.Text;
-
+            
 
             //validate inputs
             if (strFirstName == "" || strLastName == "" || strEmail == "" || strCCNum == "" || strPhone == "") ;
             {
                 MessageBox.Show("Please fill out all information (First Name, Last Name, Email, Phone, Credit Card Number");
+                return;
             }
+
+            if (!int.TryParse(txtAge.Text, out intAge)) ;
+            {
+                MessageBox.Show("Please enter a number for Age");
+                return;
+            }
+
+            if (!int.TryParse(txtWeight.Text, out intWeight)) ;
+            {
+                MessageBox.Show("Please enter a number for Weight");
+                return;
+            }
+
+            if (cmbCredCardType.SelectedIndex == -1) ;
+            {
+                MessageBox.Show("Please select a credit card type");
+                return;
+               
+            }
+
+            if (rdbMale.IsChecked == false && rdbFemale.IsChecked == false && rdbNotProvided.IsChecked == false);
+            {
+                MessageBox.Show("Please select a gender");
+            }
+
+            //add results to membership database
+
         }
     } }
