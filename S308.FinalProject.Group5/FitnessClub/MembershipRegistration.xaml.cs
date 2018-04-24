@@ -38,5 +38,25 @@ namespace FitnessClub
             MemberShipSalesWindow.Show();
             this.Close();
         }
-    }
-}
+
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        {
+            string strFirstName, strLastName, strEmail, strCCNum, strPhone;
+            int intAge, intWeight;
+
+            //place inputs into variables
+
+            strFirstName = txtFirstName.Text;
+            strLastName = txtLastName.Text;
+            strEmail = txtEmail.Text;
+            strCCNum = txtCredCardNum.Text;
+            strPhone = txtPhone.Text;
+
+
+            //validate inputs
+            if (strFirstName == "" || strLastName == "" || strEmail == "" || strCCNum == "" || strPhone == "") ;
+            {
+                MessageBox.Show("Please fill out all information (First Name, Last Name, Email, Phone, Credit Card Number");
+            }
+        }
+    } }
