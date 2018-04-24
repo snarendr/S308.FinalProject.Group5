@@ -14,6 +14,12 @@
         <Image x:Name="imgMSN" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Source="Images/MSNLogo.png"/>
         <ComboBox x:Name="cmbMembershipType" HorizontalAlignment="Left" Margin="316,198,0,0" VerticalAlignment="Top" Width="225" TabIndex="0">
             <ComboBoxItem x:Name="cbiSelectMembership" Content="Please select a membership type" IsSelected="True"/>
+            <ComboBoxItem Content="Individual 1 Month"/>
+            <ComboBoxItem Content="Individual 12 Month"/>
+            <ComboBoxItem Content="Two Person 1 Month"/>
+            <ComboBoxItem Content="Two Person 12 Month"/>
+            <ComboBoxItem Content="Family 1 Month"/>
+            <ComboBoxItem Content="Family 12 Month"/>
         </ComboBox>
         <Label x:Name="lblMembershipType" Content="Select Membership Type:" HorizontalAlignment="Left" Margin="168,194,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="316,240,0,0" VerticalAlignment="Top" Width="100" TabIndex="1" Height="30" Click="btnSubmit_Click"/>

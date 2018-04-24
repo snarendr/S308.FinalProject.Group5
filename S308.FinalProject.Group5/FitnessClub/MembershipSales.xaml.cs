@@ -53,6 +53,7 @@ namespace FitnessClub
             {
                 MessageBox.Show("Error in reading available memberships from memberships data file: " + ex.Message);
             }
+
             //Query the membership list to find the memberships that are available                       
             var membershipAvailableQuery =
               from m in MembershipList
@@ -148,7 +149,7 @@ namespace FitnessClub
                 foreach (Feature f in featureQuery)
                 {
                     dblFeatureCost += f.price;
-                    strFeatures += f.Type + " ($" + f.price + "/month)";
+                    strFeatures += f.Type + " ($" + f.price + "/month)" + Environment.NewLine;
 
                 }
             }
@@ -178,7 +179,7 @@ namespace FitnessClub
                 foreach (Feature f in featureQuery2)
                 {
                     dblFeatureCost += f.price;
-                    strFeatures += Environment.NewLine + f.Type + " ($" + f.price + "/month)";
+                    strFeatures += f.Type + " ($" + f.price + "/month)";
                 }
             }
 

@@ -90,47 +90,44 @@ namespace FitnessClub
             //Display the selected membership type to the user
             txbSelectedMembership.Text = strMembershipType;
 
-            //Clear any update information
+            //Clear any update information that is currently in the form
             txbUpdatePrice.Text = "";
             rdbOffered.IsChecked = false;
             rdbNotOffered.IsChecked = false;
 
         }
 
-
-
-
-        //Return the user to the main menu
-        private void btnMainMenu_Click_1(object sender, RoutedEventArgs e)
-        {
-            MainMenu MainMenuWindow = new MainMenu();
-            MainMenuWindow.Show();
-            this.Close();
-        }
-
+        //User selects update membership button
         private void btnUpdatePrice_Click(object sender, RoutedEventArgs e)
         {
+            //Validate that the user has selected a membership type to modify
             if (cmbMembershipType.SelectedIndex == 0)
             {
                 MessageBox.Show("Please select a membership type to modify.");
                 return;
             }
 
+            //Find the selected membership type from the user and store the selected membership type as a string in a variable. 
             ComboBoxItem cbiMembershipType;
             cbiMembershipType = (ComboBoxItem)cmbMembershipType.SelectedItem;
             string strMembershipType = cbiMembershipType.Content.ToString();
 
-
+            //Validate that the user has entered an updated price and/or selected an availability option
             if (txbUpdatePrice.Text == "" && rdbOffered.IsChecked == false && rdbNotOffered.IsChecked == false)
             {
                 MessageBox.Show("Please enter a price or select an availability option.");
                 return;
             }
 
+            //If user has updated the price and selected an availability option, execute the below code
             if(txbUpdatePrice.Text != "" && (rdbOffered.IsChecked == true || rdbNotOffered.IsChecked == true))
             {
+                //Declare double variable and store the updated price from the user. 
                 double dblUpdatePrice = Convert.ToDouble(txbUpdatePrice.Text);
+                
+                //Create bool variable to store the user selection for memebership availability
                 bool bolOffered;
+                //If the offered option was checked, set the bool variable as true, otherwise set the bool variable as false
                 if (rdbOffered.IsChecked == true)
                 {
                     bolOffered = true;
@@ -138,12 +135,14 @@ namespace FitnessClub
                 }
                 else
                     bolOffered = false;
-
+                
+                //Run a qeuery to find the membership in the membership list that matches the membership selected by the user
                 var membershipQuery =
                  from m in MembershipList
                  where (m.Type) == strMembershipType
                  select m;
 
+                //For the membership selected by the user, update the availability as stored in the bool variable and the price as stored in the double variable. 
                 foreach (Membership m in membershipQuery)
                 {
                     m.Available = bolOffered;
@@ -151,10 +150,12 @@ namespace FitnessClub
                 }
 
             }
-
+            //If the user has not entered an updated price, an availability option must have been selected based on previous validation. Run the below code to update the membership availability. 
             if (txbUpdatePrice.Text == "")
             {
+                //Create bool variable to store the user selection for memebership availability
                 bool bolOffered;
+                //If the offered option was checked, set the bool variable as true, otherwise set the bool variable as false
                 if (rdbOffered.IsChecked == true)
                 {
                     bolOffered = true;
@@ -163,11 +164,12 @@ namespace FitnessClub
                 else
                     bolOffered = false;
 
+                //Run a qeuery to find the membership in the membership list that matches the membership selected by the user
                 var membershipQuery =
                  from m in MembershipList
                  where (m.Type) == strMembershipType
                  select m;
-
+                //For the membership selected by the user, update the availability as stored in the bool variable. 
                 foreach (Membership m in membershipQuery)
                 {
                     m.Available = bolOffered;
@@ -175,41 +177,47 @@ namespace FitnessClub
 
             }
 
+            //If the user selected an availability option, an update price must have been entered based on previous validation. Execute the following code to only update the price. 
             if (rdbOffered.IsChecked == false && rdbNotOffered.IsChecked == false)
             {
+                //Declare double variable and store the updated price from the user. 
                 double dblUpdatePrice = Convert.ToDouble(txbUpdatePrice.Text);
 
+                //Run a qeuery to find the membership in the membership list that matches the membership selected by the user
                 var membershipQuery =
                  from m in MembershipList
                  where (m.Type) == strMembershipType
                  select m;
 
+                //For the membership selected by the user, update the update as stored the price variable. 
                 foreach (Membership m in membershipQuery)
                 {
                     m.Price = dblUpdatePrice;
 
                 }
-            
             }
-             
+            
+            //Serialize the updated membership list and overwrite the json file with the updated membership information. Tell the user the membership details have been updated. 
             try
             {
                 string jsonData = JsonConvert.SerializeObject(MembershipList);
                 System.IO.File.WriteAllText(strFilePath, jsonData);
                 MessageBox.Show(strMembershipType + " details have been updated.");
             }
-
+            //If an export error occurs, notify the user with an error message. 
             catch (Exception ex)
             {
                 MessageBox.Show("Error in export process " + ex.Message);
             }
 
-            var membershipQuery2 =
+            //Run query to find the membership that was updated from the membership list
+            var membershipNewInformation =
              from m in MembershipList
              where (m.Type) == strMembershipType
              select m;
 
-            foreach (Membership m in membershipQuery2)
+            //For the updated membership, display the now current price and availability to the user
+            foreach (Membership m in membershipNewInformation)
             {
                 txbSelectedMembership.Text = strMembershipType;
                 txbCurrentPrice.Text = m.Price.ToString("C2");
@@ -221,10 +229,18 @@ namespace FitnessClub
                 else
                 txbCurrentAvailability.Text = "Not Available";
             }
-
+            //Reset the update price and availability options
             txbUpdatePrice.Text = "";
             rdbNotOffered.IsChecked = false;
             rdbOffered.IsChecked = false;
+        }
+
+        //Return the user to the main menu
+        private void btnMainMenu_Click_1(object sender, RoutedEventArgs e)
+        {
+            MainMenu MainMenuWindow = new MainMenu();
+            MainMenuWindow.Show();
+            this.Close();
         }
     }
 }
