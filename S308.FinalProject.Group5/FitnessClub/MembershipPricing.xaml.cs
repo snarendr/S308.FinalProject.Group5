@@ -34,7 +34,7 @@ namespace FitnessClub
             //Call method to clear the form 
             ClearForm();
         }
-        //Delcare method to reset the the update price text box and the radio buttons. 
+        //Delcare method to reset the the update price text box, combo box, and the radio buttons. 
         private void ClearForm()
         {
             txbUpdatePrice.Text = "";
