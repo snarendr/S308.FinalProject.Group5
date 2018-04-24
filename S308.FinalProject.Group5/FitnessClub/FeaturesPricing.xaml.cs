@@ -42,6 +42,7 @@ namespace FitnessClub
             cmbSelectFeatures.SelectedIndex = 0;
         }
 
+        //User selects the submit button
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
             if (cmbSelectFeatures.SelectedIndex == 0)
@@ -66,15 +67,16 @@ namespace FitnessClub
             ComboBoxItem cbiFeatureType = (ComboBoxItem)cmbSelectFeatures.SelectedItem;
             string strFeatureType = cbiSelectFeature.Content.ToString();
 
-            //Query the membership data and find the membership type that matches the selection from the user                              
+            //Query the feature list and find the feature type that matches the selection from the user                              
             var featureQuery =
               from f in FeatureList
               where (f.Type) == strFeatureType
               select f;
 
-            //For the membership type that matches the selection by the user, display the current price to the user. Additionally display the availability to the user. 
+            //For the feature type that matches the selection by the user, display the current price to the user.
             foreach (Feature f in featureQuery)
             {
+                txbSelectedFeature.Text = f.Type;
                 txbCurrentPrice.Text = f.price.ToString("C2");
             }
         }
