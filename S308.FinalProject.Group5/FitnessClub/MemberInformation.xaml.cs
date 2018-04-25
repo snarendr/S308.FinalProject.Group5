@@ -35,12 +35,10 @@ namespace FitnessClub
         {
             List<MembersInformation> lstMembersInformation = new List<MembersInformation>();
 
-            // string strFilePath = @"..\..\Data\MembersInformation.json";
 
             string strFilePath = @"..\..\Data\MembersInformation.json";
             try
             {
-                //StreamReader reader = new StreamReader(strFilePath);
                 string jsonData = File.ReadAllText(strFilePath);
 
                 lstMembersInformation = JsonConvert.DeserializeObject<List<MembersInformation>>(jsonData);
@@ -74,24 +72,31 @@ namespace FitnessClub
             string strEmail = txtEmailInput.Text.Trim();
             if (strEmail == "")
             {
-                MessageBox.Show("Please enter an email");
+                MessageBox.Show("Your search will be better with a correctly formatted email");
             }
             //Getting input from phone number and validating 
             string strPhoneNumber = txtPhoneNumberInput.Text.Trim();
             if (strPhoneNumber == "")
             {
-                MessageBox.Show("Please enter an email");
+                MessageBox.Show("Your seach will be better with a correctly formated phone number");
             }
+            //Further validating
+          //  if((txtEmailInput.Text.Trim() == "") && (txtLastNameInput.Text.Trim() = "") && (txtPhoneNumberInput.Text.Trim() = ""))
+          //  {
+            //    MessageBox.Show("You need to enter atleast 1 of the criteria");
+
+           // }
             txtDetails.Text = "";
             lbxResults.Items.Clear();
 
-            //Start of query, not finished yet. 
             memberInformationSearch = memberIndex.Where(m =>
                 m.LastName == strLastName).ToList();
              
            foreach (MembersInformation m in memberInformationSearch)
             {
-                lbxResults.Items.Add(m.LastName.ToString()); 
+                lbxResults.Items.Add(m.LastName.ToString());
+                if (lbxResults.Items.Count < 1)
+                    MessageBox.Show("No one was found on your search.");
 
             }
 
@@ -123,6 +128,9 @@ namespace FitnessClub
             txtLastNameInput.Text = "";
             txtEmailInput.Text = "";
             txtPhoneNumberInput.Text = "";
+            txtDetails.Text = "";
+            lbxResults.Items.Clear();
+
         }
 
 
