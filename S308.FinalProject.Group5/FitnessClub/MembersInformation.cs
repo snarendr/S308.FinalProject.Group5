@@ -68,15 +68,15 @@ namespace FitnessClub
                 + "Last Name: " + LastName + Environment.NewLine
                 + "Start Date: " + StartDate + Environment.NewLine
                 + "End Date: " + EndDate + Environment.NewLine
-                + "Cost: " + Cost + Environment.NewLine
-                + "Sub Total: " + SubTotal + Environment.NewLine
+                + "Cost: " + Cost.ToString() + Environment.NewLine
+                + "Sub Total: " + SubTotal.ToString() + Environment.NewLine
                 + "Features: " + Features + Environment.NewLine
-                + "Total Cost: " + TotalCost + Environment.NewLine
+                + "Total Cost: " + TotalCost.ToString() + Environment.NewLine
                 + "Expiration Date: " + ExpirationDate + Environment.NewLine
                 + "Phone Number " + PhoneNumber + Environment.NewLine
                 + "Email " + Email + Environment.NewLine
                 + "Gender " + Gender + Environment.NewLine
-                + "Weight " + Weight;
+                + "Weight " + Weight.ToString();
         }
 
     }
