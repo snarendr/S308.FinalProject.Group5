@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.BindingSource;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -44,6 +45,7 @@ namespace FitnessClub
                 //Not sure why this is throwing an error. 
                 //serialize the json data to a list of campuses
                 memberInformationList = JsonConvert.DeserializeObject<List<MembersInformation>>(jsonData);
+                Observablecollection<ItemState> itemStates = new Observablecollection<ItemState>();
             }
             catch (Exception ex)
             {
