@@ -33,5 +33,12 @@ namespace FitnessClub
             MainMenuWindow.Show();
             this.Close();
         }
+
+        private void btnClearSearch_Click(object sender, RoutedEventArgs e)
+        {
+            txtEmailInput.Text = "";
+            txtLastNameInput.Text = "";
+            txtPhoneNumberInput.Text = "";
+        }
     }
 }
