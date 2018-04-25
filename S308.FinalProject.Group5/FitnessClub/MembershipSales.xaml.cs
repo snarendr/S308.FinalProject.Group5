@@ -201,29 +201,23 @@ namespace FitnessClub
 
             //Query the membership list to find the selected membership type                     
             var membershipQuery =
-              from m in MembershipList
-              where m.Type == strSelection
-              select m;
+              from member in MembershipList
+              where member.Type == strSelection
+              select member;
 
-            //For the membership types that are available, add them to the combo box. 
-            foreach (Membership m in membershipQuery)
-            {
-                lblMemTypeResult.Content = m.Type + " ($" + m.Price + ")";
-                lblStartDateResult.Content = datStartTime.ToShortDateString();
-                lblEndDateResult.Content = datEndTime.ToShortDateString();
-                lblSubtotalResult.Content = (m.Price).ToString("C2");
-                lblTotalResult.Content = (m.Price + (dblFeatureCost * bytMonths)).ToString("C2");
+            Membership m = membershipQuery.First();
 
-            }
+            double dblSubTotal = m.Price;
+            double dblFinalTotal = (m.Price + (dblFeatureCost * bytMonths));
+            lblMemTypeResult.Content = m.Type + " ($" + m.Price + ")";
+            lblStartDateResult.Content = datStartTime.ToShortDateString();
+            lblEndDateResult.Content = datEndTime.ToShortDateString();
+            lblSubtotalResult.Content = dblSubTotal.ToString("C2");
+            lblTotalResult.Content = (m.Price + (dblFeatureCost * bytMonths)).ToString("C2");
 
             lblAddFeatResult.Content = strFeatures;
 
-            double dblSubTotal, dblFinalTotal;
-
-            dblSubTotal = Convert.ToDouble(lblSubtotalResult.Content);
-            dblFinalTotal = Convert.ToDouble(lblTotalResult.Content);
-
-            quote = new Quote(strSelection, datStartDate, datEndTime, chbTraining.IsChecked.Value, chbLockRental.IsChecked.Value,dblSubTotal,dblFinalTotal)
+            quote = new Quote(strSelection, datStartDate, datEndTime, chbTraining.IsChecked.Value, chbLockRental.IsChecked.Value, dblSubTotal, dblFinalTotal);
         }
 
         //Call clear form method is user selects clear button

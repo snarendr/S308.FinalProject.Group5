@@ -43,7 +43,7 @@ namespace FitnessClub
 
                 //Not sure why this is throwing an error. 
                 //serialize the json data to a list of campuses
-                memberList = JsonConvert.DeserializeObject<List<MembersInformation>>(jsonData);
+                memberList = JsonConvert.DeserializeObject<List<MemberInformation>>(jsonData);
             }
             catch (Exception ex)
             {
@@ -59,43 +59,46 @@ namespace FitnessClub
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-            List<MemberInformation> membersSearch;
+            //    List<MemberInformation> membersSearch;
 
-            string strLastName = txtLastNameInput.Text.Trim();
+            //    string strLastName = txtLastNameInput.Text.Trim();
 
-            string strEmail= txtEmailInput.Text.Trim();
+            //    string strEmail= txtEmailInput.Text.Trim();
 
-            string strPhoneNumber = txtPhoneNumberInput.Text.Trim();
+            //    string strPhoneNumber = txtPhoneNumberInput.Text.Trim();
 
-            //Start of query, not finished yet. 
-            membersSearch = membersIndex.Where
-          
-                
-            //set the source of the datagrid and refresh
-            //dtgMember.ItemsSource = membersSearch;
-            //dtgMember.Items.Refresh();
+            //    //Start of query, not finished yet. 
+            //    membersSearch = membersIndex.Where
 
-            //instantiate a new Campus from the input and add it to the list
-            MembersInformation campusNew = new MembersInformation(txtName.Text.Trim(), enrollment);
-            memberList.Add(MemberNew);
 
-            try
-            {
-                //serialize the new list of campuses to json format
-                string jsonData = JsonConvert.SerializeObject(memberList);
+            //    //set the source of the datagrid and refresh
+            //    //dtgMember.ItemsSource = membersSearch;
+            //    //dtgMember.Items.Refresh();
 
-                //use System.IO.File to write over the file with the json data
-                System.IO.File.WriteAllText(strFilePath, jsonData);
+            //    //instantiate a new Campus from the input and add it to the list
+            //    MembersInformation campusNew = new MembersInformation(txtName.Text.Trim(), enrollment);
+            //    memberList.Add(MemberNew);
 
-                MessageBox.Show(memberList.Count + " Cusomters have been exported.");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error in export process: " + ex.Message);
-            }
+            //    try
+            //    {
+            //        //serialize the new list of campuses to json format
+            //        string jsonData = JsonConvert.SerializeObject(memberList);
 
-            MessageBox.Show("Campus Added!" + Environment.NewLine + MemberNew.ToString());
-        
+            //        //use System.IO.File to write over the file with the json data
+            //        System.IO.File.WriteAllText(strFilePath, jsonData);
+
+            //        MessageBox.Show(memberList.Count + " Cusomters have been exported.");
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show("Error in export process: " + ex.Message);
+            //    }
+
+            //    MessageBox.Show("Campus Added!" + Environment.NewLine + MemberNew.ToString());
+
+
+        }
+
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)
         {
             MainMenu MainMenuWindow = new MainMenu();
@@ -107,7 +110,7 @@ namespace FitnessClub
         {
             txtLastNameInput.Text = "";
             txtEmailInput.Text = "";
-            txtPhoneNumberInput = "";
+            //txtPhoneNumberInput = "";
         }
     }
 }
