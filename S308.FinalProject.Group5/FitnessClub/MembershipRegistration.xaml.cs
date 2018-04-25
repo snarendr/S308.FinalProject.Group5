@@ -85,6 +85,8 @@ namespace FitnessClub
             }
 
             //add results to membership database
+
+            MembersInformation MemberNew = new MembersInformation(,strFirstName,strLastName,MembershipSales.datStartDate,MembershipSales.datEndDate,)
             //newmemberinformation json file edits
 
         }
