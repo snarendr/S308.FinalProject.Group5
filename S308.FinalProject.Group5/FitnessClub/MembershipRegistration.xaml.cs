@@ -20,8 +20,10 @@ namespace FitnessClub
     /// </summary>
     public partial class MembershipRegistration : Window
     {
-        public MembershipRegistration()
+        Quote quote;
+        public MembershipRegistration(Quote q)
         {
+            quote = q;
             InitializeComponent();
         }
 
@@ -86,7 +88,7 @@ namespace FitnessClub
 
             //add results to membership database
 
-            MembersInformation MemberNew = new MembersInformation(,strFirstName,strLastName,MembershipSales.datStartDate,MembershipSales.datEndDate,)
+            MembersInformation MemberNew = new MembersInformation(quote.MembershipType,strFirstName,strLastName,quote.StartDate.ToString(),quote.EndDate.ToString(),
             //newmemberinformation json file edits
 
         }
