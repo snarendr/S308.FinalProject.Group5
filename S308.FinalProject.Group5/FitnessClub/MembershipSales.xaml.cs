@@ -22,8 +22,10 @@ namespace FitnessClub
     /// <summary>
     /// Interaction logic for MembershipSales.xaml
     /// </summary>
+    
     public partial class MembershipSales : Window
     {
+
         //Declare strings variables to store the file paths for the membership and feature json files
         string strFilePathMembership = @"..\..\Data\membership.json";
         string strFilePathFeature = @"..\..\Data\feature.json";
@@ -31,7 +33,7 @@ namespace FitnessClub
         //Create lists for the membership and the feature information
         List<Membership> MembershipList = new List<Membership>();
         List<Feature> featureList = new List<Feature>();
-
+        Quote quote;
         public MembershipSales()
         {
             InitializeComponent();
@@ -72,7 +74,7 @@ namespace FitnessClub
         {
 
             //Declare variable to store the start date
-            DateTime? datStartDate = dtpStart.SelectedDate;
+            DateTime datStartDate = dtpStart.SelectedDate.Value;
             //Validate that a membership type was selected
 
             if (cmbMemType.SelectedIndex == 0)
@@ -99,7 +101,7 @@ namespace FitnessClub
             string strSelection = cmbMemType.SelectedItem.ToString();
 
             //Convert date and time
-            DateTime datStartTime = (DateTime)datStartDate;
+            DateTime datStartTime = datStartDate;
 
             //Declare End Date Variable
             DateTime datEndTime;
@@ -216,6 +218,8 @@ namespace FitnessClub
 
             lblAddFeatResult.Content = strFeatures;
 
+
+            quote = new Quote(strSelection, datStartDate,datEndTime, chbTraining.IsChecked.Value, chbLockRental.IsChecked.Value);
         }
 
         //Call clear form method is user selects clear button
@@ -248,7 +252,7 @@ namespace FitnessClub
                 return;
             }
 
-            MembershipRegistration MembershipRegistrationWindow = new MembershipRegistration();
+            MembershipRegistration MembershipRegistrationWindow = new MembershipRegistration(quote);
             MembershipRegistrationWindow.Show();
         }
 
