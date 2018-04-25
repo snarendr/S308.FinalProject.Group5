@@ -43,6 +43,7 @@ namespace FitnessClub
             this.Close();
         }
 
+
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
             string strFirstName, strLastName, strEmail, strCCNum, strPhone, strGender;
@@ -110,7 +111,7 @@ namespace FitnessClub
             //newmemberinformation json file edits
 
             //read the membership file
-            List<MemberInformation> MemberList;
+            List<MembersInformation> MemberList;
             string strFilePath = @"../../Data.MembersInformation.json";
             try
             {
@@ -118,7 +119,7 @@ namespace FitnessClub
                 string jsonData = reader.ReadToEnd();
                 reader.Close();
 
-                MemberList = JsonConvert.DeserializeObject<List<MemberInformation>>(jsonData);
+                MemberList = JsonConvert.DeserializeObject<List<MembersInformation>>(jsonData);
 
 
             }
@@ -126,7 +127,7 @@ namespace FitnessClub
             catch (Exception ex)
             {
                 MessageBox.Show("Error in import process: " + ex.Message);
-            } 
+            }
 
 
             //writing back to file
@@ -143,5 +144,6 @@ namespace FitnessClub
                 return;
             }
 
-    }
+
+        }
     } }

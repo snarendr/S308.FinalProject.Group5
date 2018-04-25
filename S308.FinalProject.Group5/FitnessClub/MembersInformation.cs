@@ -34,8 +34,29 @@ namespace FitnessClub
 
         public int Weight { get; set; }
 
-        public MembersInformation()
+
+        public override string ToString()
         {
+            string strResults = "Type: " + Type + Environment.NewLine;
+            strResults += "First Name: " + FirstName + Environment.NewLine;
+            strResults += "Last Name: " + LastName + Environment.NewLine;
+            strResults += "Start Date: " + StartDate + Environment.NewLine;
+            strResults += "End Date: " + EndDate + Environment.NewLine;
+            strResults += "Sub Total: " + SubTotal.ToString() + Environment.NewLine;
+            strResults += "Addtional Feature Training: " + AddFeatures_Training + Environment.NewLine;
+            strResults += "Addtional Feature Locker Rental: " + AddFeatures_LockerRental + Environment.NewLine;
+            strResults += "Total Cost: " + TotalCost.ToString() + Environment.NewLine;
+            strResults += "Phone Number: " + PhoneNumber + Environment.NewLine;
+            strResults += "Email: " + Email + Environment.NewLine;
+            strResults += "Gender: " + Gender + Environment.NewLine;
+            strResults += "Weight: " + Weight.ToString();
+            strResults += Environment.NewLine;
+
+            return strResults;
+        }
+        
+        public MembersInformation()
+       {
 
         }
 
@@ -56,24 +77,9 @@ namespace FitnessClub
             Weight = weight;
 
         }
+                        
 
-        public override string ToString()
-        {
-            return "Member: " + Environment.NewLine
-                + "Type: " + Type + Environment.NewLine
-                + "First Name: " + FirstName + Environment.NewLine
-                + "Last Name: " + LastName + Environment.NewLine
-                + "Start Date: " + StartDate + Environment.NewLine
-                + "End Date: " + EndDate + Environment.NewLine
-                + "Sub Total: " + SubTotal.ToString() + Environment.NewLine
-                + "Addtional Feature Training: " + AddFeatures_Training + Environment.NewLine
-                + "Addtional Feature Locker Rental: " + AddFeatures_LockerRental + Environment.NewLine
-                + "Total Cost: " + TotalCost.ToString() + Environment.NewLine
-                + "Phone Number " + PhoneNumber + Environment.NewLine
-                + "Email " + Email + Environment.NewLine
-                + "Gender " + Gender + Environment.NewLine
-                + "Weight " + Weight.ToString();
-        }
+
 
     }
 }
