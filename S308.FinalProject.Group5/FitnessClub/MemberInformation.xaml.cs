@@ -22,7 +22,7 @@ namespace FitnessClub
         //Creating variable to store the membership information json file
         string strFilePath = @"..\..\..\Data\MembersInformation.json";
         //Creat membership information list based on the membership information class
-        List<MemberInformation> memberList = new List<MemberInformation>();
+        List<MembersInformation> memberInformationList = new List<MembersInformation>();
 
         
         public MemberInformation()
@@ -43,51 +43,34 @@ namespace FitnessClub
 
                 //Not sure why this is throwing an error. 
                 //serialize the json data to a list of campuses
-                memberList = JsonConvert.DeserializeObject<List<membersInformation>>(jsonData);
+                memberInformationList = JsonConvert.DeserializeObject<List<MembersInformation>>(jsonData);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error in import process: " + ex.Message);
             }
 
-            List<MemberInformation> membersSearch;
+            //List<MemberInformation> memberInformationList;
 
             string strLastName = txtLastNameInput.Text.Trim();
 
-            string strEmail= txtEmailInput.Text.Trim();
+            string strEmail = txtEmailInput.Text.Trim();
 
             string strPhoneNumber = txtPhoneNumberInput.Text.Trim();
 
             //Start of query, not finished yet. 
-            var membersInformationQuery = 
-                from m in membersSearch
+            var membersInformationQuery =
+                from m in memberInformationList
+                where (m.LastName) == strLastName
+                select m;
 
-          
-                
-            //set the source of the datagrid and refresh
-            //dtgMember.ItemsSource = membersSearch;
-            //dtgMember.Items.Refresh();
-
-            //instantiate a new Campus from the input and add it to the list
-            MembersInformation campusNew = new MembersInformation(txtName.Text.Trim(), enrollment);
-            memberList.Add(MemberNew);
-
-            try
+            foreach (MembersInformation m in membersInformationQuery)
             {
-                //serialize the new list of campuses to json format
-                string jsonData = JsonConvert.SerializeObject(memberList);
-
-                //use System.IO.File to write over the file with the json data
-                System.IO.File.WriteAllText(strFilePath, jsonData);
-
-                MessageBox.Show(memberList.Count + " Cusomters have been exported.");
+                //set the source of the datagrid and refresh
+                dtgMember.ItemsSource = memberInformationList;
+                dtgMember.Items.Refresh();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error in export process: " + ex.Message);
-            }
-
-            MessageBox.Show("Campus Added!" + Environment.NewLine + MemberNew.ToString());
+        }
         
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)
         {
@@ -100,7 +83,7 @@ namespace FitnessClub
         {
             txtLastNameInput.Text = "";
             txtEmailInput.Text = "";
-            txtPhoneNumberInput = "";
+            txtPhoneNumberInput.Text = "";
         }
     }
 }
