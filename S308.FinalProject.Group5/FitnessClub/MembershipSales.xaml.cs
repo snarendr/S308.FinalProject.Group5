@@ -218,8 +218,12 @@ namespace FitnessClub
 
             lblAddFeatResult.Content = strFeatures;
 
+            double dblSubTotal, dblFinalTotal;
 
-            quote = new Quote(strSelection, datStartDate,datEndTime, chbTraining.IsChecked.Value, chbLockRental.IsChecked.Value);
+            dblSubTotal = Convert.ToDouble(lblSubtotalResult.Content);
+            dblFinalTotal = Convert.ToDouble(lblTotalResult.Content);
+
+            quote = new Quote(strSelection, datStartDate, datEndTime, chbTraining.IsChecked.Value, chbLockRental.IsChecked.Value, dblSubTotal, dblSubTotal, dblFinalTotal);
         }
 
         //Call clear form method is user selects clear button

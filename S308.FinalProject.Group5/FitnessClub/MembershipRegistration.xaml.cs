@@ -88,7 +88,7 @@ namespace FitnessClub
 
             //add results to membership database
 
-            MembersInformation MemberNew = new MembersInformation(quote.MembershipType,strFirstName,strLastName,quote.StartDate.ToString(),quote.EndDate.ToString(),
+            MembersInformation MemberNew = new MembersInformation(quote.MembershipType,strFirstName,strLastName,quote.StartDate.ToString(),quote.EndDate.ToString(),quote.Cost,quote.SubTotal,
             //newmemberinformation json file edits
 
         }
