@@ -60,7 +60,7 @@ namespace FitnessClub
                 return;
             }
 
-            if (!int.TryParse(txtAge.Text, out intAge)) ;
+            if (!int.TryParse(txtAge.Text, out intAge));
             {
                 MessageBox.Show("Please enter a number for Age");
                 return;
