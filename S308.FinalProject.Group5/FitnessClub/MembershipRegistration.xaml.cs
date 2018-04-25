@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace FitnessClub
 {
@@ -43,7 +45,7 @@ namespace FitnessClub
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
-            string strFirstName, strLastName, strEmail, strCCNum, strPhone,strGender;
+            string strFirstName, strLastName, strEmail, strCCNum, strPhone, strGender;
             int intAge, intWeight;
 
             //place inputs into variables
@@ -54,7 +56,7 @@ namespace FitnessClub
             strCCNum = txtCredCardNum.Text;
             strPhone = txtPhone.Text;
 
-            
+
 
             //validate inputs
             if (strFirstName == "" || strLastName == "" || strEmail == "" || strCCNum == "" || strPhone == "") ;
@@ -63,7 +65,7 @@ namespace FitnessClub
                 return;
             }
 
-            if (!int.TryParse(txtAge.Text, out intAge));
+            if (!int.TryParse(txtAge.Text, out intAge)) ;
             {
                 MessageBox.Show("Please enter a number for Age");
                 return;
@@ -79,10 +81,10 @@ namespace FitnessClub
             {
                 MessageBox.Show("Please select a credit card type");
                 return;
-               
+
             }
 
-            if (rdbMale.IsChecked == false && rdbFemale.IsChecked == false && rdbNotProvided.IsChecked == false);
+            if (rdbMale.IsChecked == false && rdbFemale.IsChecked == false && rdbNotProvided.IsChecked == false) ;
             {
                 MessageBox.Show("Please select a gender");
             }
@@ -107,16 +109,32 @@ namespace FitnessClub
             MembersInformation MemberNew = new MembersInformation(quote.MembershipType, strFirstName, strLastName, quote.StartDate.ToString(), quote.EndDate.ToString(), quote.SubTotal, quote.AdditionalFeatures_Training, quote.AdditionalFeatures_LockerRental, quote.TotalCost, strPhone, strEmail, strGender, intWeight);
             //newmemberinformation json file edits
 
+            //read the membership file
             List<MemberInformation> MemberList;
-            
-            private void AppendToFile(MembersInformation MemberNew)
-        {
-
+            string strFilePath = @"../../Data.MembersInformation.json";
             try
             {
-                string jsonData = JsonConvert.SerializeObject(CustomersList);
-                System.IO.File.WriteAllText(@"..\..\..\Data\Customers.json", jsonData);
-                MessageBox.Show("New customer has been added");
+                StreamReader reader = new StreamReader(strFilePath);
+                string jsonData = reader.ReadToEnd();
+                reader.Close();
+
+                MemberList = JsonConvert.DeserializeObject<List<MemberInformation>>(jsonData);
+
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in import process: " + ex.Message);
+            } 
+
+
+            //writing back to file
+            try
+            {
+                string jsonData = JsonConvert.SerializeObject(MemberList);
+                System.IO.File.WriteAllText(strFilePath, jsonData);
+                MessageBox.Show("New Member has been added");
 
             }
             catch (Exception ex)
@@ -125,6 +143,5 @@ namespace FitnessClub
                 return;
             }
 
-        }
     }
     } }
