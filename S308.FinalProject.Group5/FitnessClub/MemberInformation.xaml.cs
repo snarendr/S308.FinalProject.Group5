@@ -35,12 +35,6 @@ namespace FitnessClub
             ImportMemberData();
         }
 
-        private void btnMainMenu_Click(object sender, RoutedEventArgs e)
-        {
-            MainMenu MainMenuWindow = new MainMenu();
-            MainMenuWindow.Show();
-            this.Close();
-        }
 
         private void ImportMemberData()
         {
@@ -155,6 +149,13 @@ namespace FitnessClub
             MainMenu MainMenuWindow = new MainMenu();
             MainMenuWindow.Show();
             this.Close();
+        }
+
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            txtLastNameInput.Text = "";
+            txtEmailInput.Text = "";
+            txtPhoneNumberInput = "";
         }
     }
 }
