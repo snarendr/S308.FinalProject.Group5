@@ -18,17 +18,15 @@ namespace FitnessClub
 
         public string EndDate { get; set; }
 
-        public int Cost { get; set; }
+        public double SubTotal { get; set; }
 
-        public int SubTotal { get; set; }
+        public bool AddFeatures_Training { get; set; }
 
-        public string Features { get; set; }
+        public bool AddFeatures_LockerRental { get; set; }
 
-        public int TotalCost { get; set; }
+        public double TotalCost { get; set; }
 
-        public string ExpirationDate { get; set; }
-
-        public int PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
 
         public string Email { get; set; }
 
@@ -41,18 +39,17 @@ namespace FitnessClub
 
         }
 
-        public MembersInformation(string type, string firstName, string lastName, string startDate, string endDate, int cost, int subTotal, string features, int totalCost, string expirationDate, int phoneNumber, string email, string gender, int weight)
+        public MembersInformation(string type, string firstName, string lastName, string startDate, string endDate, double subTotal, bool addFeat_Training,bool addFeat_LR, double totalCost, string phoneNumber, string email, string gender, int weight)
         {
             Type = type;
             FirstName = firstName;
             LastName = lastName;
             StartDate = startDate;
             EndDate = endDate;
-            Cost = cost;
             SubTotal = subTotal;
-            Features = features;
+            AddFeatures_Training = addFeat_Training;
+            AddFeatures_LockerRental = addFeat_LR;
             TotalCost = totalCost;
-            ExpirationDate = expirationDate;
             PhoneNumber = phoneNumber;
             Email = email;
             Gender = gender;
@@ -62,17 +59,16 @@ namespace FitnessClub
 
         public override string ToString()
         {
-            return "Memeber: " + Environment.NewLine
+            return "Member: " + Environment.NewLine
                 + "Type: " + Type + Environment.NewLine
                 + "First Name: " + FirstName + Environment.NewLine
                 + "Last Name: " + LastName + Environment.NewLine
                 + "Start Date: " + StartDate + Environment.NewLine
                 + "End Date: " + EndDate + Environment.NewLine
-                + "Cost: " + Cost.ToString() + Environment.NewLine
                 + "Sub Total: " + SubTotal.ToString() + Environment.NewLine
-                + "Features: " + Features + Environment.NewLine
+                + "Addtional Feature Training: " + AddFeatures_Training + Environment.NewLine
+                + "Addtional Feature Locker Rental: " + AddFeatures_LockerRental + Environment.NewLine
                 + "Total Cost: " + TotalCost.ToString() + Environment.NewLine
-                + "Expiration Date: " + ExpirationDate + Environment.NewLine
                 + "Phone Number " + PhoneNumber + Environment.NewLine
                 + "Email " + Email + Environment.NewLine
                 + "Gender " + Gender + Environment.NewLine

@@ -43,7 +43,7 @@ namespace FitnessClub
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
-            string strFirstName, strLastName, strEmail, strCCNum, strPhone;
+            string strFirstName, strLastName, strEmail, strCCNum, strPhone,strGender;
             int intAge, intWeight;
 
             //place inputs into variables
@@ -53,6 +53,7 @@ namespace FitnessClub
             strEmail = txtEmail.Text;
             strCCNum = txtCredCardNum.Text;
             strPhone = txtPhone.Text;
+
             
 
             //validate inputs
@@ -86,10 +87,44 @@ namespace FitnessClub
                 MessageBox.Show("Please select a gender");
             }
 
+            if (rdbFemale.IsChecked == true) ;
+            {
+                strGender = rdbFemale.Content.ToString();
+            }
+
+            if (rdbMale.IsChecked == true) ;
+            {
+                strGender = rdbMale.Content.ToString();
+            }
+
+            if (rdbNotProvided.IsChecked == true) ;
+            {
+                strGender = rdbNotProvided.Content.ToString();
+            }
+
             //add results to membership database
 
-            MembersInformation MemberNew = new MembersInformation(quote.MembershipType,strFirstName,strLastName,quote.StartDate.ToString(),quote.EndDate.ToString(),quote.Cost,quote.SubTotal,
+            MembersInformation MemberNew = new MembersInformation(quote.MembershipType, strFirstName, strLastName, quote.StartDate.ToString(), quote.EndDate.ToString(), quote.SubTotal, quote.AdditionalFeatures_Training, quote.AdditionalFeatures_LockerRental, quote.TotalCost, strPhone, strEmail, strGender, intWeight);
             //newmemberinformation json file edits
 
+            List<MemberInformation> MemberList;
+            
+            private void AppendToFile(MembersInformation MemberNew)
+        {
+
+            try
+            {
+                string jsonData = JsonConvert.SerializeObject(CustomersList);
+                System.IO.File.WriteAllText(@"..\..\..\Data\Customers.json", jsonData);
+                MessageBox.Show("New customer has been added");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in append file: " + ex.Message);
+                return;
+            }
+
         }
+    }
     } }
