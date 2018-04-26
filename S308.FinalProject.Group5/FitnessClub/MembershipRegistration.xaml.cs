@@ -51,36 +51,58 @@ namespace FitnessClub
 
             //place inputs into variables
 
-            strFirstName = txtFirstName.Text;
-            strLastName = txtLastName.Text;
-            strEmail = txtEmail.Text;
-            strCCNum = txtCredCardNum.Text;
-            strPhone = txtPhone.Text;
-
-
+            strFirstName = txtFirstName.Text.Trim();
+            strLastName = txtLastName.Text.Trim();
+            strEmail = txtEmail.Text.Trim();
+            strCCNum = txtCredCardNum.Text.Trim();
+            strPhone = txtPhone.Text.Trim();
 
             //validate inputs
-            if (strFirstName == "" || strLastName == "" || strEmail == "" || strCCNum == "" || strPhone == "") ;
+            if (strFirstName == "" || strLastName == "" || strEmail == "" || strCCNum == "" || strPhone == "") 
             {
                 MessageBox.Show("Please fill out all information (First Name, Last Name, Email, Phone, Credit Card Number");
                 return;
             }
 
-            if (!int.TryParse(txtAge.Text, out intAge)) ;
+            //if the user provided an age, validate it is a valid number
+            if (txtAge.Text != "")
             {
-                MessageBox.Show("Please enter a number for Age");
-                return;
-            }
+                if (!int.TryParse(txtAge.Text, out intAge))
+                {
+                    MessageBox.Show("Please enter a number for Age");
+                    return;
+                }
 
-            if (!int.TryParse(txtWeight.Text, out intWeight)) ;
+            }
+            //if the user provided a weight, validate it is a number
+            if(txtAge.Text != "")
             {
-                MessageBox.Show("Please enter a number for Weight");
-                return;
+                if (!int.TryParse(txtWeight.Text, out intWeight))
+                {
+                    MessageBox.Show("Please enter a number for Weight");
+                    return;
+                }
             }
-
-            if (cmbCredCardType.SelectedIndex == -1) ;
+            //validate the user selected a credit card type
+            if (cmbCredCardType.SelectedIndex == -1) 
             {
                 MessageBox.Show("Please select a credit card type");
+                return;
+
+            }
+            //validate the credit card is a number
+            long lngPhoneNumber;
+            if(!long.TryParse(strCCNum, out lngPhoneNumber))
+            {
+                MessageBox.Show("Please enter only numeric digits for the credit card. Please do not enter any alphanumeric characters or non-numeric characters.");
+                return;
+            }
+
+            //insert futher email, phone, credit validation here
+
+            if(strCCNum.Length != 15 && strCCNum.Length != 16)
+            {
+                MessageBox.Show("Please enter a credit card number that is 15 or 16 digits.");
                 return;
 
             }
@@ -90,17 +112,17 @@ namespace FitnessClub
                 MessageBox.Show("Please select a gender");
             }
 
-            if (rdbFemale.IsChecked == true) ;
+            if (rdbFemale.IsChecked == true) 
             {
                 strGender = rdbFemale.Content.ToString();
             }
 
-            if (rdbMale.IsChecked == true) ;
+            if (rdbMale.IsChecked == true) 
             {
                 strGender = rdbMale.Content.ToString();
             }
 
-            if (rdbNotProvided.IsChecked == true) ;
+            if (rdbNotProvided.IsChecked == true) 
             {
                 strGender = rdbNotProvided.Content.ToString();
             }
