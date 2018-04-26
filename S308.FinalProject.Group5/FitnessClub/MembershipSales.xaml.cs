@@ -253,7 +253,7 @@ namespace FitnessClub
             MembershipRegistration MembershipRegistrationWindow = new MembershipRegistration(quote);
             MembershipRegistrationWindow.Show();
         }
-
+        //for syncing purposes
         //Allow user to go back to the Main Menu
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)
         {
