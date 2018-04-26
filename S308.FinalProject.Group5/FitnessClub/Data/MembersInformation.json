@@ -11,7 +11,13 @@
     "PhoneNumber": "6301883128",
     "Email": "thejoghndoe@iu.edu",
     "Gender": "Male",
-    "Weight": "180"
+    "Weight": "180",
+	"Credit Card Number": "4802-5555-5555-5555",
+	"PFG_AthleticPeformance": true,
+	"PFG_OverallHealth": true,
+	"PFG_StrengthTraining": true,
+	"PFG_WeightLoss": true,
+	"PFG_WeightManagement": true	
 }, {
     "Type": "Individual",
     "FirstName": "Jane",
@@ -25,7 +31,13 @@
     "PhoneNumber": "8125478902",
     "Email": "janeiscool@iu.edu",
     "Gender": "Female",
-    "Weight": "118"
+    "Weight": "118",
+	"Credit Card Number": "4802-5555-5555-5555",
+	"PFG_AthleticPeformance": true,
+	"PFG_OverallHealth": true,
+	"PFG_StrengthTraining": true,
+	"PFG_WeightLoss": true,
+	"PFG_WeightManagement": true	
 }, {
     "Type": "Two Person",
     "FirstName": "Mark",
@@ -39,7 +51,13 @@
     "PhoneNumber": "7156709870",
     "Email": "markymark@iu.edu",
     "Gender": "Male",
-    "Weight": "210"
+    "Weight": "210",
+	"Credit Card Number": "4802-5555-5555-5555",
+	"PFG_AthleticPeformance": true,
+	"PFG_OverallHealth": true,
+	"PFG_StrengthTraining": true,
+	"PFG_WeightLoss": true,
+	"PFG_WeightManagement": true	
 }, {
     "Type": "Two Person",
     "FirstName": "Linda",
@@ -53,7 +71,13 @@
     "PhoneNumber": "8126709870",
     "Email": "Ljcool@iu.edu",
     "Gender": "Female",
-    "Weight": "109"
+    "Weight": "109",
+	"Credit Card Number": "4802-5555-5555-5555",
+	"PFG_AthleticPeformance": true,
+	"PFG_OverallHealth": true,
+	"PFG_StrengthTraining": true,
+	"PFG_WeightLoss": true,
+	"PFG_WeightManagement": true	
 }, {
     "Type": "Family",
     "FirstName": "Morris",
@@ -67,7 +91,13 @@
     "PhoneNumber": "8129407654",
     "Email": "Basketball447@iu.edu",
     "Gender": "Male",
-    "Weight": "250"
+    "Weight": "250",
+	"Credit Card Number": "4802-5555-5555-5555",
+	"PFG_AthleticPeformance": true,
+	"PFG_OverallHealth": true,
+	"PFG_StrengthTraining": true,
+	"PFG_WeightLoss": true,
+	"PFG_WeightManagement": true
 }, {
     "Type": "Family",
     "FirstName": "Morris",
@@ -81,7 +111,13 @@
     "PhoneNumber": "8129407654",
     "Email": "Basketball447@iu.edu",
     "Gender": "Male",
-    "Weight": "250"
+    "Weight": "250",
+	"Credit Card Number": "4802-5555-5555-5555",
+	"PFG_AthleticPeformance": true,
+	"PFG_OverallHealth": true,
+	"PFG_StrengthTraining": true,
+	"PFG_WeightLoss": true,
+	"PFG_WeightManagement": true,
 }, {
     "Type": "Individual",
     "FirstName": "Monique",
@@ -95,7 +131,13 @@
     "PhoneNumber": "8124576589",
     "Email": "nevereast@aim.com",
     "Gender": "Female",
-    "Weight": "125"
+    "Weight": "125",
+	"Credit Card Number": "4802-5555-5555-5555",
+	"PFG_AthleticPeformance": true,
+	"PFG_OverallHealth": true,
+	"PFG_StrengthTraining": true,
+	"PFG_WeightLoss": true,
+	"PFG_WeightManagement": true	
 }, {
     "Type": "Family",
     "FirstName": "Orlando",
@@ -110,7 +152,13 @@
     "PhoneNumber": "8129081923",
     "Email": "loveorlando@gmail.com",
     "Gender": "male",
-    "Weight": "190"
+    "Weight": "190",
+	"Credit Card Number": "4802-5555-5555-5555",
+	"PFG_AthleticPeformance": true,
+	"PFG_OverallHealth": true,
+	"PFG_StrengthTraining": true,
+	"PFG_WeightLoss": true,
+	"PFG_WeightManagement": true	
 }, {
     "Type": "Family",
     "FirstName": "Brad",
@@ -124,7 +172,13 @@
     "PhoneNumber": "4567820945",
     "Email": "ilikekids@yahoo.com",
     "Gender": "Male",
-    "Weight": "178"
+    "Weight": "178",
+	"Credit Card Number": "4802-5555-5555-5555",
+	"PFG_AthleticPeformance": true,
+	"PFG_OverallHealth": true,
+	"PFG_StrengthTraining": true,
+	"PFG_WeightLoss": true,
+	"PFG_WeightManagement": true	
 }, {
     "Type": "Individual",
     "FirstName": "Oprah",
@@ -138,5 +192,11 @@
     "PhoneNumber": "6304231829",
     "Email": "contactoprah@gmail.com",
     "Gender": "Female",
-    "Weight": "180"
+    "Weight": "180",
+	"Credit Card Number": "4802-5555-5555-5555",
+	"PFG_AthleticPeformance": true,
+	"PFG_OverallHealth": true,
+	"PFG_StrengthTraining": true,
+	"PFG_WeightLoss": true,
+	"PFG_WeightManagement": true		
 }]
