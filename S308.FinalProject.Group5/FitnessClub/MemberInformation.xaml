@@ -14,16 +14,15 @@
         <TextBox x:Name="txtLastNameInput" HorizontalAlignment="Left" Height="21" Margin="561,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" TabIndex="0" />
         <TextBox x:Name="txtPhoneNumberInput" HorizontalAlignment="Left" Height="21" Margin="561,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" TabIndex="2" />
         <TextBox x:Name="txtEmailInput" HorizontalAlignment="Left" Height="21" Margin="561,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" TabIndex="1" />
-        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Height="30" Margin="493,157,0,0" VerticalAlignment="Top" Width="100" TabIndex="3" />
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Height="30" Margin="493,157,0,0" VerticalAlignment="Top" Width="100" TabIndex="3" Click="btnSearch_Click"/>
         <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Height="30" Margin="602,157,0,0" VerticalAlignment="Top" Width="100" TabIndex="4" Click="btnClear_Click"/>
         <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="710,4,0,0" Height="20" TabIndex="5" Click="btnMainMenu_Click" />
         <Image x:Name="imgLogo" HorizontalAlignment="Left" Height="95" VerticalAlignment="Top" Width="111" Source="Images/MSNLogo.png" RenderTransformOrigin="0.812,0.564"/>
         <Label x:Name="lblTitle" Content="Membership Information" HorizontalAlignment="Left" Margin="79,6,0,0" VerticalAlignment="Top" Foreground="#FFF5EBEB" Height="60" Width="344" FontSize="30"/>
-        <DataGrid x:Name="dtgMember" HorizontalAlignment="Left" Height="327" Margin="0,194,0,0" VerticalAlignment="Top" Width="792" CanUserResizeColumns="False" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible">
-
-        </DataGrid>
         <TextBlock x:Name="txtbDescription" HorizontalAlignment="Left" Margin="86,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="102" Width="310" Foreground="#FFFDEBEB" Text="This window allows the user to look up user information by entering their Last Name, Email , and or/Phone Number. Once the search button is clicked, all the user(s) that meet the search criteria will have their membership information displayed below. "/>
         <Label x:Name="lblPhoNumDesc" Content="(xxx-xxx-xxxx)" HorizontalAlignment="Left" Margin="428,118,0,0" VerticalAlignment="Top" Foreground="White" FontStyle="Italic"/>
-
+        <Label x:Name="lblResults" Content="Results:" HorizontalAlignment="Left" Height="32" Margin="0,157,0,0" VerticalAlignment="Top" Width="160" Foreground="White"/>
+        <TextBox x:Name="txtDetails" HorizontalAlignment="Left" Height="327" Margin="165,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="586" VerticalScrollBarVisibility="Visible" IsReadOnly="True" IsTabStop="False"/>
+        <ListBox x:Name="lbxResults" HorizontalAlignment="Left" Height="327" Margin="10,194,0,0" VerticalAlignment="Top" Width="150" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="lbxResults_SelectionChanged" />
     </Grid>
 </Window>

@@ -35,6 +35,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MvvmFx.Controls.WinForms, Version=3.0.1.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmFx-BoundControls-WinForms.3.0.1\lib\net45\MvvmFx.Controls.WinForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmFx.Logging, Version=3.0.1.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmFx-Logging.3.0.1\lib\net45\MvvmFx.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>

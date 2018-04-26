@@ -17,84 +17,103 @@ using System.Windows.Shapes;
 
 namespace FitnessClub
 {
+    
     public partial class MemberInformation : Window
     {
+        List<MembersInformation> memberIndex;
 
-        List<MemberInformation> membersIndex;
         public MemberInformation()
         {
             InitializeComponent();
 
 
-            //load members list from json file
-            membersIndex = ImportMemberData();
+            memberIndex = LoadData();
+            
         }
 
-        public List<MemberInformation> ImportMemberData()
+        public List<MembersInformation> LoadData()
         {
-            List<MemberInformation> memberList = new List<MemberInformation>();
+            List<MembersInformation> lstMembersInformation = new List<MembersInformation>();
 
-            string strFilePath = @"..\..\..\Data\MembersInformation.json";
 
+            string strFilePath = @"..\..\Data\MembersInformation.json";
             try
             {
-                //use System.IO.File to read the entire data file
                 string jsonData = File.ReadAllText(strFilePath);
 
-                //Not sure why this is throwing an error. 
-                //serialize the json data to a list of campuses
-                memberList = JsonConvert.DeserializeObject<List<MemberInformation>>(jsonData);
+                lstMembersInformation = JsonConvert.DeserializeObject<List<MembersInformation>>(jsonData);
+                if (lstMembersInformation.Count >= 0)
+                    MessageBox.Show(lstMembersInformation.Count + " members have been imported.");
+                else
+                    MessageBox.Show("No members imported.");
             }
+
             catch (Exception ex)
             {
-                Console.WriteLine("Error loading Pokemon from file: " + ex.Message);
+                MessageBox.Show("Error in import process: " + ex.Message);
             }
 
-            return memberList;
+            return lstMembersInformation;
 
+
+        }
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+
+            List<MembersInformation> memberInformationSearch;
+
+            //Getting input from Last name and validating
+            string strLastName = txtLastNameInput.Text.Trim();
+            if (strLastName == "")
+            {
+                MessageBox.Show("Please enter a last name");
+            }
+            //Getting input from email and validating
+            string strEmail = txtEmailInput.Text.Trim();
+            if (strEmail == "")
+            {
+                MessageBox.Show("Your search will be better with a correctly formatted email");
+            }
+            //Getting input from phone number and validating 
+            string strPhoneNumber = txtPhoneNumberInput.Text.Trim();
+            if (strPhoneNumber == "")
+            {
+                MessageBox.Show("Your seach will be better with a correctly formated phone number");
+            }
+            //Further validating
+          //  if((txtEmailInput.Text.Trim() == "") && (txtLastNameInput.Text.Trim() = "") && (txtPhoneNumberInput.Text.Trim() = ""))
+          //  {
+            //    MessageBox.Show("You need to enter atleast 1 of the criteria");
+
+           // }
+            txtDetails.Text = "";
+            lbxResults.Items.Clear();
+
+            memberInformationSearch = memberIndex.Where(m =>
+                m.LastName == strLastName &&
+                m.Email == strEmail &&
+                m.PhoneNumber == strPhoneNumber).ToList();
+             
+           foreach (MembersInformation m in memberInformationSearch)
+            {
+                lbxResults.Items.Add(m.LastName.ToString());
+                if (lbxResults.Items.Count < 1)
+                    MessageBox.Show("No one was found on your search.");
+
+            }
 
         }
 
 
-
-        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        private void lbxResults_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //    List<MemberInformation> membersSearch;
+            if (lbxResults.SelectedIndex > -1)
+            {
+                string strSelectedName = lbxResults.SelectedItem.ToString();
 
-            //    string strLastName = txtLastNameInput.Text.Trim();
-
-            //    string strEmail= txtEmailInput.Text.Trim();
-
-            //    string strPhoneNumber = txtPhoneNumberInput.Text.Trim();
-
-            //    //Start of query, not finished yet. 
-            //    membersSearch = membersIndex.Where
-
-
-            //    //set the source of the datagrid and refresh
-            //    //dtgMember.ItemsSource = membersSearch;
-            //    //dtgMember.Items.Refresh();
-
-            //    //instantiate a new Campus from the input and add it to the list
-            //    MembersInformation campusNew = new MembersInformation(txtName.Text.Trim(), enrollment);
-            //    memberList.Add(MemberNew);
-
-            //    try
-            //    {
-            //        //serialize the new list of campuses to json format
-            //        string jsonData = JsonConvert.SerializeObject(memberList);
-
-            //        //use System.IO.File to write over the file with the json data
-            //        System.IO.File.WriteAllText(strFilePath, jsonData);
-
-            //        MessageBox.Show(memberList.Count + " Cusomters have been exported.");
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show("Error in export process: " + ex.Message);
-            //    }
-
-            //    MessageBox.Show("Campus Added!" + Environment.NewLine + MemberNew.ToString());
+                MembersInformation memberSelected = memberIndex.Where(m => m.LastName == strSelectedName).FirstOrDefault();
+                txtDetails.Text = memberSelected.ToString();
+            }
 
 
         }
@@ -110,7 +129,12 @@ namespace FitnessClub
         {
             txtLastNameInput.Text = "";
             txtEmailInput.Text = "";
-            //txtPhoneNumberInput = "";
+            txtPhoneNumberInput.Text = "";
+            txtDetails.Text = "";
+            lbxResults.Items.Clear();
+
         }
+
+
     }
 }
