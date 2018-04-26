@@ -90,9 +90,11 @@ namespace FitnessClub
             lbxResults.Items.Clear();
 
             memberInformationSearch = memberIndex.Where(m =>
-                m.LastName == strLastName &&
-                m.Email == strEmail &&
-                m.PhoneNumber == strPhoneNumber).ToList();
+                (m.LastName == strLastName) || 
+                (m.Email == strEmail) ||
+                (m.PhoneNumber == strPhoneNumber) ||
+                (m.LastName == strLastName && m.Email == strEmail) || 
+                (m.LastName == strLastName && m.Email == strEmail && m.PhoneNumber == strPhoneNumber)).ToList();
              
            foreach (MembersInformation m in memberInformationSearch)
             {
