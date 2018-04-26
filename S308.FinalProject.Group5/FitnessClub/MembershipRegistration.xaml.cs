@@ -51,11 +51,11 @@ namespace FitnessClub
 
             //place inputs into variables
 
-            strFirstName = txtFirstName.Text;
-            strLastName = txtLastName.Text;
-            strEmail = txtEmail.Text;
-            strCCNum = txtCredCardNum.Text;
-            strPhone = txtPhone.Text;
+            strFirstName = txtFirstName.Text.Trim();
+            strLastName = txtLastName.Text.Trim();
+            strEmail = txtEmail.Text.Trim();
+            strCCNum = txtCredCardNum.Text.Trim();
+            strPhone = txtPhone.Text.Trim();
 
             //validate inputs
             if (strFirstName == "" || strLastName == "" || strEmail == "" || strCCNum == "" || strPhone == "") 
@@ -87,6 +87,17 @@ namespace FitnessClub
             if (cmbCredCardType.SelectedIndex == -1) 
             {
                 MessageBox.Show("Please select a credit card type");
+                return;
+
+            }
+
+            if(!long.TryParse(strCCNum, out lngPhoneNumber))
+
+            //insert futher email, phone, credit validation here
+
+            if(strCCNum.Length != 15 && strCCNum.Length != 16)
+            {
+                MessageBox.Show("Please enter a credit card number that is 15 or 16 digits.");
                 return;
 
             }
