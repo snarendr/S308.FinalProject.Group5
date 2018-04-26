@@ -146,7 +146,6 @@ namespace FitnessClub
 
 
         }
-
         private void btnExistingCustomer_Click(object sender, RoutedEventArgs e)
         {
             ExistingMemberSearch ExistingMemberWindow = new ExistingMemberSearch();

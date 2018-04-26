@@ -20,9 +20,9 @@ namespace FitnessClub
 
         public double SubTotal { get; set; }
 
-        public bool AddFeatures_Training { get; set; }
+        public bool Additional_Features_Training { get; set; }
 
-        public bool AddFeatures_LockerRental { get; set; }
+        public bool Additional_Features_LockerRental { get; set; }
 
         public double TotalCost { get; set; }
 
@@ -34,7 +34,17 @@ namespace FitnessClub
 
         public int Weight { get; set; }
 
+        public string Credit_Card_Number { get; set; }
 
+        public bool PFG_AthleticPerformance { get; set; }
+
+        public bool PFG_OverallHealth { get; set; }
+
+        public bool PFG_StrengthTraining { get; set; }
+
+        public bool PFG_WeightLoss { get; set; }
+
+        public bool PFG_WeightManagment { get; set; }
         public override string ToString()
         {
             string strResults = "Type: " + Type + Environment.NewLine;
@@ -43,13 +53,18 @@ namespace FitnessClub
             strResults += "Start Date: " + StartDate + Environment.NewLine;
             strResults += "End Date: " + EndDate + Environment.NewLine;
             strResults += "Sub Total: " + SubTotal.ToString() + Environment.NewLine;
-            strResults += "Addtional Feature Training: " + AddFeatures_Training + Environment.NewLine;
-            strResults += "Addtional Feature Locker Rental: " + AddFeatures_LockerRental + Environment.NewLine;
+            strResults += "Addtional Feature Training: " + Additional_Features_Training + Environment.NewLine;
+            strResults += "Addtional Feature Locker Rental: " + Additional_Features_LockerRental + Environment.NewLine;
             strResults += "Total Cost: " + TotalCost.ToString() + Environment.NewLine;
             strResults += "Phone Number: " + PhoneNumber + Environment.NewLine;
             strResults += "Email: " + Email + Environment.NewLine;
             strResults += "Gender: " + Gender + Environment.NewLine;
             strResults += "Weight: " + Weight.ToString();
+            strResults += "Credit Card Number: " + Credit_Card_Number + Environment.NewLine;
+            strResults += "Athletics Perofrmance: " + PFG_AthleticPerformance + Environment.NewLine;
+            strResults += "Overall Health: " + PFG_OverallHealth + Environment.NewLine;
+            strResults += "Strength Trainging: " + PFG_StrengthTraining + Environment.NewLine;
+            strResults += "Weight Loss: " + PFG_WeightManagment + Environment.NewLine;
             strResults += Environment.NewLine;
 
             return strResults;
@@ -60,7 +75,7 @@ namespace FitnessClub
 
         }
 
-        public MembersInformation(string type, string firstName, string lastName, string startDate, string endDate, double subTotal, bool addFeat_Training,bool addFeat_LR, double totalCost, string phoneNumber, string email, string gender, int weight)
+        public MembersInformation(string type, string firstName, string lastName, string startDate, string endDate, double subTotal, bool additional_Features_Training, bool additional_Features_LockerRental, double totalCost, string phoneNumber, string email, string gender, int weight, string credit_Card_Number, bool pFG_AthleticPerformance, bool pFG_OverallHealth, bool pFG_StrengthTraining, bool pFG_WeightLoss, bool pFG_WeightManagment)
         {
             Type = type;
             FirstName = firstName;
@@ -68,13 +83,19 @@ namespace FitnessClub
             StartDate = startDate;
             EndDate = endDate;
             SubTotal = subTotal;
-            AddFeatures_Training = addFeat_Training;
-            AddFeatures_LockerRental = addFeat_LR;
+            Additional_Features_LockerRental = additional_Features_Training;
+            Additional_Features_LockerRental = additional_Features_LockerRental;
             TotalCost = totalCost;
             PhoneNumber = phoneNumber;
             Email = email;
             Gender = gender;
             Weight = weight;
+            Credit_Card_Number = credit_Card_Number;
+            PFG_AthleticPerformance = pFG_AthleticPerformance;
+            PFG_OverallHealth = pFG_OverallHealth;
+            PFG_StrengthTraining = pFG_StrengthTraining;
+            PFG_WeightLoss = pFG_WeightLoss;
+            PFG_WeightManagment = pFG_WeightManagment;
 
         }
                         
