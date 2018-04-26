@@ -90,8 +90,13 @@ namespace FitnessClub
                 return;
 
             }
-
+            //validate the credit card is a number
+            long lngPhoneNumber;
             if(!long.TryParse(strCCNum, out lngPhoneNumber))
+            {
+                MessageBox.Show("Please enter only numeric digits for the credit card. Please do not enter any alphanumeric characters or non-numeric characters.");
+                return;
+            }
 
             //insert futher email, phone, credit validation here
 
