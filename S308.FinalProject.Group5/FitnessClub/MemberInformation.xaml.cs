@@ -105,7 +105,7 @@ namespace FitnessClub
             }
 
         }
-
+        //asdf
         private void lbxResults_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (lbxResults.SelectedIndex > -1)
