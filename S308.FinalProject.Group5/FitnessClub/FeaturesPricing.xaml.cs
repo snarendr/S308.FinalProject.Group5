@@ -107,9 +107,15 @@ namespace FitnessClub
                 return;
             }
 
-            //Declare a double variable to store the updated price from the user
-            double dblUpdatePrice = Convert.ToDouble(txbUpdatePrice.Text);
+            //Declare variable to store updated price
+            double dblUpdatePrice;
 
+            //Validate the user proived a valid updated price
+            if (!double.TryParse(txbUpdatePrice.Text, out dblUpdatePrice))
+            {
+                MessageBox.Show("Please enter a valid number for the updated price. Do not enter any alphanumeric or non-numeric characters.");
+                return;
+            }
 
             //Read feature json file to fill the feature list with the current feature data
             try
