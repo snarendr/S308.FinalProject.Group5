@@ -56,7 +56,9 @@ namespace FitnessClub
             strEmail = txtEmail.Text.Trim();
             strCCNum = txtCredCardNum.Text.Trim();
             strPhone = txtPhone.Text.Trim();
-
+            strGender = "";
+            intWeight = 0;
+           
             //validate the user provided a first name
             if (strFirstName == "")
             {
@@ -228,15 +230,16 @@ namespace FitnessClub
                     return;
                 }
             }
-            
+
             //collect user fitness goals here
-           
-            
-           
-    
+          
+
+
+
+
             //add results to membership database
 
-            //MembersInformation MemberNew = new MembersInformation(quote.MembershipType, strFirstName, strLastName, quote.StartDate.ToString(), quote.EndDate.ToString(), quote.SubTotal, quote.AdditionalFeatures_Training, quote.AdditionalFeatures_LockerRental, quote.TotalCost, strPhone, strEmail, strGender, intWeight);
+            MembersInformation MemberNew = new MembersInformation(quote.MembershipType, strFirstName, strLastName, quote.StartDate.ToString(), quote.EndDate.ToString(), quote.SubTotal, quote.AdditionalFeatures_Training, quote.AdditionalFeatures_LockerRental, quote.TotalCost, strPhone, strEmail, strGender, intWeight, strCCNum, chbAthPer.IsChecked.Value, chbOverHealth.IsChecked.Value, chbST.IsChecked.Value, chbWeightLoss.IsChecked.Value, chbWeightMgmt.IsChecked.Value);
             //newmemberinformation json file edits
 
             //read the membership file
