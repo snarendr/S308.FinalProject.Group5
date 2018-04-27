@@ -110,6 +110,19 @@ namespace FitnessClub
             //Declare a double variable to store the updated price from the user
             double dblUpdatePrice = Convert.ToDouble(txbUpdatePrice.Text);
 
+
+            //Read feature json file to fill the feature list with the current feature data
+            try
+            {
+                string jsonData = File.ReadAllText(strFilePath);
+                FeatureList = JsonConvert.DeserializeObject<List<Feature>>(jsonData);
+            }
+            //Display an error message to the user if an error occurs during the import process
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in import process: " + ex.Message);
+            }
+
             //Run a qeuery to find the feature in the feature list that matches the feature selected by the user
             var featureQuery =
              from f in FeatureList
