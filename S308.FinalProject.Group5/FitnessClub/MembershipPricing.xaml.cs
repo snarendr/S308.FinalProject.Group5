@@ -119,8 +119,19 @@ namespace FitnessClub
                 return;
             }
 
+            //Read membership json file to fill the membership list with the current membership data
+            try
+            {
+                string jsonData = File.ReadAllText(strFilePath);
+                MembershipList = JsonConvert.DeserializeObject<List<Membership>>(jsonData);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in import process: " + ex.Message);
+            }
+
             //If user has updated the price and selected an availability option, execute the below code
-            if(txbUpdatePrice.Text != "" && (rdbOffered.IsChecked == true || rdbNotOffered.IsChecked == true))
+            if (txbUpdatePrice.Text != "" && (rdbOffered.IsChecked == true || rdbNotOffered.IsChecked == true))
             {
                 //Declare double variable and store the updated price from the user. 
                 double dblUpdatePrice = Convert.ToDouble(txbUpdatePrice.Text);
