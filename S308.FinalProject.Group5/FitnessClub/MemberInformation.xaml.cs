@@ -90,7 +90,7 @@ namespace FitnessClub
             lbxResults.Items.Clear();
 
             memberInformationSearch = memberIndex.Where(m =>
-                (m.LastName.ToUpper() == strLastName.ToUpper()) || 
+                (m.LastName.ToUpper().StartsWith(strLastName.ToUpper())) || 
                 (m.Email.ToUpper() == strEmail.ToUpper()) ||
                 (m.PhoneNumber == strPhoneNumber) ||
                 (m.LastName == strLastName && m.Email == strEmail) || 

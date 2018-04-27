@@ -8,6 +8,7 @@ namespace FitnessClub
 {
     public class MembersInformation
     {
+        public DateTime datRegistration { get; set; }
         public string Type { get; set; }
 
         public string FirstName { get; set; }
@@ -71,8 +72,9 @@ namespace FitnessClub
         }
 
 
-        public MembersInformation(string type, string firstName, string lastName, string startDate, string endDate, double subTotal, bool additional_Features_Training, bool additional_Features_LockerRental, double totalCost, string phoneNumber, string email, string gender, int weight, string credit_Card_Number, bool pFG_AthleticPerformance, bool pFG_OverallHealth, bool pFG_StrengthTraining, bool pFG_WeightLoss, bool pFG_WeightManagment)
+        public MembersInformation(DateTime datREgistration, string type, string firstName, string lastName, string startDate, string endDate, double subTotal, bool additional_Features_Training, bool additional_Features_LockerRental, double totalCost, string phoneNumber, string email, string gender, int weight, string credit_Card_Number, bool pFG_AthleticPerformance, bool pFG_OverallHealth, bool pFG_StrengthTraining, bool pFG_WeightLoss, bool pFG_WeightManagment)
         {
+            datRegistration = datREgistration;
             Type = type;
             FirstName = firstName;
             LastName = lastName;
