@@ -53,14 +53,14 @@ namespace FitnessClub
         strResults += "Last Name: " + LastName + Environment.NewLine;
         strResults += "Start Date: " + StartDate + Environment.NewLine;
         strResults += "End Date: " + EndDate + Environment.NewLine;
-        strResults += "Sub Total: " + SubTotal.ToString() + Environment.NewLine;
-        strResults += "Addtional Feature Training: " + Additional_Features_Training + Environment.NewLine;
-        strResults += "Addtional Feature Locker Rental: " + Additional_Features_LockerRental + Environment.NewLine;
-        strResults += "Total Cost: " + TotalCost.ToString() + Environment.NewLine;
+        strResults += "Sub Total: " + SubTotal.ToString("C2") + Environment.NewLine;
+        strResults += "Training: " + Additional_Features_Training + Environment.NewLine;
+        strResults += "Locker Rental: " + Additional_Features_LockerRental + Environment.NewLine;
+        strResults += "Total Cost: " + TotalCost.ToString("C2") + Environment.NewLine;
         strResults += "Phone Number: " + PhoneNumber + Environment.NewLine;
         strResults += "Email: " + Email + Environment.NewLine;
         strResults += "Gender: " + Gender + Environment.NewLine;
-        strResults += "Weight: " + Weight.ToString() + Environment.NewLine;
+        strResults += "Weight: " + Weight.ToString() + "lbs" + Environment.NewLine;
         strResults += "Credit Card Number: " + Credit_Card_Number + Environment.NewLine;
         strResults += "Athletic Performance: " + PFG_AthleticPerformance + Environment.NewLine;
         strResults += "Overall Health: " + PFG_OverallHealth + Environment.NewLine;
@@ -72,9 +72,8 @@ namespace FitnessClub
         }
 
 
-        public MembersInformation(DateTime datREgistration, string type, string firstName, string lastName, string startDate, string endDate, double subTotal, bool additional_Features_Training, bool additional_Features_LockerRental, double totalCost, string phoneNumber, string email, string gender, int weight, string credit_Card_Number, bool pFG_AthleticPerformance, bool pFG_OverallHealth, bool pFG_StrengthTraining, bool pFG_WeightLoss, bool pFG_WeightManagment)
+        public MembersInformation(string type, string firstName, string lastName, string startDate, string endDate, double subTotal, bool additional_Features_Training, bool additional_Features_LockerRental, double totalCost, string phoneNumber, string email, string gender, int weight, string credit_Card_Number, bool pFG_AthleticPerformance, bool pFG_OverallHealth, bool pFG_StrengthTraining, bool pFG_WeightLoss, bool pFG_WeightManagment)
         {
-            datRegistration = datREgistration;
             Type = type;
             FirstName = firstName;
             LastName = lastName;

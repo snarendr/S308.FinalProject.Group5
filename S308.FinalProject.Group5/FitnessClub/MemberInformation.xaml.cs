@@ -25,8 +25,6 @@ namespace FitnessClub
         public MemberInformation()
         {
             InitializeComponent();
-
-
             memberIndex = LoadData();
             
         }
@@ -42,10 +40,7 @@ namespace FitnessClub
                 string jsonData = File.ReadAllText(strFilePath);
 
                 lstMembersInformation = JsonConvert.DeserializeObject<List<MembersInformation>>(jsonData);
-                if (lstMembersInformation.Count >= 0)
-                    MessageBox.Show(lstMembersInformation.Count + " members have been imported.");
-                else
-                    MessageBox.Show("No members imported.");
+               
             }
 
             catch (Exception ex)
@@ -60,52 +55,45 @@ namespace FitnessClub
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
 
-            List<MembersInformation> memberInformationSearch;
-
-            //Getting input from Last name and validating
-            string strLastName = txtLastNameInput.Text.Trim();
-           // if (strLastName.ToUpper() == "")
-            //{
-                //MessageBox.Show("Please enter a last name");
-            //}
-            //Getting input from email and validating
-            string strEmail = txtEmailInput.Text.Trim();
-           // if (strEmail == "")
-            //{
-                //MessageBox.Show("Your search will be better with a correctly formatted email");
-            //}
-            //Getting input from phone number and validating 
+            //Declare variables to store last name, email, and phone number provided by the user
+            string strLastName = txtLastNameInput.Text.Trim().ToUpper();
+          
+            string strEmail = txtEmailInput.Text.Trim().ToUpper();
+           
             string strPhoneNumber = txtPhoneNumberInput.Text.Trim();
-            //if (strPhoneNumber == "")
-            //{
-                //MessageBox.Show("Your seach will be better with a correctly formated phone number");
-            //}
-            //Further validating
-          //  if((txtEmailInput.Text.Trim() == "") && (txtLastNameInput.Text.Trim() = "") && (txtPhoneNumberInput.Text.Trim() = ""))
-          //  {
-            //    MessageBox.Show("You need to enter atleast 1 of the criteria");
+            
+          if(strPhoneNumber == "" && strLastName =="" && strEmail == "")
+            {
+                MessageBox.Show("You must enter at least one search critera.");
+                return;
+            }
 
-           // }
             txtDetails.Text = "";
             lbxResults.Items.Clear();
 
+            //Declare list for information serach query
+            List<MembersInformation> memberInformationSearch;
+
+            //write query to find members that match any proivded information about the members last name, email, or phone number
             memberInformationSearch = memberIndex.Where(m =>
                 (m.LastName.ToUpper().Contains(strLastName.ToUpper())) && 
-                (m.Email.ToUpper().Contains( strEmail.ToUpper())) &&
+                (m.Email.ToUpper().Contains(strEmail.ToUpper())) &&
                 (m.PhoneNumber.Contains(strPhoneNumber)) &&
                 (m.LastName.Contains(strLastName) && m.Email.Contains(strEmail)) &&
                 (m.LastName.Contains(strLastName) && m.Email.Contains(strEmail) && m.PhoneNumber.Contains(strPhoneNumber))).ToList();
-             
+           
+            //list the first name and last name of members that matched the query results 
            foreach (MembersInformation m in memberInformationSearch)
             {
-                lbxResults.Items.Add((m.LastName + ", " +m.FirstName).ToString());
+                lbxResults.Items.Add((m.LastName + ", " +m.FirstName + ", (" + m.Email + ")").ToString());
+                //if no results were found in the query, notify the user
                 if (lbxResults.Items.Count < 1)
                     MessageBox.Show("No one was found on your search.");
 
             }
 
         }
-        //asdf
+       
         private void lbxResults_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (lbxResults.SelectedIndex > -1)
@@ -115,7 +103,7 @@ namespace FitnessClub
                 List<MembersInformation> memberInformationSearch;
 
                 memberInformationSearch = memberIndex.Where(m =>
-                (m.LastName + ", " + m.FirstName) == strSelectedName).ToList();
+                (m.LastName + ", " + m.FirstName + ", (" + m.Email + ")") == strSelectedName).ToList();
 
 
                 foreach (MembersInformation m in memberInformationSearch)

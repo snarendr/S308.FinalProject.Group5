@@ -22,7 +22,7 @@
         <TextBlock x:Name="txtbDescription" HorizontalAlignment="Left" Margin="86,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="102" Width="310" Foreground="#FFFDEBEB" Text="This window allows the user to look up user information by entering their Last Name, Email , and or/Phone Number. Once the search button is clicked, all the user(s) that meet the search criteria will have their membership information displayed below. "/>
         <Label x:Name="lblPhoNumDesc" Content="(xxx-xxx-xxxx)" HorizontalAlignment="Left" Margin="428,118,0,0" VerticalAlignment="Top" Foreground="White" FontStyle="Italic"/>
         <Label x:Name="lblResults" Content="Results:" HorizontalAlignment="Left" Height="32" Margin="0,157,0,0" VerticalAlignment="Top" Width="160" Foreground="White"/>
-        <TextBox x:Name="txtDetails" HorizontalAlignment="Left" Height="327" Margin="165,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="586" VerticalScrollBarVisibility="Visible" IsReadOnly="True" IsTabStop="False"/>
-        <ListBox x:Name="lbxResults" HorizontalAlignment="Left" Height="327" Margin="10,194,0,0" VerticalAlignment="Top" Width="150" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="lbxResults_SelectionChanged" />
+        <TextBox x:Name="txtDetails" HorizontalAlignment="Left" Height="327" Margin="258,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" VerticalScrollBarVisibility="Visible" IsReadOnly="True" IsTabStop="False"/>
+        <ListBox x:Name="lbxResults" HorizontalAlignment="Left" Height="327" Margin="10,194,0,0" VerticalAlignment="Top" Width="229" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="lbxResults_SelectionChanged" />
     </Grid>
 </Window>
