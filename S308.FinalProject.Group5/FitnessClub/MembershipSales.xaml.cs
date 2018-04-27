@@ -72,9 +72,6 @@ namespace FitnessClub
         //Begin the quote measurement
         private void btnQuote_Click(object sender, RoutedEventArgs e)
         {
-
-            //Declare variable to store the start date
-            DateTime datStartDate = dtpStart.SelectedDate.Value;
             //Validate that a membership type was selected
 
             if (cmbMemType.SelectedIndex == 0)
@@ -84,11 +81,14 @@ namespace FitnessClub
             }
 
             //Validate that a start date was entered
-            if (datStartDate == null)
+            if (dtpStart.SelectedDate == null)
             {
                 MessageBox.Show("Please select a start date to generate a quote.");
                 return;
             }
+
+            //Declare variable to store the start date
+            DateTime datStartDate = dtpStart.SelectedDate.Value;
 
             //Validate the start date is not in the past
             if (datStartDate < DateTime.Today)

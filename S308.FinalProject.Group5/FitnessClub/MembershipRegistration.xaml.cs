@@ -243,8 +243,9 @@ namespace FitnessClub
             //newmemberinformation json file edits
 
             //read the membership file
-            List<MembersInformation> MemberList;
-            string strFilePath = @"../../Data.MembersInformation.json";
+            List<MembersInformation> MemberList = new List<MembersInformation>();                    
+            string strFilePath = @"..\..\Data.MembersInformation.json";
+    
             try
             {
                 StreamReader reader = new StreamReader(strFilePath);
@@ -252,7 +253,6 @@ namespace FitnessClub
                 reader.Close();
 
                 MemberList = JsonConvert.DeserializeObject<List<MembersInformation>>(jsonData);
-
 
             }
 
@@ -263,17 +263,17 @@ namespace FitnessClub
 
 
             //writing back to file
-            //try
+            try
             {
-                //string jsonData = JsonConvert.SerializeObject(MemberList);
-                //System.IO.File.WriteAllText(strFilePath, jsonData);
-                //MessageBox.Show("New Member has been added");
+                string jsonData = JsonConvert.SerializeObject(MemberList);
+                System.IO.File.WriteAllText(strFilePath, jsonData);
+                MessageBox.Show("New Member has been added");
 
             }
-            //catch (Exception ex)
+            catch (Exception ex)
             {
-               // MessageBox.Show("Error in append file: " + ex.Message);
-                //return;
+               MessageBox.Show("Error in append file: " + ex.Message);
+               return;
             }
 
 
