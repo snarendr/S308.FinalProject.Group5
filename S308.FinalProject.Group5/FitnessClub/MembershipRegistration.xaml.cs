@@ -229,7 +229,8 @@ namespace FitnessClub
                 }
             }
             
-
+            //collect user fitness goals here
+           
             
 
     
