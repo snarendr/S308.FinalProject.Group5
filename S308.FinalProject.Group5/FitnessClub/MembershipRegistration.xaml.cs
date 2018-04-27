@@ -244,7 +244,7 @@ namespace FitnessClub
 
             //read the membership file
             List<MembersInformation> MemberList = new List<MembersInformation>();                    
-            string strFilePath = @"..\..\Data.MembersInformation.json";
+            string strFilePath = @"..\..\Data\MembersInformation.json";
 
             //Read the json feature file and deserialize the information into the feature list
             try
