@@ -232,7 +232,7 @@ namespace FitnessClub
             //collect user fitness goals here
            
             
-
+           
     
             //add results to membership database
 

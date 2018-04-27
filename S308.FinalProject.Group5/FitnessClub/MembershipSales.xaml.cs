@@ -252,6 +252,7 @@ namespace FitnessClub
 
             MembershipRegistration MembershipRegistrationWindow = new MembershipRegistration(quote);
             MembershipRegistrationWindow.Show();
+            this.Close();
         }
 
         //Allow user to go back to the Main Menu
