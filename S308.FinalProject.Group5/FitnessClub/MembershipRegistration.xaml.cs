@@ -72,7 +72,7 @@ namespace FitnessClub
             }
 
             //validate the user selected a credit card type
-            if (cmbCredCardType.SelectedIndex == -1)
+            if (cmbCredCardType.SelectedIndex == 0)
             {
                 MessageBox.Show("Please select a credit card type");
                 return;
@@ -187,7 +187,7 @@ namespace FitnessClub
             }
 
             //validate a gender was provided
-            if (rdbMale.IsChecked == false && rdbFemale.IsChecked == false && rdbNotProvided.IsChecked == false) ;
+            if (rdbMale.IsChecked == false && rdbFemale.IsChecked == false && rdbNotProvided.IsChecked == false) 
             {
                 MessageBox.Show("Please select a gender");
             }
@@ -220,7 +220,7 @@ namespace FitnessClub
             }
 
             //if the user provided a weight, validate it is a number
-            if(txtAge.Text != "")
+            if(txtWeight.Text != "")
             {
                 if (!int.TryParse(txtWeight.Text, out intWeight))
                 {
@@ -236,7 +236,7 @@ namespace FitnessClub
     
             //add results to membership database
 
-            MembersInformation MemberNew = new MembersInformation(quote.MembershipType, strFirstName, strLastName, quote.StartDate.ToString(), quote.EndDate.ToString(), quote.SubTotal, quote.AdditionalFeatures_Training, quote.AdditionalFeatures_LockerRental, quote.TotalCost, strPhone, strEmail, strGender, intWeight);
+            //MembersInformation MemberNew = new MembersInformation(quote.MembershipType, strFirstName, strLastName, quote.StartDate.ToString(), quote.EndDate.ToString(), quote.SubTotal, quote.AdditionalFeatures_Training, quote.AdditionalFeatures_LockerRental, quote.TotalCost, strPhone, strEmail, strGender, intWeight);
             //newmemberinformation json file edits
 
             //read the membership file
@@ -260,17 +260,17 @@ namespace FitnessClub
 
 
             //writing back to file
-            try
+            //try
             {
-                string jsonData = JsonConvert.SerializeObject(MemberList);
-                System.IO.File.WriteAllText(strFilePath, jsonData);
-                MessageBox.Show("New Member has been added");
+                //string jsonData = JsonConvert.SerializeObject(MemberList);
+                //System.IO.File.WriteAllText(strFilePath, jsonData);
+                //MessageBox.Show("New Member has been added");
 
             }
-            catch (Exception ex)
+            //catch (Exception ex)
             {
-                MessageBox.Show("Error in append file: " + ex.Message);
-                return;
+               // MessageBox.Show("Error in append file: " + ex.Message);
+                //return;
             }
 
 
