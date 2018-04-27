@@ -133,9 +133,16 @@ namespace FitnessClub
             //If user has updated the price and selected an availability option, execute the below code
             if (txbUpdatePrice.Text != "" && (rdbOffered.IsChecked == true || rdbNotOffered.IsChecked == true))
             {
-                //Declare double variable and store the updated price from the user. 
-                double dblUpdatePrice = Convert.ToDouble(txbUpdatePrice.Text);
-                
+                //Declare variable to store updated price
+                double dblUpdatePrice;
+
+                //Validate the user proived a valid updated price
+                if(!double.TryParse(txbUpdatePrice.Text, out dblUpdatePrice))
+                {
+                    MessageBox.Show("Please enter a valid number for the updated price. Do not enter any alphanumeric or non-numeric characters.");
+                    return;
+                }
+
                 //Create bool variable to store the user selection for memebership availability
                 bool bolOffered;
                 //If the offered option was checked, set the bool variable as true, otherwise set the bool variable as false
@@ -188,11 +195,18 @@ namespace FitnessClub
 
             }
 
-            //If the user selected an availability option, an update price must have been entered based on previous validation. Execute the following code to only update the price. 
+            //If the user did not select an availability option, an update price must have been entered based on previous validation. Execute the following code to only update the price. 
             if (rdbOffered.IsChecked == false && rdbNotOffered.IsChecked == false)
             {
-                //Declare double variable and store the updated price from the user. 
-                double dblUpdatePrice = Convert.ToDouble(txbUpdatePrice.Text);
+                //Declare variable to store updated price
+                double dblUpdatePrice;
+
+                //Validate the user proived a valid updated price
+                if (!double.TryParse(txbUpdatePrice.Text, out dblUpdatePrice))
+                {
+                    MessageBox.Show("Please enter a valid number for the updated price. Do not enter any alphanumeric or non-numeric characters.");
+                    return;
+                }
 
                 //Run a qeuery to find the membership in the membership list that matches the membership selected by the user
                 var membershipQuery =
