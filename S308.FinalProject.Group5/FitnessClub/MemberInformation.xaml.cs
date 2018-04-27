@@ -86,10 +86,13 @@ namespace FitnessClub
            foreach (MembersInformation m in memberInformationSearch)
             {
                 lbxResults.Items.Add((m.LastName + ", " +m.FirstName + ", (" + m.Email + ")").ToString());
-                //if no results were found in the query, notify the user
-                if (lbxResults.Items.Count < 1)
-                    MessageBox.Show("No one was found on your search.");
+            }
 
+            //if no results were found in the query, notify the user
+            if (lbxResults.Items.Count < 1)
+            {
+                MessageBox.Show("No one was found on your search.");
+                return;
             }
 
         }
