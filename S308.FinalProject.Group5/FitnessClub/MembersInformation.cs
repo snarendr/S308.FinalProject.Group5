@@ -57,7 +57,7 @@ namespace FitnessClub
         strResults += "Training: " + Additional_Features_Training + Environment.NewLine;
         strResults += "Locker Rental: " + Additional_Features_LockerRental + Environment.NewLine;
         strResults += "Total Cost: " + TotalCost.ToString("C2") + Environment.NewLine;
-        strResults += "Phone Number: " + PhoneNumber + Environment.NewLine;
+        strResults += "Phone Number: (" + PhoneNumber.Substring(0,3) + ")" + "-" + PhoneNumber.Substring(3,3) + "-" + PhoneNumber.Substring(6,4) + Environment.NewLine;
         strResults += "Email: " + Email + Environment.NewLine;
         strResults += "Gender: " + Gender + Environment.NewLine;
         strResults += "Weight: " + Weight.ToString() + "lbs" + Environment.NewLine;
