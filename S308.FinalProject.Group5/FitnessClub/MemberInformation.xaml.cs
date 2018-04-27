@@ -98,7 +98,7 @@ namespace FitnessClub
              
            foreach (MembersInformation m in memberInformationSearch)
             {
-                lbxResults.Items.Add(m.LastName.ToString());
+                lbxResults.Items.Add((m.LastName + ", " +m.FirstName).ToString());
                 if (lbxResults.Items.Count < 1)
                     MessageBox.Show("No one was found on your search.");
 
@@ -112,7 +112,7 @@ namespace FitnessClub
             {
                 string strSelectedName = lbxResults.SelectedItem.ToString();
 
-                MembersInformation memberSelected = memberIndex.Where(m => m.LastName == strSelectedName).ToList()[lbxResults.SelectedIndex];
+                MembersInformation memberSelected = memberIndex.Where(m => m.LastName.ToString() == strSelectedName);
                 txtDetails.Text = memberSelected.ToString();
             }
 
