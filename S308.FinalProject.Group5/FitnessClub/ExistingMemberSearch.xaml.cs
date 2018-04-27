@@ -23,7 +23,7 @@ namespace FitnessClub
     {
         List<MembersInformation> memberIndex;
         List<MembersInformation> filteredMembers;
-        MembersInformation selectedMember;
+        MemberInformation selectedMember;
         Quote q;
 
         public ExistingMemberSearch()
@@ -105,7 +105,7 @@ namespace FitnessClub
             // 1. get index of listbox
 
             // 2. filter list of customers by criteria and index by index in step 1
-            selectedMember = filteredMembers[lbxExistingMembers.SelectedIndex];
+          //  selectedMember = filteredMembers[lbxExistingMembers.SelectedIndex];
 
         }
 
@@ -126,8 +126,12 @@ namespace FitnessClub
 
         private void bttnSelect_Click(object sender, RoutedEventArgs e)
         {
-          //MembershipRegistration m = new MembershipRegistration(selectedMember,q)
-            
+            MembershipRegistration m = new MembershipRegistration(selectedMember, q);
+
+          //  MembershipRegistration MembershipRegistrationWindow = new MembershipRegistration();
+          //  MembershipRegistrationWindow.Show();
+          //  this.Close();
+
         }
     }
 }

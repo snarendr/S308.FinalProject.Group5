@@ -35,6 +35,7 @@ namespace FitnessClub
             quote = q;
             member = m;
             InitializeComponent();
+            
         }
 
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)
