@@ -18,9 +18,9 @@
         <Label x:Name="lblAge" Content="Age:" HorizontalAlignment="Left" Margin="387,250,0,0" VerticalAlignment="Top" Foreground="White" Height="34" Width="45"/>
         <Label x:Name="lblWeight" Content="Weight:" HorizontalAlignment="Left" Margin="387,288,0,0" VerticalAlignment="Top" Foreground="White" Height="34" Width="68"/>
         <Label x:Name="lblPersonalFitGoal" Content="Personal Fitness Goal:" HorizontalAlignment="Left" Margin="25,331,0,0" VerticalAlignment="Top" Foreground="White" Height="34" Width="166"/>
-        <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="30" Margin="124,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" TabIndex="0" Text="Nathan"/>
-        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="30" Margin="124,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" TabIndex="1" Text="Jobst"/>
-        <TextBox x:Name="txtCredCardNum" HorizontalAlignment="Left" Height="31" Margin="151,279,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" TabIndex="3" Text="123456789654123"/>
+        <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="30" Margin="124,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" TabIndex="0"/>
+        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="30" Margin="124,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" TabIndex="1"/>
+        <TextBox x:Name="txtCredCardNum" HorizontalAlignment="Left" Height="31" Margin="151,279,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" TabIndex="3"/>
         <ComboBox x:Name="cmbCredCardType" HorizontalAlignment="Left" Margin="134,235,0,0" VerticalAlignment="Top" Width="202" Height="29" SelectedIndex="0" TabIndex="2">
             <ComboBoxItem x:Name="cbiDefault" Content="Please select a Credit Card type" HorizontalAlignment="Left" Width="197" Margin="0,0,-11,0"/>
             <ComboBoxItem x:Name="cbiVisa" Content="Visa" HorizontalAlignment="Left" Width="148"/>
@@ -33,12 +33,12 @@
         <CheckBox x:Name="chbST" Content="Strength Training" HorizontalAlignment="Left" Margin="197,391,0,0" VerticalAlignment="Top" Foreground="White" Height="20" Width="148" TabIndex="6"/>
         <CheckBox x:Name="chbWeightLoss" Content="Weight Loss" HorizontalAlignment="Left" Margin="197,417,0,0" VerticalAlignment="Top" Foreground="White" Height="20" Width="111" TabIndex="7"/>
         <CheckBox x:Name="chbWeightMgmt" Content="Weight Managment" HorizontalAlignment="Left" Margin="197,444,0,0" VerticalAlignment="Top" Foreground="White" Height="19" Width="166" TabIndex="8"/>
-        <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Height="30" Margin="517,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" TabIndex="10" Text="4846023105"/>
-        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="31" Margin="517,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" TabIndex="11" Text="natejobst@gmail.com"/>
+        <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Height="30" Margin="517,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" TabIndex="10"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="31" Margin="517,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" TabIndex="11"/>
         <RadioButton x:Name="rdbMale" Content="Male" HorizontalAlignment="Left" Margin="461,219,0,0" VerticalAlignment="Top" Height="20" Width="60" Focusable="False" TabIndex="12" Foreground="White"/>
         <RadioButton x:Name="rdbFemale" Content="Female" HorizontalAlignment="Left" Margin="528,219,0,0" VerticalAlignment="Top" Height="20" Width="75" TabIndex="13" Foreground="White"/>
-        <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="30" Margin="439,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" TabIndex="15" Text="22"/>
-        <TextBox x:Name="txtWeight" HorizontalAlignment="Left" Height="30" Margin="439,289,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" TabIndex="16" Text="150"/>
+        <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="30" Margin="439,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" TabIndex="15"/>
+        <TextBox x:Name="txtWeight" HorizontalAlignment="Left" Height="30" Margin="439,289,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" TabIndex="16"/>
         <Label x:Name="lblWeightDesc" Content="(lbs)" HorizontalAlignment="Left" Margin="389,304,0,0" VerticalAlignment="Top" FontStyle="Italic" Foreground="White" Height="34" Width="42"/>
         <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Left" Margin="528,332,0,0" VerticalAlignment="Top" Width="150" Height="50" TabIndex="17" Click="btnRegister_Click"/>
         <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="528,411,0,0" VerticalAlignment="Top" Width="150" Height="50" TabIndex="18"/>
