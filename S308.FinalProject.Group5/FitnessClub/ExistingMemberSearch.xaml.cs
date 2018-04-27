@@ -123,5 +123,6 @@ namespace FitnessClub
             txtLastNameInput.Text = "";
             txtPhoneNumberInput.Text = "";
         }
+
     }
 }

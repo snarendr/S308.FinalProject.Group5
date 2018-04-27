@@ -64,22 +64,22 @@ namespace FitnessClub
 
             //Getting input from Last name and validating
             string strLastName = txtLastNameInput.Text.Trim();
-            if (strLastName == "")
-            {
-                MessageBox.Show("Please enter a last name");
-            }
+           // if (strLastName.ToUpper() == "")
+            //{
+                //MessageBox.Show("Please enter a last name");
+            //}
             //Getting input from email and validating
             string strEmail = txtEmailInput.Text.Trim();
-            if (strEmail == "")
-            {
-                MessageBox.Show("Your search will be better with a correctly formatted email");
-            }
+           // if (strEmail == "")
+            //{
+                //MessageBox.Show("Your search will be better with a correctly formatted email");
+            //}
             //Getting input from phone number and validating 
             string strPhoneNumber = txtPhoneNumberInput.Text.Trim();
-            if (strPhoneNumber == "")
-            {
-                MessageBox.Show("Your seach will be better with a correctly formated phone number");
-            }
+            //if (strPhoneNumber == "")
+            //{
+                //MessageBox.Show("Your seach will be better with a correctly formated phone number");
+            //}
             //Further validating
           //  if((txtEmailInput.Text.Trim() == "") && (txtLastNameInput.Text.Trim() = "") && (txtPhoneNumberInput.Text.Trim() = ""))
           //  {
@@ -90,8 +90,8 @@ namespace FitnessClub
             lbxResults.Items.Clear();
 
             memberInformationSearch = memberIndex.Where(m =>
-                (m.LastName == strLastName) || 
-                (m.Email == strEmail) ||
+                (m.LastName.ToUpper() == strLastName.ToUpper()) || 
+                (m.Email.ToUpper() == strEmail.ToUpper()) ||
                 (m.PhoneNumber == strPhoneNumber) ||
                 (m.LastName == strLastName && m.Email == strEmail) || 
                 (m.LastName == strLastName && m.Email == strEmail && m.PhoneNumber == strPhoneNumber)).ToList();
