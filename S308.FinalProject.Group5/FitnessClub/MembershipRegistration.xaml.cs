@@ -245,35 +245,65 @@ namespace FitnessClub
             //read the membership file
             List<MembersInformation> MemberList = new List<MembersInformation>();                    
             string strFilePath = @"..\..\Data.MembersInformation.json";
-    
-            try
-            {
-                StreamReader reader = new StreamReader(strFilePath);
-                string jsonData = reader.ReadToEnd();
-                reader.Close();
-
-                MemberList = JsonConvert.DeserializeObject<List<MembersInformation>>(jsonData);
-
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error in import process: " + ex.Message);
-            }
 
 
-            //writing back to file
+            //Serialize the updated feature list and overwrite the json file with the updated feature information. Tell the user the feature details have been updated. 
             try
             {
                 string jsonData = JsonConvert.SerializeObject(MemberList);
                 System.IO.File.WriteAllText(strFilePath, jsonData);
-                MessageBox.Show("New Member has been added");
-
+                MessageBox.Show("New member has been added.");
             }
+            //If an export error occurs, notify the user with an error message. 
             catch (Exception ex)
             {
-               MessageBox.Show("Error in append file: " + ex.Message);
-               return;
+                MessageBox.Show("Error in export process " + ex.Message);
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //try
+            {
+                //StreamReader reader = new StreamReader(strFilePath);
+                //string jsonData = reader.ReadToEnd();
+                //reader.Close();
+
+                //MemberList = JsonConvert.DeserializeObject<List<MembersInformation>>(jsonData);
+
+            }
+
+            //catch (Exception ex)
+            {
+                //MessageBox.Show("Error in import process: " + ex.Message);
+            }
+
+
+            //writing back to file
+           // try
+            {
+               // string jsonData = JsonConvert.SerializeObject(MemberList);
+                //System.IO.File.WriteAllText(strFilePath, jsonData);
+               // MessageBox.Show("New Member has been added");
+
+            }
+           // catch (Exception ex)
+            {
+              // MessageBox.Show("Error in append file: " + ex.Message);
+               //return;
             }
 
 
