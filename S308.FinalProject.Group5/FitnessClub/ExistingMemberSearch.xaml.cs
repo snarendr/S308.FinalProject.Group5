@@ -22,6 +22,10 @@ namespace FitnessClub
     public partial class ExistingMemberSearch : Window
     {
         List<MembersInformation> memberIndex;
+        List<MembersInformation> filteredMembers;
+        MembersInformation selectedMember;
+        Quote q;
+
         public ExistingMemberSearch()
         {
 
@@ -82,10 +86,10 @@ namespace FitnessClub
  
             lbxExistingMembers.Items.Clear();
 
-            memberInformationSearch = memberIndex.Where(m =>
+            filteredMembers = memberIndex.Where(m =>
                 m.LastName == strLastName).ToList();
 
-            foreach (MembersInformation m in memberInformationSearch)
+            foreach (MembersInformation m in filteredMembers)
             {
                 lbxExistingMembers.Items.Add(m.LastName.ToString());
                 if (lbxExistingMembers.Items.Count < 1)
@@ -96,18 +100,14 @@ namespace FitnessClub
         }
 
 
-       // private void lbxResults_SelectionChanged(object sender, SelectionChangedEventArgs e)
-       // {
-          //  if (lbxExistingMembers.SelectedIndex > -1)
-          //  {
-               // string strSelectedName = lbxExistingMembers.SelectedItem.ToString();
+        private void lbxresults_selectionchanged(object sender, SelectionChangedEventArgs e)
+        {
+            // 1. get index of listbox
 
-              //  MembersInformation memberSelected = memberIndex.Where(m => m.LastName == strSelectedName).FirstOrDefault();
-               // txtDetails.Text = memberSelected.ToString();
-           // }
+            // 2. filter list of customers by criteria and index by index in step 1
+            selectedMember = filteredMembers[lbxExistingMembers.SelectedIndex];
 
-
-       // }
+        }
 
 
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)
@@ -124,5 +124,10 @@ namespace FitnessClub
             txtPhoneNumberInput.Text = "";
         }
 
+        private void bttnSelect_Click(object sender, RoutedEventArgs e)
+        {
+          //MembershipRegistration m = new MembershipRegistration(selectedMember,q)
+            
+        }
     }
 }

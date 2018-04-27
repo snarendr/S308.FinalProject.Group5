@@ -23,9 +23,17 @@ namespace FitnessClub
     public partial class MembershipRegistration : Window
     {
         Quote quote;
+        MemberInformation member;
         public MembershipRegistration(Quote q)
         {
             quote = q;
+            InitializeComponent();
+        }
+
+       public MembershipRegistration(MemberInformation m, Quote q)
+        {
+            quote = q;
+            member = m;
             InitializeComponent();
         }
 
