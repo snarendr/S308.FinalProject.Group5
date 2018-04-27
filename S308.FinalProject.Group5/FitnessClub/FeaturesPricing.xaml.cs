@@ -128,7 +128,7 @@ namespace FitnessClub
             {
                 string jsonData = JsonConvert.SerializeObject(FeatureList);
                 System.IO.File.WriteAllText(strFilePath, jsonData);
-                MessageBox.Show(strFeatureType + " details have been updated.");
+                MessageBox.Show(strFeatureType + " details have been updated. You will see the updated details after pressing ok.");
             }
             //If an export error occurs, notify the user with an error message. 
             catch (Exception ex)

@@ -202,7 +202,7 @@ namespace FitnessClub
             {
                 string jsonData = JsonConvert.SerializeObject(MembershipList);
                 System.IO.File.WriteAllText(strFilePath, jsonData);
-                MessageBox.Show(strMembershipType + " details have been updated.");
+                MessageBox.Show(strMembershipType + " details have been updated. You will see the updated details in current price and availability box after pressing ok.");
             }
             //If an export error occurs, notify the user with an error message. 
             catch (Exception ex)
