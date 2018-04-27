@@ -239,13 +239,26 @@ namespace FitnessClub
 
             //add results to membership database
 
-            MembersInformation MemberNew = new MembersInformation(quote.MembershipType, strFirstName, strLastName, quote.StartDate.ToString(), quote.EndDate.ToString(), quote.SubTotal, quote.AdditionalFeatures_Training, quote.AdditionalFeatures_LockerRental, quote.TotalCost, strPhone, strEmail, strGender, intWeight, strCCNum, chbAthPer.IsChecked.Value, chbOverHealth.IsChecked.Value, chbST.IsChecked.Value, chbWeightLoss.IsChecked.Value, chbWeightMgmt.IsChecked.Value);
+            
             //newmemberinformation json file edits
 
             //read the membership file
             List<MembersInformation> MemberList = new List<MembersInformation>();                    
             string strFilePath = @"..\..\Data.MembersInformation.json";
 
+            //Read the json feature file and deserialize the information into the feature list
+            try
+            {
+                string jsonData = File.ReadAllText(strFilePath);
+                MemberList = JsonConvert.DeserializeObject<List<MembersInformation>>(jsonData);
+            }
+            //Catch any errors that occur and display an error message to the user
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in reading available memberships from memberships data file: " + ex.Message);
+            }
+
+            MembersInformation MemberNew = new MembersInformation(quote.MembershipType, strFirstName, strLastName, quote.StartDate.ToString(), quote.EndDate.ToString(), quote.SubTotal, quote.AdditionalFeatures_Training, quote.AdditionalFeatures_LockerRental, quote.TotalCost, strPhone, strEmail, strGender, intWeight, strCCNum, chbAthPer.IsChecked.Value, chbOverHealth.IsChecked.Value, chbST.IsChecked.Value, chbWeightLoss.IsChecked.Value, chbWeightMgmt.IsChecked.Value);
 
             //Serialize the updated feature list and overwrite the json file with the updated feature information. Tell the user the feature details have been updated. 
             try
