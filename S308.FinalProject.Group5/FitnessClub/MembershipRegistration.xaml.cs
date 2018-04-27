@@ -230,23 +230,14 @@ namespace FitnessClub
                     return;
                 }
             }
-
-            //collect user fitness goals here
-          
-
-
-
-
-            //add results to membership database
-
-            
-            //newmemberinformation json file edits
-
-            //read the membership file
+                
+            //start process to add new member to the membership json file
+            //create a list store the members information
+            //declare variable to store the file path of the membership json file
             List<MembersInformation> MemberList = new List<MembersInformation>();                    
             string strFilePath = @"..\..\Data\MembersInformation.json";
 
-            //Read the json feature file and deserialize the information into the feature list
+            //Read the json membership file and deserialize the information into the membership list
             try
             {
                 string jsonData = File.ReadAllText(strFilePath);
@@ -255,14 +246,16 @@ namespace FitnessClub
             //Catch any errors that occur and display an error message to the user
             catch (Exception ex)
             {
-                MessageBox.Show("Error in reading available memberships from memberships data file: " + ex.Message);
+                MessageBox.Show("Error in reading membership information from memberships data file: " + ex.Message);
             }
 
+            //Add new member using the established signature
             MembersInformation MemberNew = new MembersInformation(quote.MembershipType, strFirstName, strLastName, quote.StartDate.ToString(), quote.EndDate.ToString(), quote.SubTotal, quote.AdditionalFeatures_Training, quote.AdditionalFeatures_LockerRental, quote.TotalCost, strPhone, strEmail, strGender, intWeight, strCCNum, chbAthPer.IsChecked.Value, chbOverHealth.IsChecked.Value, chbST.IsChecked.Value, chbWeightLoss.IsChecked.Value, chbWeightMgmt.IsChecked.Value);
 
+            //Add the new member to the member list
             MemberList.Add(MemberNew);
 
-            //Serialize the updated feature list and overwrite the json file with the updated feature information. Tell the user the feature details have been updated. 
+            //Serialize the updated member list and overwrite the json file with the updated member information. Tell the user the member details have been updated. 
             try
             {
                 string jsonData = JsonConvert.SerializeObject(MemberList);
@@ -274,53 +267,6 @@ namespace FitnessClub
             {
                 MessageBox.Show("Error in export process " + ex.Message);
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            //try
-            {
-                //StreamReader reader = new StreamReader(strFilePath);
-                //string jsonData = reader.ReadToEnd();
-                //reader.Close();
-
-                //MemberList = JsonConvert.DeserializeObject<List<MembersInformation>>(jsonData);
-
-            }
-
-            //catch (Exception ex)
-            {
-                //MessageBox.Show("Error in import process: " + ex.Message);
-            }
-
-
-            //writing back to file
-           // try
-            {
-               // string jsonData = JsonConvert.SerializeObject(MemberList);
-                //System.IO.File.WriteAllText(strFilePath, jsonData);
-               // MessageBox.Show("New Member has been added");
-
-            }
-           // catch (Exception ex)
-            {
-              // MessageBox.Show("Error in append file: " + ex.Message);
-               //return;
-            }
-
 
         }
         private void btnExistingCustomer_Click(object sender, RoutedEventArgs e)
