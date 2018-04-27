@@ -112,8 +112,26 @@ namespace FitnessClub
             {
                 string strSelectedName = lbxResults.SelectedItem.ToString();
 
-                MembersInformation memberSelected = memberIndex.Where(m => m.LastName.ToString() == strSelectedName);
-                txtDetails.Text = memberSelected.ToString();
+                List<MembersInformation> memberInformationSearch;
+
+                memberInformationSearch = memberIndex.Where(m =>
+                (m.LastName + ", " + m.FirstName) == strSelectedName).ToList();
+
+
+                foreach (MembersInformation m in memberInformationSearch)
+                {
+                    txtDetails.Text = m.ToString();
+                }
+
+
+                //notes below
+                //(m.Email.ToUpper().Contains(strEmail.ToUpper())) &&
+                //(m.PhoneNumber.Contains(strPhoneNumber)) &&
+                //(m.LastName.Contains(strLastName) && m.Email.Contains(strEmail)) &&
+                //(m.LastName.Contains(strLastName) && m.Email.Contains(strEmail) && m.PhoneNumber.Contains(strPhoneNumber))).ToList();
+
+                //MembersInformation memberSelected 
+                //txtDetails.Text = memberSelected.ToString();
             }
 
 
