@@ -24,6 +24,6 @@
         <Label x:Name="lblResults" Content="Matching Results:" HorizontalAlignment="Left" Height="32" Margin="11,184,0,0" VerticalAlignment="Top" Width="160" Foreground="White"/>
         <TextBox x:Name="txtDetails" HorizontalAlignment="Left" Height="295" Margin="366,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="406" VerticalScrollBarVisibility="Visible" IsReadOnly="True" IsTabStop="False" IsReadOnlyCaretVisible="True"/>
         <ListBox x:Name="lbxResults" HorizontalAlignment="Left" Height="295" Margin="10,211,0,0" VerticalAlignment="Top" Width="315" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="lbxResults_SelectionChanged" />
-        <Label x:Name="lblIndividualDetails" Content="Individual Details:" HorizontalAlignment="Left" Height="31" Margin="366,184,0,0" VerticalAlignment="Top" Width="177" Foreground="White"/>
+        <Label x:Name="lblIndividualDetails" Content="Individual Details:" HorizontalAlignment="Left" Height="31" Margin="366,184,0,0" VerticalAlignment="Top" Width="406" Foreground="White"/>
     </Grid>
 </Window>

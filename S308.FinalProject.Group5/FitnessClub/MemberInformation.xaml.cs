@@ -109,8 +109,16 @@ namespace FitnessClub
                 foreach (MembersInformation m in memberInformationSearch)
                 {
                     txtDetails.Text = m.ToString();
+                    
+                    if(Convert.ToDateTime(m.EndDate).Month <= DateTime.Now.Month)
+
+                    {
+                        txtDetails.Background = Brushes.LightPink;
+                    }
                 }
 
+
+               
 
                 //notes below
                 //(m.Email.ToUpper().Contains(strEmail.ToUpper())) &&

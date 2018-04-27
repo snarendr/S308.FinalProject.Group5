@@ -68,6 +68,7 @@ namespace FitnessClub
         strResults += "Weight Loss: " + PFG_WeightManagment + Environment.NewLine;
         strResults += Environment.NewLine;
 
+
         return strResults;
         }
 
