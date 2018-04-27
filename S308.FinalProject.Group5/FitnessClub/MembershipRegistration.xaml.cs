@@ -260,6 +260,8 @@ namespace FitnessClub
 
             MembersInformation MemberNew = new MembersInformation(quote.MembershipType, strFirstName, strLastName, quote.StartDate.ToString(), quote.EndDate.ToString(), quote.SubTotal, quote.AdditionalFeatures_Training, quote.AdditionalFeatures_LockerRental, quote.TotalCost, strPhone, strEmail, strGender, intWeight, strCCNum, chbAthPer.IsChecked.Value, chbOverHealth.IsChecked.Value, chbST.IsChecked.Value, chbWeightLoss.IsChecked.Value, chbWeightMgmt.IsChecked.Value);
 
+            MemberList.Add(MemberNew);
+
             //Serialize the updated feature list and overwrite the json file with the updated feature information. Tell the user the feature details have been updated. 
             try
             {

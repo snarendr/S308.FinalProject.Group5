@@ -69,11 +69,32 @@ namespace FitnessClub
 
             return strResults;
         }
-        
-        public MembersInformation()
-       {
 
+        public MembersInformation()
+        {
+            Type = "";
+            FirstName = "";
+            LastName = "";
+            StartDate = "";
+            EndDate = "";
+            SubTotal = 0;
+            Additional_Features_Training = false;
+            Additional_Features_LockerRental = false;
+            TotalCost = 0;
+            PhoneNumber = "";
+            Email = "";
+            Gender = "";
+            Weight = 0;
+            Credit_Card_Number = "";
+            PFG_AthleticPerformance = false;
+            PFG_OverallHealth = false;
+            PFG_StrengthTraining = false;
+            PFG_WeightLoss = false;
+            PFG_WeightManagment = false;
         }
+
+
+        
 
         public MembersInformation(string type, string firstName, string lastName, string startDate, string endDate, double subTotal, bool additional_Features_Training, bool additional_Features_LockerRental, double totalCost, string phoneNumber, string email, string gender, int weight, string credit_Card_Number, bool pFG_AthleticPerformance, bool pFG_OverallHealth, bool pFG_StrengthTraining, bool pFG_WeightLoss, bool pFG_WeightManagment)
         {
@@ -83,7 +104,7 @@ namespace FitnessClub
             StartDate = startDate;
             EndDate = endDate;
             SubTotal = subTotal;
-            Additional_Features_LockerRental = additional_Features_Training;
+            Additional_Features_Training = additional_Features_Training;
             Additional_Features_LockerRental = additional_Features_LockerRental;
             TotalCost = totalCost;
             PhoneNumber = phoneNumber;
