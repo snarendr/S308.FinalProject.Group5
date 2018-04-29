@@ -146,6 +146,13 @@ namespace FitnessClub
                     return;
                 }
 
+                //Validate the updated price is not a negative number
+                if (dblUpdatePrice < 0)
+                {
+                    MessageBox.Show("Please enter a non-negative value for the updated price.");
+                    return;
+                }
+
                 //Create bool variable to store the user selection for memebership availability
                 bool bolOffered;
                 //If the offered option was checked, set the bool variable as true, otherwise set the bool variable as false
@@ -208,6 +215,13 @@ namespace FitnessClub
                 if (!double.TryParse(txbUpdatePrice.Text, out dblUpdatePrice))
                 {
                     MessageBox.Show("Please enter a valid number for the updated price. Do not enter any alphanumeric or non-numeric characters.");
+                    return;
+                }
+
+                //Validate the updated price is not a negative number
+                if (dblUpdatePrice < 0)
+                {
+                    MessageBox.Show("Please enter a non-negative value for the updated price.");
                     return;
                 }
 

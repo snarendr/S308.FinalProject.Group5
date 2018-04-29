@@ -27,7 +27,7 @@
         <Label x:Name="lblEndDateResHead" Content="End Date:" HorizontalAlignment="Left" Margin="35,357,0,0" VerticalAlignment="Top" Foreground="White" Height="42" Width="101"/>
         <Label x:Name="lblAddFeatResHead" Content="Additional Features:" HorizontalAlignment="Left" Margin="359,316,0,0" VerticalAlignment="Top" Foreground="White" Height="41" Width="189"/>
         <Label x:Name="lblSubTotalHead" Content="Subtotal:" HorizontalAlignment="Left" Margin="359,285,0,0" VerticalAlignment="Top" Foreground="White" Height="41" Width="94"/>
-        <Label x:Name="lblMemTypeResult" Content="" HorizontalAlignment="Left" Margin="165,286,0,0" VerticalAlignment="Top" Foreground="White" Height="41" Width="156"/>
+        <Label x:Name="lblMemTypeResult" Content="" HorizontalAlignment="Left" Margin="165,286,0,0" VerticalAlignment="Top" Foreground="White" Height="41" Width="189"/>
         <Label x:Name="lblStartDateResult" Content="" HorizontalAlignment="Left" Margin="165,316,0,0" VerticalAlignment="Top" Foreground="White" Height="41" Width="83"/>
         <Label x:Name="lblEndDateResult" Content="" HorizontalAlignment="Left" Margin="165,357,0,0" VerticalAlignment="Top" Foreground="White" Height="42" Width="83"/>
         <Label x:Name="lblSubtotalResult" Content="" HorizontalAlignment="Left" Margin="504,284,0,0" VerticalAlignment="Top" Foreground="White" Height="42" Width="62"/>

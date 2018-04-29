@@ -72,7 +72,6 @@ namespace FitnessClub
         return strResults;
         }
 
-
         public MembersInformation(string type, string firstName, string lastName, string startDate, string endDate, double subTotal, bool additional_Features_Training, bool additional_Features_LockerRental, double totalCost, string phoneNumber, string email, string gender, int weight, string credit_Card_Number, bool pFG_AthleticPerformance, bool pFG_OverallHealth, bool pFG_StrengthTraining, bool pFG_WeightLoss, bool pFG_WeightManagment)
         {
             Type = type;
@@ -118,14 +117,6 @@ namespace FitnessClub
             PFG_StrengthTraining = false;
             PFG_WeightLoss = false;
             PFG_WeightManagment = false;
-        }
-
-
-        
-        
-                        
-
-
-
+        }                 
     }
 }

@@ -34,10 +34,11 @@ namespace FitnessClub
         List<Membership> MembershipList = new List<Membership>();
         List<Feature> featureList = new List<Feature>();
         Quote quote;
+
         public MembershipSales()
         {
             InitializeComponent();
-            //Call the method to find the available memberships for the combo box
+            //Call the method to find the available memberships to display in the combo box
             AvailableMemberships();
         }
 
@@ -101,7 +102,7 @@ namespace FitnessClub
             string strSelection = cmbMemType.SelectedItem.ToString();
 
             //Convert date and time
-            DateTime datStartTime = datStartDate;
+            //delte?? DateTime datStartTime = datStartDate;
 
             //Declare End Date Variable
             DateTime datEndTime;
@@ -112,13 +113,17 @@ namespace FitnessClub
             //Cacluate the timespan for the selected membership - Either add 1 year or 1 month to the start time based on the selected membership. Store the equivalent number of months in a byte variable for usage in calculating additional feature costs. 
             if (strSelection == "Individual 12 Month" || strSelection == "Family 12 Month")
             {
-                datEndTime = datStartTime.AddYears(1);
+                //Since user is selecting a 12 month option, add 1 year to the start date to get the end date
+                datEndTime = datStartDate.AddYears(1);
+                //Store 12 months in byte variable for calcuation of any feature costs
                 bytMonths = 12;
 
             }
             else
             {
-                datEndTime = datStartTime.AddMonths(1);
+                //Since user is selecting a 1 month option, add 1 month to the start date to get the end date
+                datEndTime = datStartDate.AddMonths(1);
+                //Store 1 months in byte variable for calcuation of any feature costs
                 bytMonths = 1;
             }
 
@@ -207,14 +212,21 @@ namespace FitnessClub
 
             Membership m = membershipQuery.First();
 
+            //Store the subtotal as the price of the selected membership
             double dblSubTotal = m.Price;
+            //Cacluate the total cost by adding the membership cost to the total feauture cost. The total feature cost is calculated by multiplying the costs per month of the selected features by the number of months for the selected membership type. 
             double dblFinalTotal = (m.Price + (dblFeatureCost * bytMonths));
+            //Display the selected membership type and its associated price to the user
             lblMemTypeResult.Content = m.Type + " ($" + m.Price + ")";
-            lblStartDateResult.Content = datStartTime.ToShortDateString();
+            //Display the membership start date to the user in short date format
+            lblStartDateResult.Content = datStartDate.ToShortDateString();
+            //Display the membership end date to the user in short date format
             lblEndDateResult.Content = datEndTime.ToShortDateString();
+            //Dispaly the subtotal to the user in currency format
             lblSubtotalResult.Content = dblSubTotal.ToString("C2");
-            lblTotalResult.Content = (m.Price + (dblFeatureCost * bytMonths)).ToString("C2");
-
+            //Dispaly the the total cost to the user in currency format
+            lblTotalResult.Content = (dblFinalTotal).ToString("C2");
+            //Display the selected feature content to the user
             lblAddFeatResult.Content = strFeatures;
 
             quote = new Quote(strSelection, datStartDate, datEndTime, chbTraining.IsChecked.Value, chbLockRental.IsChecked.Value, dblSubTotal, dblFinalTotal);
@@ -241,15 +253,16 @@ namespace FitnessClub
             lblTotalResult.Content = "";
         }
 
-        //User selects generate quote button
+        //User selects approve quote button
         private void btnApprove_Click(object sender, RoutedEventArgs e)
         {
+            //Validate that all needed content for the quote was displayed to the user prior to allowing the user to proceed with the registration process
             if (lblMemTypeResult.Content == "" || lblStartDate.Content == "" || lblEndDateResult.Content == "" || lblSubtotalResult.Content == "" || lblTotalResult.Content == "")
             {
                 MessageBox.Show("A quote has not been fully generated. A full quote must be provided before approving the quote. Please ensure you have pressed the generate quote button prior to selecting the approve button.");
                 return;
             }
-
+            //If the quote was properly generated, open the window for membership registration and pass in the needed information from the quote
             MembershipRegistration MembershipRegistrationWindow = new MembershipRegistration(quote);
             MembershipRegistrationWindow.Show();
             this.Close();
