@@ -26,6 +26,7 @@ namespace FitnessClub
         MemberInformation selectedMember;
         Quote q;
 
+
         public ExistingMemberSearch()
         {
 
@@ -62,51 +63,83 @@ namespace FitnessClub
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
 
-            List<MembersInformation> memberInformationSearch;
+
 
             //Getting input from Last name and validating
-            string strLastName = txtLastNameInput.Text.Trim();
-            if (strLastName == "")
-            {
-                MessageBox.Show("Please enter a last name");
-            }
+            string strLastName = txtLastNameInput.Text.Trim().ToUpper();
+
             //Getting input from email and validating
-            string strEmail = txtEmailInput.Text.Trim();
-            if (strEmail == "")
-            {
-                MessageBox.Show("Your search will be better with a correctly formatted email");
-            }
+            string strEmail = txtEmailInput.Text.Trim().ToUpper();
+
             //Getting input from phone number and validating 
-            string strPhoneNumber = txtPhoneNumberInput.Text.Trim();
-            if (strPhoneNumber == "")
+            string strPhoneNumber = txtPhoneNumberInput.Text.Trim().ToUpper();
+
+            if (strPhoneNumber == "" && strLastName == "" && strEmail == "")
             {
-                MessageBox.Show("Your seach will be better with a correctly formated phone number");
+                MessageBox.Show("You must enter at least one search critera.");
+                return;
             }
 
- 
             lbxExistingMembers.Items.Clear();
-
+           
+            //Declare list for information serach query
+            List<MembersInformation> filteredMembers;
             filteredMembers = memberIndex.Where(m =>
                 m.LastName == strLastName).ToList();
 
             foreach (MembersInformation m in filteredMembers)
             {
-                lbxExistingMembers.Items.Add(m.LastName.ToString());
-                if (lbxExistingMembers.Items.Count < 1)
-                    MessageBox.Show("No one was found on your search.");
+                lbxExistingMembers.Items.Add((m.LastName + ", " + m.FirstName + ", (" + m.Email + ")").ToString());
+            }
+            if (lbxExistingMembers.Items.Count < 1)
+            {
+                MessageBox.Show("No one was found on your search.");
 
             }
+
 
         }
 
 
         private void lbxresults_selectionchanged(object sender, SelectionChangedEventArgs e)
         {
+            /*
             // 1. get index of listbox
+                //MembersInformation memberSelected = memberIndex.Where(m => m.LastName == strSelectedName).ToList()[lbxExistingMembers.SelectedIndex];
+                //txtDetails.Text = memberSelected.ToString();
 
-            // 2. filter list of customers by criteria and index by index in step 1
-          //  selectedMember = filteredMembers[lbxExistingMembers.SelectedIndex];
+                //Convert.ToDateTime(m.EndDate).Day - DateTime.Now.Day < 14
+                //notes below
+                //(m.Email.ToUpper().Contains(strEmail.ToUpper())) &&
+                //(m.PhoneNumber.Contains(strPhoneNumber)) &&
+                //(m.LastName.Contains(strLastName) && m.Email.Contains(strEmail)) &&
+                //(m.LastName.Contains(strLastName) && m.Email.Contains(strEmail) && m.PhoneNumber.Contains(strPhoneNumber))).ToList();
 
+                //MembersInformation memberSelected 
+                //filteredMembers = memberSelected.ToString();
+
+            if (lbxExistingMembers.SelectedIndex > -1)
+            {
+                string strSelectedName = lbxExistingMembers.SelectedItem.ToString();
+
+                List<MembersInformation> selectedMember;
+
+                selectedMember = memberIndex.Where(m =>
+                (m.LastName + ", " + m.FirstName + ", (" + m.Email + ")") == strSelectedName).ToList();
+
+                foreach (MembersInformation m in selectedMember)
+                {
+                    MembersInformation info = new MembersInformation(quote.MembershipType, strFirstName.ToUpper(), strLastName.ToUpper(), quote.StartDate.ToShortDateString(), quote.EndDate.ToShortDateString(), quote.SubTotal, quote.AdditionalFeatures_Training, quote.AdditionalFeatures_LockerRental, quote.TotalCost, strPhone, strEmail.ToUpper(), strGender, intWeight, strCCNum, chbAthPer.IsChecked.Value, chbOverHealth.IsChecked.Value, chbST.IsChecked.Value, chbWeightLoss.IsChecked.Value, chbWeightMgmt.IsChecked.Value);
+                    MembershipRegistration next = new MembershipRegistration(info, q);
+
+
+
+
+                    // 2. filter list of customers by criteria and index by index in step 1
+                    //selectedMember = filteredMembers[lbxExistingMembers.SelectedIndex];
+                    //if the end date of the selected membership is within 14 days (or already expired), display the text box in red
+                   // if ((Convert.ToDateTime(m.EndDate) - DateTime.Now).TotalDays < 14)
+          */
         }
 
 
@@ -126,7 +159,7 @@ namespace FitnessClub
 
         private void bttnSelect_Click(object sender, RoutedEventArgs e)
         {
-            MembershipRegistration m = new MembershipRegistration(selectedMember, q);
+            //MembershipRegistration m = new MembershipRegistration(selectedMember, q);
 
           //  MembershipRegistration MembershipRegistrationWindow = new MembershipRegistration();
           //  MembershipRegistrationWindow.Show();

@@ -20,20 +20,23 @@ namespace FitnessClub
     
     public partial class MemberInformation : Window
     {
+        //Creaing the index to hold our members
         List<MembersInformation> memberIndex;
 
         public MemberInformation()
         {
             InitializeComponent();
+            //Calling method that loads data from the JSON file to our index
             memberIndex = LoadData();
             
         }
 
         public List<MembersInformation> LoadData()
         {
+            //Creating list to hold members 
             List<MembersInformation> lstMembersInformation = new List<MembersInformation>();
 
-
+            //Our file path to holding members 
             string strFilePath = @"..\..\Data\MembersInformation.json";
             try
             {
@@ -47,13 +50,14 @@ namespace FitnessClub
             {
                 MessageBox.Show("Error in import process: " + ex.Message);
             }
-
+            //Returning our list 
             return lstMembersInformation;
 
 
         }
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
+            //Setting background to white 
             txtDetails.Background = Brushes.White;
 
             //Declare variables to store last name, email, and phone number provided by the user
@@ -100,19 +104,22 @@ namespace FitnessClub
        
         private void lbxResults_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            //Turning background to white 
             txtDetails.Background = Brushes.White;
-
+            //Validating that there is an item in our list box
             if (lbxResults.SelectedIndex > -1)
             {
                 string strSelectedName = lbxResults.SelectedItem.ToString();
 
                 List<MembersInformation> memberInformationSearch;
-
+                //Query selecting the information about the member
                 memberInformationSearch = memberIndex.Where(m =>
                 (m.LastName + ", " + m.FirstName + ", (" + m.Email + ")") == strSelectedName).ToList();
 
+                //Walking through the item selected
                 foreach (MembersInformation m in memberInformationSearch)
-                {
+                {   
+                    //adding the information to the txt box
                     txtDetails.Text = m.ToString();
                     //if the end date of the selected membership is within 14 days (or already expired), display the text box in red
                     if ((Convert.ToDateTime(m.EndDate) - DateTime.Now).TotalDays <  14)
@@ -122,30 +129,19 @@ namespace FitnessClub
                     }
                 }
 
-                //MembersInformation memberSelected = memberIndex.Where(m => m.LastName == strSelectedName).ToList()[lbxResults.SelectedIndex];
-                //txtDetails.Text = memberSelected.ToString();
 
-                //Convert.ToDateTime(m.EndDate).Day - DateTime.Now.Day < 14
-                //notes below
-                //(m.Email.ToUpper().Contains(strEmail.ToUpper())) &&
-                //(m.PhoneNumber.Contains(strPhoneNumber)) &&
-                //(m.LastName.Contains(strLastName) && m.Email.Contains(strEmail)) &&
-                //(m.LastName.Contains(strLastName) && m.Email.Contains(strEmail) && m.PhoneNumber.Contains(strPhoneNumber))).ToList();
-
-                //MembersInformation memberSelected 
-                //txtDetails.Text = memberSelected.ToString();
             }
 
 
         }
-
+        //Method to get back to the main menu 
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)
         {
             MainMenu MainMenuWindow = new MainMenu();
             MainMenuWindow.Show();
             this.Close();
         }
-
+        //Method to clear the window
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
             txtLastNameInput.Text = "";
