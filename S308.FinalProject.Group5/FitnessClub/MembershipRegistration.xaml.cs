@@ -24,6 +24,8 @@ namespace FitnessClub
     {
         Quote quote;
         MemberInformation member;
+        //Defalting blank member info for the default constructor 
+        //public MembersInformation InfoFromPrevWindow { get; set; }
         public MembershipRegistration(Quote q)
         {
             quote = q;

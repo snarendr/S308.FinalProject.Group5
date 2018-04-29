@@ -45,10 +45,6 @@ namespace FitnessClub
                 string jsonData = File.ReadAllText(strFilePath);
 
                 lstMembersInformation = JsonConvert.DeserializeObject<List<MembersInformation>>(jsonData);
-                if (lstMembersInformation.Count >= 0)
-                    MessageBox.Show(lstMembersInformation.Count + " members have been imported.");
-                else
-                    MessageBox.Show("No members imported.");
             }
 
             catch (Exception ex)
@@ -106,7 +102,6 @@ namespace FitnessClub
             /*
             // 1. get index of listbox
                 //MembersInformation memberSelected = memberIndex.Where(m => m.LastName == strSelectedName).ToList()[lbxExistingMembers.SelectedIndex];
-                //txtDetails.Text = memberSelected.ToString();
 
                 //Convert.ToDateTime(m.EndDate).Day - DateTime.Now.Day < 14
                 //notes below
