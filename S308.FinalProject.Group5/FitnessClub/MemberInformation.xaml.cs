@@ -122,8 +122,9 @@ namespace FitnessClub
                     }
                 }
 
+                //MembersInformation memberSelected = memberIndex.Where(m => m.LastName == strSelectedName).ToList()[lbxResults.SelectedIndex];
+                //txtDetails.Text = memberSelected.ToString();
 
-               
                 //Convert.ToDateTime(m.EndDate).Day - DateTime.Now.Day < 14
                 //notes below
                 //(m.Email.ToUpper().Contains(strEmail.ToUpper())) &&
