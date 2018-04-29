@@ -54,6 +54,7 @@ namespace FitnessClub
         }
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
+            txtDetails.Background = Brushes.White;
 
             //Declare variables to store last name, email, and phone number provided by the user
             string strLastName = txtLastNameInput.Text.Trim().ToUpper();
@@ -99,6 +100,8 @@ namespace FitnessClub
        
         private void lbxResults_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            txtDetails.Background = Brushes.White;
+
             if (lbxResults.SelectedIndex > -1)
             {
                 string strSelectedName = lbxResults.SelectedItem.ToString();
@@ -108,11 +111,10 @@ namespace FitnessClub
                 memberInformationSearch = memberIndex.Where(m =>
                 (m.LastName + ", " + m.FirstName + ", (" + m.Email + ")") == strSelectedName).ToList();
 
-                 
                 foreach (MembersInformation m in memberInformationSearch)
                 {
                     txtDetails.Text = m.ToString();
-                    //if the end date of the selected membership is within 14 days (or already expired), dispaly the text box in red
+                    //if the end date of the selected membership is within 14 days (or already expired), display the text box in red
                     if ((Convert.ToDateTime(m.EndDate) - DateTime.Now).TotalDays <  14)
 
                     {
@@ -150,6 +152,7 @@ namespace FitnessClub
             txtPhoneNumberInput.Text = "";
             txtDetails.Text = "";
             lbxResults.Items.Clear();
+            txtDetails.Background = Brushes.White;
 
         }
 
