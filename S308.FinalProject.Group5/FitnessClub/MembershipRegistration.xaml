@@ -40,7 +40,7 @@
         <TextBox x:Name="txtWeight" HorizontalAlignment="Left" Height="30" Margin="439,289,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" TabIndex="16"/>
         <Label x:Name="lblWeightDesc" Content="(lbs)" HorizontalAlignment="Left" Margin="389,304,0,0" VerticalAlignment="Top" FontStyle="Italic" Foreground="White" Height="34" Width="42"/>
         <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Left" Margin="528,332,0,0" VerticalAlignment="Top" Width="150" Height="50" TabIndex="17" Click="btnRegister_Click"/>
-        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="528,411,0,0" VerticalAlignment="Top" Width="150" Height="50" TabIndex="18"/>
+        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="528,411,0,0" VerticalAlignment="Top" Width="150" Height="50" TabIndex="18" Click="btnClear_Click"/>
         <Label x:Name="lblTitle" Content="New Member Registration Form" HorizontalAlignment="Left" Margin="98,6,0,0" VerticalAlignment="Top" FontSize="30" Foreground="#FFF5EBEB" Height="57" Width="482"/>
         <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="659,8,0,0" VerticalAlignment="Top" Width="75" TabIndex="19" Click="btnBack_Click"/>
         <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="659,45,0,0" VerticalAlignment="Top" Width="75" TabIndex="20" Click="btnMainMenu_Click"/>

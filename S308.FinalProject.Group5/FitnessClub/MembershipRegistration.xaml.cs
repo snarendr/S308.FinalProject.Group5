@@ -289,4 +289,18 @@ namespace FitnessClub
             ExistingMemberWindow.Show();
             this.Close();
         }
+
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            txtFirstName.Text = "";
+            txtLastName.Text = "";
+            txtCredCardNum.Text = "";
+            txtPhone.Text = "";
+            txtEmail.Text = "";
+            txtWeight.Text = "";
+            txtAge.Text = "";
+            txtbDescription.Text = "";
+            
+
+        }
     } }
