@@ -35,7 +35,6 @@
         <CheckBox x:Name="chbWeightMgmt" Content="Weight Managment" HorizontalAlignment="Left" Margin="197,444,0,0" VerticalAlignment="Top" Foreground="White" Height="19" Width="166" TabIndex="8"/>
         <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Height="30" Margin="517,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" TabIndex="10"/>
         <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="31" Margin="517,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" TabIndex="11"/>
-        <RadioButton x:Name="rdbMale" Content="Male" HorizontalAlignment="Left" Margin="455,219,0,0" VerticalAlignment="Top" Height="20" Width="60" Focusable="False" TabIndex="21" Foreground="White"/>
         <RadioButton x:Name="rdbFemale" Content="Female" HorizontalAlignment="Left" Margin="528,219,0,0" VerticalAlignment="Top" Height="20" Width="75" TabIndex="13" Foreground="White"/>
         <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="30" Margin="439,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" TabIndex="15"/>
         <TextBox x:Name="txtWeight" HorizontalAlignment="Left" Height="30" Margin="439,289,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" TabIndex="16"/>
@@ -53,6 +52,7 @@
         <Label x:Name="lblAgeOptional" Content="(optional)" HorizontalAlignment="Left" Margin="494,252,0,0" VerticalAlignment="Top" Foreground="White" FontStyle="Italic"/>
         <Label x:Name="lblWeightOptional" Content="(optional)" HorizontalAlignment="Left" Margin="494,290,0,0" VerticalAlignment="Top" Foreground="White" FontStyle="Italic" RenderTransformOrigin="0.546,1.435"/>
         <Label x:Name="lblGoalOptional" Content="(optional)" HorizontalAlignment="Left" Margin="28,350,0,0" VerticalAlignment="Top" Foreground="White" FontStyle="Italic" RenderTransformOrigin="0.546,1.435"/>
+        <RadioButton x:Name="rdbMale" Content="Male" HorizontalAlignment="Left" Margin="448,219,0,0" VerticalAlignment="Top" Height="20" Width="75" TabIndex="12" Foreground="White"/>
 
     </Grid>
 </Window>
