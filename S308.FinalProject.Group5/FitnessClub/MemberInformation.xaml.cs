@@ -108,12 +108,12 @@ namespace FitnessClub
                 memberInformationSearch = memberIndex.Where(m =>
                 (m.LastName + ", " + m.FirstName + ", (" + m.Email + ")") == strSelectedName).ToList();
 
-
+                 
                 foreach (MembersInformation m in memberInformationSearch)
                 {
                     txtDetails.Text = m.ToString();
-                    
-                    if(Convert.ToDateTime(m.EndDate).Month <= DateTime.Now.Month)
+                    //if the end date of the selected membership is within 14 days (or already expired), dispaly the text box in red
+                    if ((Convert.ToDateTime(m.EndDate) - DateTime.Now).TotalDays <  14)
 
                     {
                         txtDetails.Background = Brushes.LightPink;
@@ -122,7 +122,7 @@ namespace FitnessClub
 
 
                
-
+                //Convert.ToDateTime(m.EndDate).Day - DateTime.Now.Day < 14
                 //notes below
                 //(m.Email.ToUpper().Contains(strEmail.ToUpper())) &&
                 //(m.PhoneNumber.Contains(strPhoneNumber)) &&
