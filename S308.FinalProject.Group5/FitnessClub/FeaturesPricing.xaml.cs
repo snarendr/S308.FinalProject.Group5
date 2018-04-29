@@ -24,9 +24,9 @@ namespace FitnessClub
     /// </summary>
     public partial class FeaturesPricing : Window
     {
-        //Create variable to store the membership json file path
+        //Create variable to store the feature json file path
         string strFilePath = @"..\..\Data\feature.json";
-        //Create membership list based on the feature class
+        //Create feature list based on the feature class
         List<Feature> FeatureList = new List<Feature>();
 
         public FeaturesPricing()
@@ -63,7 +63,7 @@ namespace FitnessClub
                 MessageBox.Show("Error in import process: " + ex.Message);
             }
 
-            //Store the comobo box selection in a string variable
+            //Identify the combo box selection and store the selection in a string variable
             ComboBoxItem cbiFeatureType = (ComboBoxItem)cmbSelectFeatures.SelectedItem;
             string strFeatureType = cbiFeatureType.Content.ToString();
 
@@ -73,7 +73,7 @@ namespace FitnessClub
               where (f.Type) == strFeatureType
               select f;
 
-            //For the feature type that matches the selection by the user, display the current price to the user.
+            //For the feature type that matches the selection by the user, display the selected feature name and current price to the user.
             foreach (Feature f in featureQuery)
             {
                 txbSelectedFeature.Text = f.Type;
@@ -81,14 +81,11 @@ namespace FitnessClub
             }
         }
 
-
-
-
         //User selects update button
         private void btnUpdatePrice_Click(object sender, RoutedEventArgs e)
         {
 
-            //Validate that the user has selected a membership type to modify
+            //Validate that the user has selected a feature type to modify
             if (cmbSelectFeatures.SelectedIndex == 0)
             {
                 MessageBox.Show("Please select a feature type to modify.");
@@ -110,10 +107,17 @@ namespace FitnessClub
             //Declare variable to store updated price
             double dblUpdatePrice;
 
-            //Validate the user proived a valid updated price
+            //Validate the user provided a valid updated price
             if (!double.TryParse(txbUpdatePrice.Text, out dblUpdatePrice))
             {
                 MessageBox.Show("Please enter a valid number for the updated price. Do not enter any alphanumeric or non-numeric characters.");
+                return;
+            }
+
+            //Validate the updated price is not a negative number
+            if(dblUpdatePrice < 0 )
+            {
+                MessageBox.Show("Please enter a non-negative value for the updated price.");
                 return;
             }
 
@@ -135,12 +139,11 @@ namespace FitnessClub
              where (f.Type) == strFeatureType
              select f;
 
-            //For the membership selected by the user, update the availability as stored in the bool variable and the price as stored in the double variable. 
+            //For the feature selected by the user, update the price as stored in the update price variable. 
             foreach (Feature f in featureQuery)
             {
                 f.price = dblUpdatePrice;
             }
-
 
             //Serialize the updated feature list and overwrite the json file with the updated feature information. Tell the user the feature details have been updated. 
             try
@@ -155,13 +158,13 @@ namespace FitnessClub
                 MessageBox.Show("Error in export process " + ex.Message);
             }
 
-            //Run query to find the membership that was updated from the membership list
+            //Run query to find the feature that was updated from the feature list
             var featurepNewInformation =
              from f in FeatureList
              where (f.Type) == strFeatureType
              select f;
 
-            //For the updated membership, display the now current price and availability to the user
+            //For the updated feature, display the select feature and now current price to the user. 
             foreach (Feature f in featurepNewInformation)
             {
                 txbSelectedFeature.Text = strFeatureType;

@@ -42,7 +42,7 @@ namespace FitnessClub
             rdbNotOffered.IsChecked = false;
             cmbMembershipType.SelectedIndex = 0;
         }
-        //Display the current price and availability the membership selected by the user. 
+        //Display the current price and availability of the membership selected by the user. 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
  
@@ -59,12 +59,13 @@ namespace FitnessClub
                 string jsonData = File.ReadAllText(strFilePath);
                 MembershipList = JsonConvert.DeserializeObject<List<Membership>>(jsonData);
             }
+            //Catch any errors during the read process and display an associated error message to the user
             catch (Exception ex)
             {
                 MessageBox.Show("Error in import process: " + ex.Message);
             }
 
-            //Store the comobo box selection in a string variable
+            //Identify the comobo box selection and store the selection in a string variable
             ComboBoxItem cbiMembershipType = (ComboBoxItem)cmbMembershipType.SelectedItem;
             string strMembershipType = cbiMembershipType.Content.ToString();
 
@@ -74,11 +75,15 @@ namespace FitnessClub
               where (m.Type) == strMembershipType
               select m;
 
-            //For the membership type that matches the selection by the user, display the current price to the user. Additionally display the availability to the user. 
+            //For the membership type that matches the selection by the user, display the membership type, the current price, and the availability to the user. 
             foreach (Membership m in membershipQuery)
             {
+                //Display the selected membership type
+                txbSelectedMembership.Text = m.Type;
+                //Display the price for the selected membership in currency format
                 txbCurrentPrice.Text = m.Price.ToString("C2");
 
+                //if the mebership is available, tell the user it is available, otherwise display not available. 
                 if (m.Available)
                 {
                     txbCurrentAvailability.Text = "Available";
@@ -87,9 +92,6 @@ namespace FitnessClub
                     txbCurrentAvailability.Text = "Not Available";                        
             }
 
-            //Display the selected membership type to the user
-            txbSelectedMembership.Text = strMembershipType;
-
             //Clear any update information that is currently in the form
             txbUpdatePrice.Text = "";
             rdbOffered.IsChecked = false;
@@ -97,7 +99,7 @@ namespace FitnessClub
 
         }
 
-        //User selects update membership button
+        //User selects update button
         private void btnUpdatePrice_Click(object sender, RoutedEventArgs e)
         {
             //Validate that the user has selected a membership type to modify
@@ -125,12 +127,13 @@ namespace FitnessClub
                 string jsonData = File.ReadAllText(strFilePath);
                 MembershipList = JsonConvert.DeserializeObject<List<Membership>>(jsonData);
             }
+            //Catch any errors during the read process and display an associated error message to the user
             catch (Exception ex)
             {
                 MessageBox.Show("Error in import process: " + ex.Message);
             }
 
-            //If user has updated the price and selected an availability option, execute the below code
+            //If the user has updated the price and selected an availability option, execute the below code
             if (txbUpdatePrice.Text != "" && (rdbOffered.IsChecked == true || rdbNotOffered.IsChecked == true))
             {
                 //Declare variable to store updated price
@@ -154,7 +157,7 @@ namespace FitnessClub
                 else
                     bolOffered = false;
                 
-                //Run a qeuery to find the membership in the membership list that matches the membership selected by the user
+                //Run a query to find the membership in the membership list that matches the membership selected by the user
                 var membershipQuery =
                  from m in MembershipList
                  where (m.Type) == strMembershipType
@@ -208,7 +211,7 @@ namespace FitnessClub
                     return;
                 }
 
-                //Run a qeuery to find the membership in the membership list that matches the membership selected by the user
+                //Run a query to find the membership in the membership list that matches the membership selected by the user
                 var membershipQuery =
                  from m in MembershipList
                  where (m.Type) == strMembershipType
