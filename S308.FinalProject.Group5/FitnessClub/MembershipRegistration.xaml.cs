@@ -47,14 +47,32 @@ namespace FitnessClub
 
         public void DoSomethingWithInfo()
         {
+            string strGender; 
+
             txtFirstName.Text = InfoFromPrevWindow.FirstName;
             txtLastName.Text = InfoFromPrevWindow.LastName;
             txtCredCardNum.Text = InfoFromPrevWindow.Credit_Card_Number;
             txtPhone.Text = InfoFromPrevWindow.PhoneNumber;
+            strGender = InfoFromPrevWindow.Gender;
             txtEmail.Text = InfoFromPrevWindow.Email;
             txtAge.Text = InfoFromPrevWindow.Age.ToString(); 
             txtWeight.Text = InfoFromPrevWindow.Weight.ToString();
+            strGender = InfoFromPrevWindow.Gender; 
+            //Checking correct radio button based upon the members gender 
+            if (strGender == "Male")
+            {
+                rdbMale.IsChecked = true;
+            }
 
+            else if (strGender == "Female")
+            {
+                rdbFemale.IsChecked = true;
+            }
+            else
+            {
+                rdbNotProvided.IsChecked = true;
+            }
+            //Getting boolean from exisiting member search and if true, check box is checked, if false, check box is unchecked 
             chbAthPer.IsChecked = InfoFromPrevWindow.PFG_AthleticPerformance;
             if (chbAthPer.IsChecked.Value == true)
             {
@@ -357,6 +375,7 @@ namespace FitnessClub
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
+            //Clearing all input in the form 
             txtFirstName.Text = "";
             txtLastName.Text = "";
             txtCredCardNum.Text = "";
@@ -369,8 +388,9 @@ namespace FitnessClub
             chbST.IsChecked = false;
             chbWeightLoss.IsChecked = false;
             chbWeightMgmt.IsChecked = false;
-
-
+            rdbMale.IsChecked = false;
+            rdbFemale.IsChecked = false;
+            rdbMale.IsChecked = false;
         }
     }
 }
