@@ -23,21 +23,84 @@ namespace FitnessClub
     public partial class MembershipRegistration : Window
     {
         Quote quote;
-        MemberInformation member;
-        //Defalting blank member info for the default constructor 
-        //public MembersInformation InfoFromPrevWindow { get; set; }
+        //MemberInformation member;
+        //Getter and Setter for information from exisiting members 
+        public MembersInformation InfoFromPrevWindow { get; set; }
         public MembershipRegistration(Quote q)
         {
             quote = q;
             InitializeComponent();
+            //Defalting blank member info for the default constructor
+            InfoFromPrevWindow = new MembersInformation();
+
         }
 
-       public MembershipRegistration(MemberInformation m, Quote q)
+        public MembershipRegistration(MembersInformation info, Quote q)
         {
             quote = q;
-            member = m;
+            InfoFromPrevWindow = info;
             InitializeComponent();
-            
+
+            DoSomethingWithInfo();
+
+        }
+
+        public void DoSomethingWithInfo()
+        {
+            txtFirstName.Text = InfoFromPrevWindow.FirstName;
+            txtLastName.Text = InfoFromPrevWindow.LastName;
+            txtCredCardNum.Text = InfoFromPrevWindow.Credit_Card_Number;
+            txtPhone.Text = InfoFromPrevWindow.PhoneNumber;
+            txtEmail.Text = InfoFromPrevWindow.Email;
+            txtAge.Text = InfoFromPrevWindow.Age.ToString(); 
+            txtWeight.Text = InfoFromPrevWindow.Weight.ToString();
+
+            chbAthPer.IsChecked = InfoFromPrevWindow.PFG_AthleticPerformance;
+            if (chbAthPer.IsChecked.Value == true)
+            {
+                chbAthPer.SetCurrentValue(CheckBox.IsCheckedProperty, true);
+            }
+
+
+            chbOverHealth.IsChecked = InfoFromPrevWindow.PFG_OverallHealth;
+            if (chbOverHealth.IsChecked.Value == true)
+            {
+                chbOverHealth.SetCurrentValue(CheckBox.IsCheckedProperty, true);
+            }
+            else
+            {
+                chbOverHealth.SetCurrentValue(CheckBox.IsCheckedProperty, false);
+            }
+
+            chbST.IsChecked = InfoFromPrevWindow.PFG_StrengthTraining;
+            if (chbST.IsChecked.Value == true)
+            {
+                chbST.SetCurrentValue(CheckBox.IsCheckedProperty, true);
+            }
+            else
+            {
+                chbST.SetCurrentValue(CheckBox.IsCheckedProperty, false);
+            }
+
+            chbWeightLoss.IsChecked = InfoFromPrevWindow.PFG_WeightLoss;
+            if (chbWeightLoss.IsChecked.Value == true)
+            {
+                chbWeightLoss.SetCurrentValue(CheckBox.IsCheckedProperty, true);
+            }
+            else
+            {
+                chbWeightLoss.SetCurrentValue(CheckBox.IsCheckedProperty, false);
+            }
+
+            chbWeightMgmt.IsChecked = InfoFromPrevWindow.PFG_WeightManagment;
+            if (chbWeightMgmt.IsChecked.Value == true)
+            {
+                chbWeightMgmt.SetCurrentValue(CheckBox.IsCheckedProperty, true);
+            }
+            else
+            {
+                chbWeightMgmt.SetCurrentValue(CheckBox.IsCheckedProperty, false);
+            }
         }
 
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)
@@ -68,8 +131,9 @@ namespace FitnessClub
             strCCNum = txtCredCardNum.Text.Trim();
             strPhone = txtPhone.Text.Trim();
             strGender = "";
+            intAge = 0;
             intWeight = 0;
-           
+
             //validate the user provided a first name
             if (strFirstName == "")
             {
@@ -107,7 +171,7 @@ namespace FitnessClub
             }
 
             //validate the credit card is a valid number
-                long lngCreditCard;
+            long lngCreditCard;
             if (!long.TryParse(strCCNum, out lngCreditCard))
             {
                 MessageBox.Show("Please enter only numeric digits for the credit card. Please do not enter any alphanumeric characters or non-numeric characters.");
@@ -122,7 +186,7 @@ namespace FitnessClub
             }
 
             //validate the phone number is 10 digits
-            if(strPhone.Length != 10)
+            if (strPhone.Length != 10)
             {
                 MessageBox.Show("Please enter a 10 digit phone number.");
                 return;
@@ -200,11 +264,11 @@ namespace FitnessClub
             }
 
             //validate a gender was provided
-            if (rdbMale.IsChecked == false && rdbFemale.IsChecked == false && rdbNotProvided.IsChecked == false) 
+            if (rdbMale.IsChecked == false && rdbFemale.IsChecked == false && rdbNotProvided.IsChecked == false)
             {
                 MessageBox.Show("Please select a gender");
             }
-            
+
             //store the selected gender type
             if (rdbFemale.IsChecked == true)
             {
@@ -233,7 +297,7 @@ namespace FitnessClub
             }
 
             //if the user provided a weight, validate it is a number
-            if(txtWeight.Text != "")
+            if (txtWeight.Text != "")
             {
                 if (!int.TryParse(txtWeight.Text, out intWeight))
                 {
@@ -241,11 +305,11 @@ namespace FitnessClub
                     return;
                 }
             }
-                
+
             //start process to add new member to the membership json file
             //create a list store the members information
             //declare variable to store the file path of the membership json file
-            List<MembersInformation> MemberList = new List<MembersInformation>();                    
+            List<MembersInformation> MemberList = new List<MembersInformation>();
             string strFilePath = @"..\..\Data\MembersInformation.json";
 
             //Read the json membership file and deserialize the information into the membership list
@@ -264,7 +328,7 @@ namespace FitnessClub
             DateTime datRegistration = DateTime.Now;
 
             //Add new member using the established signature
-            MembersInformation MemberNew = new MembersInformation(quote.MembershipType, strFirstName.ToUpper(), strLastName.ToUpper(), quote.StartDate.ToShortDateString(), quote.EndDate.ToShortDateString(), quote.SubTotal, quote.AdditionalFeatures_Training, quote.AdditionalFeatures_LockerRental, quote.TotalCost, strPhone, strEmail.ToUpper(), strGender, intWeight, strCCNum, chbAthPer.IsChecked.Value, chbOverHealth.IsChecked.Value, chbST.IsChecked.Value, chbWeightLoss.IsChecked.Value, chbWeightMgmt.IsChecked.Value);
+            MembersInformation MemberNew = new MembersInformation(quote.MembershipType, strFirstName.ToUpper(), strLastName.ToUpper(), quote.StartDate.ToShortDateString(), quote.EndDate.ToShortDateString(), quote.SubTotal, quote.AdditionalFeatures_Training, quote.AdditionalFeatures_LockerRental, quote.TotalCost, strPhone, strEmail.ToUpper(), strGender, intAge, intWeight, strCCNum, chbAthPer.IsChecked.Value, chbOverHealth.IsChecked.Value, chbST.IsChecked.Value, chbWeightLoss.IsChecked.Value, chbWeightMgmt.IsChecked.Value);
 
             //Add the new member to the member list
             MemberList.Add(MemberNew);
@@ -299,8 +363,13 @@ namespace FitnessClub
             txtEmail.Text = "";
             txtWeight.Text = "";
             txtAge.Text = "";
-            txtbDescription.Text = "";
-            
+            chbAthPer.IsChecked = false;
+            chbOverHealth.IsChecked = false;
+            chbST.IsChecked = false;
+            chbWeightLoss.IsChecked = false;
+            chbWeightMgmt.IsChecked = false;
+
 
         }
-    } }
+    }
+}

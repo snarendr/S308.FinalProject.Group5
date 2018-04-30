@@ -33,6 +33,8 @@ namespace FitnessClub
 
         public string Gender { get; set; }
 
+        public int Age { get; set; }
+
         public int Weight { get; set; }
 
         public string Credit_Card_Number { get; set; }
@@ -60,6 +62,7 @@ namespace FitnessClub
         strResults += "Phone Number: (" + PhoneNumber.Substring(0,3) + ")" + "-" + PhoneNumber.Substring(3,3) + "-" + PhoneNumber.Substring(6,4) + Environment.NewLine;
         strResults += "Email: " + Email + Environment.NewLine;
         strResults += "Gender: " + Gender + Environment.NewLine;
+        strResults += "Age: " + Age.ToString() + " Years old." + Environment.NewLine;
         strResults += "Weight: " + Weight.ToString() + "lbs" + Environment.NewLine;
         strResults += "Credit Card Number: " + Credit_Card_Number + Environment.NewLine;
         strResults += "Athletic Performance: " + PFG_AthleticPerformance + Environment.NewLine;
@@ -72,7 +75,7 @@ namespace FitnessClub
         return strResults;
         }
 
-        public MembersInformation(string type, string firstName, string lastName, string startDate, string endDate, double subTotal, bool additional_Features_Training, bool additional_Features_LockerRental, double totalCost, string phoneNumber, string email, string gender, int weight, string credit_Card_Number, bool pFG_AthleticPerformance, bool pFG_OverallHealth, bool pFG_StrengthTraining, bool pFG_WeightLoss, bool pFG_WeightManagment)
+        public MembersInformation(string type, string firstName, string lastName, string startDate, string endDate, double subTotal, bool additional_Features_Training, bool additional_Features_LockerRental, double totalCost, string phoneNumber, string email, string gender, int age, int weight, string credit_Card_Number, bool pFG_AthleticPerformance, bool pFG_OverallHealth, bool pFG_StrengthTraining, bool pFG_WeightLoss, bool pFG_WeightManagment)
         {
             Type = type;
             FirstName = firstName;
@@ -86,6 +89,7 @@ namespace FitnessClub
             PhoneNumber = phoneNumber;
             Email = email;
             Gender = gender;
+            Age = age;
             Weight = weight;
             Credit_Card_Number = credit_Card_Number;
             PFG_AthleticPerformance = pFG_AthleticPerformance;
@@ -110,6 +114,7 @@ namespace FitnessClub
             PhoneNumber = "";
             Email = "";
             Gender = "";
+            Age = 0;
             Weight = 0;
             Credit_Card_Number = "";
             PFG_AthleticPerformance = false;

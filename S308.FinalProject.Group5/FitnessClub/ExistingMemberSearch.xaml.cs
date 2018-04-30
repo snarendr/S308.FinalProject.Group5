@@ -22,8 +22,8 @@ namespace FitnessClub
     public partial class ExistingMemberSearch : Window
     {
         List<MembersInformation> memberIndex;
-        List<MembersInformation> filteredMembers;
-        MemberInformation selectedMember;
+        // List<MembersInformation> filteredMembers;
+        // MemberInformation selectedMember;
         Quote q;
 
 
@@ -77,7 +77,7 @@ namespace FitnessClub
             }
 
             lbxExistingMembers.Items.Clear();
-           
+
             //Declare list for information serach query
             List<MembersInformation> filteredMembers;
             filteredMembers = memberIndex.Where(m =>
@@ -99,42 +99,32 @@ namespace FitnessClub
 
         private void lbxresults_selectionchanged(object sender, SelectionChangedEventArgs e)
         {
-            /*
-            // 1. get index of listbox
-                //MembersInformation memberSelected = memberIndex.Where(m => m.LastName == strSelectedName).ToList()[lbxExistingMembers.SelectedIndex];
 
-                //Convert.ToDateTime(m.EndDate).Day - DateTime.Now.Day < 14
-                //notes below
-                //(m.Email.ToUpper().Contains(strEmail.ToUpper())) &&
-                //(m.PhoneNumber.Contains(strPhoneNumber)) &&
-                //(m.LastName.Contains(strLastName) && m.Email.Contains(strEmail)) &&
-                //(m.LastName.Contains(strLastName) && m.Email.Contains(strEmail) && m.PhoneNumber.Contains(strPhoneNumber))).ToList();
 
-                //MembersInformation memberSelected 
-                //filteredMembers = memberSelected.ToString();
-
+            //Checking there is an item in our list box 
             if (lbxExistingMembers.SelectedIndex > -1)
             {
                 string strSelectedName = lbxExistingMembers.SelectedItem.ToString();
 
-                List<MembersInformation> selectedMember;
+                List<MembersInformation> filteredMembers;
 
-                selectedMember = memberIndex.Where(m =>
+                filteredMembers = memberIndex.Where(m =>
                 (m.LastName + ", " + m.FirstName + ", (" + m.Email + ")") == strSelectedName).ToList();
 
-                foreach (MembersInformation m in selectedMember)
+                foreach (MembersInformation m in filteredMembers)
                 {
-                    MembersInformation info = new MembersInformation(quote.MembershipType, strFirstName.ToUpper(), strLastName.ToUpper(), quote.StartDate.ToShortDateString(), quote.EndDate.ToShortDateString(), quote.SubTotal, quote.AdditionalFeatures_Training, quote.AdditionalFeatures_LockerRental, quote.TotalCost, strPhone, strEmail.ToUpper(), strGender, intWeight, strCCNum, chbAthPer.IsChecked.Value, chbOverHealth.IsChecked.Value, chbST.IsChecked.Value, chbWeightLoss.IsChecked.Value, chbWeightMgmt.IsChecked.Value);
+                    MembersInformation info = new MembersInformation(m.Type, m.FirstName.ToUpper(), m.LastName.ToUpper(), m.StartDate, m.EndDate, m.SubTotal, m.Additional_Features_Training, m.Additional_Features_LockerRental, m.TotalCost, m.PhoneNumber, m.Email, m.Gender, m.Age, m.Weight, m.Credit_Card_Number, m.PFG_AthleticPerformance, m.PFG_OverallHealth, m.PFG_StrengthTraining, m.PFG_WeightLoss, m.PFG_WeightManagment);
+
                     MembershipRegistration next = new MembershipRegistration(info, q);
 
+                    next.Show();
+
+                    this.Close();
+                }
 
 
 
-                    // 2. filter list of customers by criteria and index by index in step 1
-                    //selectedMember = filteredMembers[lbxExistingMembers.SelectedIndex];
-                    //if the end date of the selected membership is within 14 days (or already expired), display the text box in red
-                   // if ((Convert.ToDateTime(m.EndDate) - DateTime.Now).TotalDays < 14)
-          */
+            }
         }
 
 
@@ -156,9 +146,9 @@ namespace FitnessClub
         {
             //MembershipRegistration m = new MembershipRegistration(selectedMember, q);
 
-          //  MembershipRegistration MembershipRegistrationWindow = new MembershipRegistration();
-          //  MembershipRegistrationWindow.Show();
-          //  this.Close();
+            //  MembershipRegistration MembershipRegistrationWindow = new MembershipRegistration();
+            //  MembershipRegistrationWindow.Show();
+            //  this.Close();
 
         }
     }
