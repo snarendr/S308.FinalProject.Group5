@@ -345,6 +345,7 @@ namespace FitnessClub
             {
                 MessageBox.Show("Error in export process " + ex.Message);
             }
+            MessageBox.Show("Customer Added!" + Environment.NewLine + MemberNew.ToString());
 
         }
         private void btnExistingCustomer_Click(object sender, RoutedEventArgs e)
