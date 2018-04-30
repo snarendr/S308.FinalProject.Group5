@@ -15,7 +15,7 @@
             <ComboBoxItem x:Name="cbiPersonalTrainingPlan" Content="Personal Training Plan"/>
             <ComboBoxItem x:Name="cbiLockerRental" Content="Locker Rental"/>
         </ComboBox>
-        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="183,312,0,0" VerticalAlignment="Top" Width="100" TabIndex="1" Height="30" Click="btnSubmit_Click"/>
+        <Button x:Name="btnSubmit" Content="Select" HorizontalAlignment="Left" Margin="183,312,0,0" VerticalAlignment="Top" Width="100" TabIndex="1" Height="30" Click="btnSubmit_Click"/>
         <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="657,11,0,0" VerticalAlignment="Top" Width="75" TabIndex="4" Height="20" Click="btnMainMenu_Click"/>
         <Label x:Name="lblSelectedFeature" Content="Selected Feature:" HorizontalAlignment="Left" Margin="437,226,0,0" VerticalAlignment="Top" Foreground="White"/>
         <TextBlock x:Name="txbSelectedFeature" HorizontalAlignment="Left" Margin="545,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Text="Selected feature will appear here"/>
