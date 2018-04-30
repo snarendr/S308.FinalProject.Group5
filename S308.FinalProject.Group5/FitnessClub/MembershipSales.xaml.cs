@@ -30,7 +30,7 @@ namespace FitnessClub
         string strFilePathMembership = @"..\..\Data\membership.json";
         string strFilePathFeature = @"..\..\Data\feature.json";
 
-        //Create lists for the membership and the feature information
+        //Create lists for the membership and the feature information and brings in information from Quote class
         List<Membership> MembershipList = new List<Membership>();
         List<Feature> featureList = new List<Feature>();
         Quote quote;
