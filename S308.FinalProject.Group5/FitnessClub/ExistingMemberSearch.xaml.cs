@@ -22,8 +22,7 @@ namespace FitnessClub
     public partial class ExistingMemberSearch : Window
     {
         List<MembersInformation> memberIndex;
-        // List<MembersInformation> filteredMembers;
-        // MemberInformation selectedMember;
+
         Quote q;
 
 
@@ -31,13 +30,12 @@ namespace FitnessClub
         {
 
             InitializeComponent();
-
+            //Loading data to our member index
             memberIndex = LoadData();
         }
         public List<MembersInformation> LoadData()
         {
             List<MembersInformation> lstMembersInformation = new List<MembersInformation>();
-
 
             string strFilePath = @"..\..\Data\MembersInformation.json";
             try
@@ -54,13 +52,9 @@ namespace FitnessClub
 
             return lstMembersInformation;
 
-
         }
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-
-
-
             //Getting input from Last name and validating
             string strLastName = txtLastNameInput.Text.Trim().ToUpper();
 
@@ -80,9 +74,15 @@ namespace FitnessClub
 
             //Declare list for information serach query
             List<MembersInformation> filteredMembers;
+            //write query to find members that match any proivded information about the members last name, email, or phone number
             filteredMembers = memberIndex.Where(m =>
-                m.LastName == strLastName).ToList();
-
+                (m.LastName.ToUpper().Contains(strLastName.ToUpper())) &&
+                (m.Email.ToUpper().Contains(strEmail.ToUpper())) &&
+                (m.PhoneNumber.Contains(strPhoneNumber)) &&
+                (m.LastName.Contains(strLastName) && m.Email.Contains(strEmail)) &&
+                (m.LastName.Contains(strLastName) && m.Email.Contains(strEmail) && m.PhoneNumber.Contains(strPhoneNumber))).ToList();
+          
+                  //Walking through each item added to filtered members 
             foreach (MembersInformation m in filteredMembers)
             {
                 lbxExistingMembers.Items.Add((m.LastName + ", " + m.FirstName + ", (" + m.Email + ")").ToString());
@@ -93,9 +93,7 @@ namespace FitnessClub
 
             }
 
-
         }
-
 
         private void lbxresults_selectionchanged(object sender, SelectionChangedEventArgs e)
         {
@@ -107,12 +105,14 @@ namespace FitnessClub
                 string strSelectedName = lbxExistingMembers.SelectedItem.ToString();
 
                 List<MembersInformation> filteredMembers;
-
+                
+                //Query that selects the members information chosen by the user
                 filteredMembers = memberIndex.Where(m =>
                 (m.LastName + ", " + m.FirstName + ", (" + m.Email + ")") == strSelectedName).ToList();
 
                 foreach (MembersInformation m in filteredMembers)
                 {
+                    //Pulling the information of the existing user to pull to the next window
                     MembersInformation info = new MembersInformation(m.Type, m.FirstName.ToUpper(), m.LastName.ToUpper(), m.StartDate, m.EndDate, m.SubTotal, m.Additional_Features_Training, m.Additional_Features_LockerRental, m.TotalCost, m.PhoneNumber, m.Email, m.Gender, m.Age, m.Weight, m.Credit_Card_Number, m.PFG_AthleticPerformance, m.PFG_OverallHealth, m.PFG_StrengthTraining, m.PFG_WeightLoss, m.PFG_WeightManagment);
 
                     MembershipRegistration next = new MembershipRegistration(info, q);
@@ -121,12 +121,8 @@ namespace FitnessClub
 
                     this.Close();
                 }
-
-
-
             }
         }
-
 
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)
         {
@@ -142,14 +138,5 @@ namespace FitnessClub
             txtPhoneNumberInput.Text = "";
         }
 
-        private void bttnSelect_Click(object sender, RoutedEventArgs e)
-        {
-            //MembershipRegistration m = new MembershipRegistration(selectedMember, q);
-
-            //  MembershipRegistration MembershipRegistrationWindow = new MembershipRegistration();
-            //  MembershipRegistrationWindow.Show();
-            //  this.Close();
-
-        }
     }
 }
