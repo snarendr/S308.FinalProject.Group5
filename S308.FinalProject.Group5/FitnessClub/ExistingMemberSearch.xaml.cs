@@ -21,14 +21,13 @@ namespace FitnessClub
 
     public partial class ExistingMemberSearch : Window
     {
+        //Establish list to store member information
         List<MembersInformation> memberIndex;
-
+        //Reference quote data
         Quote q;
-
 
         public ExistingMemberSearch()
         {
-
             InitializeComponent();
             //Loading data to our member index
             memberIndex = LoadData();
@@ -53,7 +52,6 @@ namespace FitnessClub
             }
 
             return lstMembersInformation;
-
         }
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
@@ -95,9 +93,7 @@ namespace FitnessClub
                 MessageBox.Show("No one was found on your search.");
 
             }
-
         }
-
         private void lbxresults_selectionchanged(object sender, SelectionChangedEventArgs e)
         {
             //Checking there is an item in our list box 
@@ -138,6 +134,5 @@ namespace FitnessClub
             txtLastNameInput.Text = "";
             txtPhoneNumberInput.Text = "";
         }
-
     }
 }
