@@ -37,6 +37,8 @@ namespace FitnessClub
 
         public int Weight { get; set; }
 
+        public string Credit_Card_Type { get; set; }
+
         public string Credit_Card_Number { get; set; }
 
         public bool PFG_AthleticPerformance { get; set; }
@@ -64,6 +66,7 @@ namespace FitnessClub
         strResults += "Gender: " + Gender + Environment.NewLine;
         strResults += "Age: " + Age.ToString() + " Years old" + Environment.NewLine;
         strResults += "Weight: " + Weight.ToString() + "lbs" + Environment.NewLine;
+        strResults += "Credit Card Type: " + Credit_Card_Type + Environment.NewLine;
         strResults += "Credit Card Number: " + Credit_Card_Number + Environment.NewLine;
         strResults += "Athletic Performance: " + PFG_AthleticPerformance + Environment.NewLine;
         strResults += "Overall Health: " + PFG_OverallHealth + Environment.NewLine;
@@ -73,7 +76,7 @@ namespace FitnessClub
         return strResults;
         }
         //Signature for passing in information from membership registration process and constructing instance of the member information class
-        public MembersInformation(string type, string firstName, string lastName, string startDate, string endDate, double subTotal, bool additional_Features_Training, bool additional_Features_LockerRental, double totalCost, string phoneNumber, string email, string gender, int age, int weight, string credit_Card_Number, bool pFG_AthleticPerformance, bool pFG_OverallHealth, bool pFG_StrengthTraining, bool pFG_WeightLoss, bool pFG_WeightManagment)
+        public MembersInformation(string type, string firstName, string lastName, string startDate, string endDate, double subTotal, bool additional_Features_Training, bool additional_Features_LockerRental, double totalCost, string phoneNumber, string email, string gender, int age, int weight, string credit_card_type,string credit_Card_Number, bool pFG_AthleticPerformance, bool pFG_OverallHealth, bool pFG_StrengthTraining, bool pFG_WeightLoss, bool pFG_WeightManagment)
         {
             Type = type;
             FirstName = firstName;
@@ -89,6 +92,7 @@ namespace FitnessClub
             Gender = gender;
             Age = age;
             Weight = weight;
+            Credit_Card_Type = credit_card_type;
             Credit_Card_Number = credit_Card_Number;
             PFG_AthleticPerformance = pFG_AthleticPerformance;
             PFG_OverallHealth = pFG_OverallHealth;
@@ -114,6 +118,7 @@ namespace FitnessClub
             Gender = "";
             Age = 0;
             Weight = 0;
+            Credit_Card_Type = "";
             Credit_Card_Number = "";
             PFG_AthleticPerformance = false;
             PFG_OverallHealth = false;

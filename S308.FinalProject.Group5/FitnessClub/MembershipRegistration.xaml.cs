@@ -137,7 +137,7 @@ namespace FitnessClub
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
             //declare variables to store first name, last name, email, cc number, phone, gender, age, and weight
-            string strFirstName, strLastName, strEmail, strCCNum, strPhone, strGender;
+            string strFirstName, strLastName, strEmail, strCCNum, strPhone, strGender, strCCType;
             int intAge, intWeight;
 
             //place inputs into variables
@@ -146,6 +146,7 @@ namespace FitnessClub
             strEmail = txtEmail.Text.Trim();
             strCCNum = txtCredCardNum.Text.Trim();
             strPhone = txtPhone.Text.Trim();
+            strCCType = ((ComboBoxItem)cmbCredCardType.SelectedItem).Content as string;
             strGender = "";
             intAge = 0;
             intWeight = 0;
@@ -344,7 +345,7 @@ namespace FitnessClub
             DateTime datRegistration = DateTime.Now;
 
             //Add new member using the established signature
-            MembersInformation MemberNew = new MembersInformation(quote.MembershipType, strFirstName.ToUpper(), strLastName.ToUpper(), quote.StartDate.ToShortDateString(), quote.EndDate.ToShortDateString(), quote.SubTotal, quote.AdditionalFeatures_Training, quote.AdditionalFeatures_LockerRental, quote.TotalCost, strPhone, strEmail.ToUpper(), strGender, intAge, intWeight, strCCNum, chbAthPer.IsChecked.Value, chbOverHealth.IsChecked.Value, chbST.IsChecked.Value, chbWeightLoss.IsChecked.Value, chbWeightMgmt.IsChecked.Value);
+            MembersInformation MemberNew = new MembersInformation(quote.MembershipType, strFirstName.ToUpper(), strLastName.ToUpper(), quote.StartDate.ToShortDateString(), quote.EndDate.ToShortDateString(), quote.SubTotal, quote.AdditionalFeatures_Training, quote.AdditionalFeatures_LockerRental, quote.TotalCost, strPhone, strEmail.ToUpper(), strGender, intAge, intWeight,strCCType, strCCNum, chbAthPer.IsChecked.Value, chbOverHealth.IsChecked.Value, chbST.IsChecked.Value, chbWeightLoss.IsChecked.Value, chbWeightMgmt.IsChecked.Value);
 
             //Add the new member to the member list
             MemberList.Add(MemberNew);

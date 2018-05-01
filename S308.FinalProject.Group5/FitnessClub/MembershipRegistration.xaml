@@ -23,10 +23,10 @@
         <TextBox x:Name="txtCredCardNum" HorizontalAlignment="Left" Height="31" Margin="151,279,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" TabIndex="3"/>
         <ComboBox x:Name="cmbCredCardType" HorizontalAlignment="Left" Margin="134,235,0,0" VerticalAlignment="Top" Width="202" Height="29" SelectedIndex="0" TabIndex="2">
             <ComboBoxItem x:Name="cbiDefault" Content="Please select a Credit Card type" HorizontalAlignment="Left" Width="197" Margin="0,0,-11,0"/>
-            <ComboBoxItem x:Name="cbiVisa" Content="Visa" HorizontalAlignment="Left" Width="148"/>
-            <ComboBoxItem x:Name="cbiMasterCard" Content="MasterCard" HorizontalAlignment="Left" Width="148"/>
-            <ComboBoxItem x:Name="cbiAMEX" Content="American Express" HorizontalAlignment="Left" Width="148"/>
-            <ComboBoxItem x:Name="cbiDiscover" Content="Discover" HorizontalAlignment="Left" Width="148"/>
+            <ComboBoxItem x:Name="cbiVisa" Content="Visa" HorizontalAlignment="Left" Width="202" Height="24" Margin="0,0,-2,0"/>
+            <ComboBoxItem x:Name="cbiMasterCard" Content="MasterCard" HorizontalAlignment="Left" Width="198" Height="22"/>
+            <ComboBoxItem x:Name="cbiAMEX" Content="American Express" HorizontalAlignment="Left" Width="199"/>
+            <ComboBoxItem x:Name="cbiDiscover" Content="Discover" HorizontalAlignment="Left" Width="198"/>
         </ComboBox>
         <CheckBox x:Name="chbAthPer" Content="Athletic Performance" HorizontalAlignment="Left" Margin="197,339,0,0" VerticalAlignment="Top" Foreground="White" Height="19" Width="173" TabIndex="4"/>
         <CheckBox x:Name="chbOverHealth" Content="Overall Health" HorizontalAlignment="Left" Margin="197,365,0,0" VerticalAlignment="Top" Foreground="White" Height="19" Width="125" TabIndex="5"/>
