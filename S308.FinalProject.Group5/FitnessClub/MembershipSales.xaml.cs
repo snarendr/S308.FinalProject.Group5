@@ -101,9 +101,6 @@ namespace FitnessClub
             //Identify the membership type selected and store in a string variable
             string strSelection = cmbMemType.SelectedItem.ToString();
 
-            //Convert date and time
-            //delte?? DateTime datStartTime = datStartDate;
-
             //Declare End Date Variable
             DateTime datEndTime;
 

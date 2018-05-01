@@ -38,6 +38,7 @@ namespace FitnessClub
 
             //Our file path to holding members 
             string strFilePath = @"..\..\Data\MembersInformation.json";
+            //Read the json membership file and deseralize the data to a list
             try
             {
                 string jsonData = File.ReadAllText(strFilePath);
@@ -45,15 +46,13 @@ namespace FitnessClub
                 lstMembersInformation = JsonConvert.DeserializeObject<List<MembersInformation>>(jsonData);
                
             }
-
+            //Catch any errors during the import process and display an error message to th user
             catch (Exception ex)
             {
                 MessageBox.Show("Error in import process: " + ex.Message);
             }
             //Returning our list 
             return lstMembersInformation;
-
-
         }
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
@@ -66,13 +65,14 @@ namespace FitnessClub
             string strEmail = txtEmailInput.Text.Trim().ToUpper();
            
             string strPhoneNumber = txtPhoneNumberInput.Text.Trim();
-            
+          
+          //Validate the user provided at least one search criteria  
           if(strPhoneNumber == "" && strLastName =="" && strEmail == "")
             {
                 MessageBox.Show("You must enter at least one search critera.");
                 return;
             }
-
+            //Clear any existing results 
             txtDetails.Text = "";
             lbxResults.Items.Clear();
 
@@ -87,7 +87,7 @@ namespace FitnessClub
                 (m.LastName.Contains(strLastName) && m.Email.Contains(strEmail)) &&
                 (m.LastName.Contains(strLastName) && m.Email.Contains(strEmail) && m.PhoneNumber.Contains(strPhoneNumber))).ToList();
            
-            //list the first name and last name of members that matched the query results 
+           //list the first name and last name of members that matched the query results 
            foreach (MembersInformation m in memberInformationSearch)
             {
                 lbxResults.Items.Add((m.LastName + ", " +m.FirstName + ", (" + m.Email + ")").ToString());
@@ -99,9 +99,8 @@ namespace FitnessClub
                 MessageBox.Show("No one was found on your search.");
                 return;
             }
-
         }
-       
+        //User changes the member record they have selected      
         private void lbxResults_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //Turning background to white 
@@ -128,11 +127,7 @@ namespace FitnessClub
                         txtDetails.Background = Brushes.LightPink;
                     }
                 }
-
-
             }
-
-
         }
         //Method to get back to the main menu 
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)
@@ -150,9 +145,6 @@ namespace FitnessClub
             txtDetails.Text = "";
             lbxResults.Items.Clear();
             txtDetails.Background = Brushes.White;
-
         }
-
-
     }
 }

@@ -35,16 +35,18 @@ namespace FitnessClub
         }
         public List<MembersInformation> LoadData()
         {
+            //Create list to store member information
             List<MembersInformation> lstMembersInformation = new List<MembersInformation>();
-
+            //Create variable to store file member of membership information json file
             string strFilePath = @"..\..\Data\MembersInformation.json";
+            //Read membership json file and deserialize data to members information list
             try
             {
                 string jsonData = File.ReadAllText(strFilePath);
 
                 lstMembersInformation = JsonConvert.DeserializeObject<List<MembersInformation>>(jsonData);
             }
-
+            //Catch any errors and display the errors to the user
             catch (Exception ex)
             {
                 MessageBox.Show("Error in import process: " + ex.Message);
@@ -69,7 +71,7 @@ namespace FitnessClub
                 MessageBox.Show("You must enter at least one search critera.");
                 return;
             }
-
+            //Clear the items list
             lbxExistingMembers.Items.Clear();
 
             //Declare list for information serach query
@@ -82,11 +84,12 @@ namespace FitnessClub
                 (m.LastName.Contains(strLastName) && m.Email.Contains(strEmail)) &&
                 (m.LastName.Contains(strLastName) && m.Email.Contains(strEmail) && m.PhoneNumber.Contains(strPhoneNumber))).ToList();
           
-                  //Walking through each item added to filtered members 
+            //Walking through each item added to filtered members 
             foreach (MembersInformation m in filteredMembers)
             {
                 lbxExistingMembers.Items.Add((m.LastName + ", " + m.FirstName + ", (" + m.Email + ")").ToString());
             }
+            //Tell the user if no records were found
             if (lbxExistingMembers.Items.Count < 1)
             {
                 MessageBox.Show("No one was found on your search.");
@@ -97,8 +100,6 @@ namespace FitnessClub
 
         private void lbxresults_selectionchanged(object sender, SelectionChangedEventArgs e)
         {
-
-
             //Checking there is an item in our list box 
             if (lbxExistingMembers.SelectedIndex > -1)
             {
@@ -123,14 +124,14 @@ namespace FitnessClub
                 }
             }
         }
-
+        //User selects button to return to the main menu
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)
         {
             MainMenu MainMenuWindow = new MainMenu();
             MainMenuWindow.Show();
             this.Close();
         }
-
+        //User selects clear search button
         private void btnClearSearch_Click(object sender, RoutedEventArgs e)
         {
             txtEmailInput.Text = "";

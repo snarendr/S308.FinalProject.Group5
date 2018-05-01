@@ -174,7 +174,7 @@ namespace FitnessClub
             txbUpdatePrice.Text = "";
 
         }
-
+        //Allow user to go back to the main menu
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)
         {
             MainMenu MainMenuWindow = new MainMenu();

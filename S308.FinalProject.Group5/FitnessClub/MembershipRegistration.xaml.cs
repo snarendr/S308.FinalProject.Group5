@@ -34,7 +34,6 @@ namespace FitnessClub
             InfoFromPrevWindow = new MembersInformation();
 
         }
-
         public MembershipRegistration(MembersInformation info, Quote q)
         {
             quote = q;
@@ -44,7 +43,6 @@ namespace FitnessClub
             DoSomethingWithInfo();
 
         }
-
         public void DoSomethingWithInfo()
         {
             string strGender; 
@@ -120,14 +118,14 @@ namespace FitnessClub
                 chbWeightMgmt.SetCurrentValue(CheckBox.IsCheckedProperty, false);
             }
         }
-
+        //User selects button to return to the main menu
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)
         {
             MainMenu MainMenuWindow = new MainMenu();
             MainMenuWindow.Show();
             this.Close();
         }
-
+        //User wants  selects back button to return to original membership sales page
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             MembershipSales MemberShipSalesWindow = new MembershipSales();
@@ -135,14 +133,13 @@ namespace FitnessClub
             this.Close();
         }
 
-
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
+            //declare variables to store first name, last name, email, cc number, phone, gender, age, and weight
             string strFirstName, strLastName, strEmail, strCCNum, strPhone, strGender;
             int intAge, intWeight;
 
             //place inputs into variables
-
             strFirstName = txtFirstName.Text.Trim();
             strLastName = txtLastName.Text.Trim();
             strEmail = txtEmail.Text.Trim();
@@ -366,6 +363,7 @@ namespace FitnessClub
             MessageBox.Show("Customer Added!" + Environment.NewLine + MemberNew.ToString());
 
         }
+        //User opens the existing member search window
         private void btnExistingCustomer_Click(object sender, RoutedEventArgs e)
         {
             ExistingMemberSearch ExistingMemberWindow = new ExistingMemberSearch();

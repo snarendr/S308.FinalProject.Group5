@@ -96,9 +96,7 @@ namespace FitnessClub
             txbUpdatePrice.Text = "";
             rdbOffered.IsChecked = false;
             rdbNotOffered.IsChecked = false;
-
         }
-
         //User selects update button
         private void btnUpdatePrice_Click(object sender, RoutedEventArgs e)
         {

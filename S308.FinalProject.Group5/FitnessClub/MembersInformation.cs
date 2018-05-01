@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace FitnessClub
 {
     public class MembersInformation
-    {
+    {//Declare needed attributes for the mebershipinformation class
         public DateTime datRegistration { get; set; }
         public string Type { get; set; }
 
@@ -49,7 +49,7 @@ namespace FitnessClub
 
         public bool PFG_WeightManagment { get; set; }
         public override string ToString()
-        {
+        {//Override the default tostring method for use in dispalying confirmation message and for the member information search page
         string strResults = "Type: " + Type + Environment.NewLine;
         strResults += "First Name: " + FirstName + Environment.NewLine;
         strResults += "Last Name: " + LastName + Environment.NewLine;
@@ -70,11 +70,9 @@ namespace FitnessClub
         strResults += "Strength Training: " + PFG_StrengthTraining + Environment.NewLine;
         strResults += "Weight Loss: " + PFG_WeightManagment + Environment.NewLine;
         strResults += Environment.NewLine;
-
-
         return strResults;
         }
-
+        //Signature for passing in information from membership registration process and constructing instance of the member information class
         public MembersInformation(string type, string firstName, string lastName, string startDate, string endDate, double subTotal, bool additional_Features_Training, bool additional_Features_LockerRental, double totalCost, string phoneNumber, string email, string gender, int age, int weight, string credit_Card_Number, bool pFG_AthleticPerformance, bool pFG_OverallHealth, bool pFG_StrengthTraining, bool pFG_WeightLoss, bool pFG_WeightManagment)
         {
             Type = type;
@@ -99,7 +97,7 @@ namespace FitnessClub
             PFG_WeightManagment = pFG_WeightManagment;
 
         }
-
+        //Default constructor
         public MembersInformation()
         {
             Type = "";
