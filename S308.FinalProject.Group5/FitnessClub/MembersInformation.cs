@@ -62,7 +62,7 @@ namespace FitnessClub
         strResults += "Phone Number: (" + PhoneNumber.Substring(0,3) + ")" + "-" + PhoneNumber.Substring(3,3) + "-" + PhoneNumber.Substring(6,4) + Environment.NewLine;
         strResults += "Email: " + Email + Environment.NewLine;
         strResults += "Gender: " + Gender + Environment.NewLine;
-        strResults += "Age: " + Age.ToString() + " Years old." + Environment.NewLine;
+        strResults += "Age: " + Age.ToString() + " Years old" + Environment.NewLine;
         strResults += "Weight: " + Weight.ToString() + "lbs" + Environment.NewLine;
         strResults += "Credit Card Number: " + Credit_Card_Number + Environment.NewLine;
         strResults += "Athletic Performance: " + PFG_AthleticPerformance + Environment.NewLine;

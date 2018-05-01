@@ -8,7 +8,7 @@
         Title="Membership Pricing" Height="500" Width="750" Background="#FFBF3417" ResizeMode="CanMinimize">
     <Grid x:Name="grdMembershipPricing">
         <GroupBox x:Name="grpUpdatePricing_Copy" Header="Update Price and Availability" HorizontalAlignment="Left" Margin="390,290,0,0" VerticalAlignment="Top" BorderBrush="White" Height="164" Width="315" Foreground="White" IsManipulationEnabled="True"/>
-        <GroupBox x:Name="grpUpdatePricing" Header="Current Price and Availability" HorizontalAlignment="Left" Margin="38,290,0,0" VerticalAlignment="Top" BorderBrush="White" Height="164" Width="315" Foreground="White" IsManipulationEnabled="True">
+        <GroupBox x:Name="grpUpdatePricing" Header="Current Price and Availability" HorizontalAlignment="Left" Margin="29,290,0,0" VerticalAlignment="Top" BorderBrush="White" Height="164" Width="337" Foreground="White" IsManipulationEnabled="True">
             <TextBlock x:Name="txbCurrentPrice" HorizontalAlignment="Left" Margin="157,61,0,0" TextWrapping="Wrap" Text="Current Price Will Appear" VerticalAlignment="Top" Foreground="White"/>
         </GroupBox>
         <Image x:Name="imgMSN" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Source="Images/MSNLogo.png"/>
@@ -23,20 +23,20 @@
         </ComboBox>
         <Label x:Name="lblMembershipType" Content="Select Membership Type:" HorizontalAlignment="Left" Margin="168,194,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Button x:Name="btnSubmit" Content="Select" HorizontalAlignment="Left" Margin="316,240,0,0" VerticalAlignment="Top" Width="100" TabIndex="1" Height="30" Click="btnSubmit_Click"/>
-        <Label x:Name="lblCurrentPrice" Content="Current Price:" HorizontalAlignment="Left" Margin="106,360,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label x:Name="lblCurrentPrice" Content="Current Price:" HorizontalAlignment="Left" Margin="97,360,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="659,10,0,0" VerticalAlignment="Top" Width="75" TabIndex="6" Height="20" Click="btnMainMenu_Click_1"/>
         <Label x:Name="lblUpdatePrice" Content="Update Price:" HorizontalAlignment="Left" Margin="465,319,0,0" VerticalAlignment="Top" Foreground="White"/>
         <TextBox x:Name="txbUpdatePrice" HorizontalAlignment="Left" Height="23" Margin="563,322,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" TabIndex="2"/>
-        <Label x:Name="lblSelectedMembership" Content="Selected Membership:" HorizontalAlignment="Left" Margin="60,329,0,0" VerticalAlignment="Top" Foreground="White"/>
-        <TextBlock x:Name="txbSelectedMembership" HorizontalAlignment="Left" Margin="202,336,0,0" TextWrapping="Wrap" Text="Select Membership" VerticalAlignment="Top" Foreground="White"/>
+        <Label x:Name="lblSelectedMembership" Content="Selected Membership:" HorizontalAlignment="Left" Margin="51,329,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <TextBlock x:Name="txbSelectedMembership" HorizontalAlignment="Left" Margin="193,336,0,0" TextWrapping="Wrap" Text="Select Membership" VerticalAlignment="Top" Foreground="White"/>
         <Button x:Name="btnUpdatePrice" Content="Update" HorizontalAlignment="Left" Margin="560,408,0,0" VerticalAlignment="Top" Width="100" TabIndex="5" Height="30" Click="btnUpdatePrice_Click"/>
-        <TextBlock x:Name="txbInstructions" HorizontalAlignment="Left" Margin="94,59,0,0" TextWrapping="Wrap" Text="Instructions: To update the price and/or availability for a membership type, please select the membership type in the dropdown menu below and click submit. The current price and availability for the selected membership type will appear. To change the current price, type a new price in the update price textbox . To change the availability, select the appropriate radio button. After making the desired changes, click the update button. A message box will appear to confirm the updates for the selected membership. " VerticalAlignment="Top" Height="101" Width="480" Foreground="#FFFDEBEB"/>
+        <TextBlock x:Name="txbInstructions" HorizontalAlignment="Left" Margin="94,59,0,0" TextWrapping="Wrap" Text="Instructions: To update the price and/or availability for a membership type, please select the membership type in the dropdown menu below and click select. The current price and availability for the selected membership type will appear. To change the current price, type a new price in the update price textbox . To change the availability, select the appropriate radio button. After making the desired changes, click the update button. A message box will appear to confirm the updates for the selected membership. " VerticalAlignment="Top" Height="101" Width="480" Foreground="#FFFDEBEB"/>
         <Image x:Name="imgValuePricing" HorizontalAlignment="Left" Height="110" Margin="603,44,0,0" VerticalAlignment="Top" Width="134" Source="Images/ValuePricingImg.jpg"/>
         <Label x:Name="lblTitle" Content="Manage Membership Pricing" HorizontalAlignment="Left" Margin="91,6,0,0" VerticalAlignment="Top" Foreground="#FFF5EBEB" Height="60" Width="463" FontSize="30"/>
         <RadioButton x:Name="rdbNotOffered" Content="Not Offered" HorizontalAlignment="Left" Margin="563,376,0,0" VerticalAlignment="Top" IsChecked="True" TabIndex="4" Foreground="White"/>
         <RadioButton x:Name="rdbOffered" Content="Offered" HorizontalAlignment="Left" Margin="563,356,0,0" VerticalAlignment="Top" TabIndex="3" Foreground="White"/>
-        <Label x:Name="lblCurrentAvailability" Content="Current Availability:" HorizontalAlignment="Left" Margin="74,391,0,0" VerticalAlignment="Top" Foreground="White"/>
-        <TextBlock x:Name="txbCurrentAvailability" HorizontalAlignment="Left" Margin="202,396,0,0" TextWrapping="Wrap" Text="Select Membership" VerticalAlignment="Top" Foreground="White"/>
+        <Label x:Name="lblCurrentAvailability" Content="Current Availability:" HorizontalAlignment="Left" Margin="65,391,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <TextBlock x:Name="txbCurrentAvailability" HorizontalAlignment="Left" Margin="193,396,0,0" TextWrapping="Wrap" Text="Current Availability Will Appear" VerticalAlignment="Top" Foreground="White"/>
         <Label x:Name="lblUpdateAvailability" Content="Update Availability:" HorizontalAlignment="Left" Margin="433,350,0,0" VerticalAlignment="Top" Foreground="White"/>
 
     </Grid>
