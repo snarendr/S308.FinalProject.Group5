@@ -56,6 +56,7 @@ namespace FitnessClub
             txtAge.Text = InfoFromPrevWindow.Age.ToString(); 
             txtWeight.Text = InfoFromPrevWindow.Weight.ToString();
             strGender = InfoFromPrevWindow.Gender; 
+
             //Checking correct radio button based upon the members gender 
             if (strGender == "Male")
             {
