@@ -56,7 +56,7 @@ namespace FitnessClub
         }
         public void DoSomethingWithInfo()
         {
-            
+            //put existing information into regirstration screen
             string strGender; 
 
             txtFirstName.Text = InfoFromPrevWindow.FirstName;
@@ -69,6 +69,26 @@ namespace FitnessClub
             txtWeight.Text = InfoFromPrevWindow.Weight.ToString();
             strGender = InfoFromPrevWindow.Gender;
             
+            //assign credit card type to combobox
+            if(InfoFromPrevWindow.Credit_Card_Type == "Visa")
+            {
+                cmbCredCardType.SelectedIndex = 1;
+            }
+
+            if (InfoFromPrevWindow.Credit_Card_Type == "MasterCard")
+            {
+                cmbCredCardType.SelectedIndex = 2;
+            }
+
+            if (InfoFromPrevWindow.Credit_Card_Type == "American Express")
+            {
+                cmbCredCardType.SelectedIndex = 3;
+            }
+
+            if (InfoFromPrevWindow.Credit_Card_Type == "Discover")
+            {
+                cmbCredCardType.SelectedIndex = 4;
+            }
 
             //Checking correct radio button based upon the members gender 
             if (strGender == "Male")
@@ -393,9 +413,11 @@ namespace FitnessClub
 
             //Add new member using the established signature
 
-            
-           // MembersInformation MemberNew = new MembersInformation(quote.MembershipType, strFirstName.ToUpper(), strLastName.ToUpper(), quote.StartDate.ToShortDateString(), quote.EndDate.ToShortDateString(), quote.SubTotal, quote.AdditionalFeatures_Training, quote.AdditionalFeatures_LockerRental, quote.TotalCost, strPhone, strEmail.ToUpper(), strGender, intAge, intWeight, strCCType, strCCNum, chbAthPer.IsChecked.Value, chbOverHealth.IsChecked.Value, chbST.IsChecked.Value, chbWeightLoss.IsChecked.Value, chbWeightMgmt.IsChecked.Value);
 
+            // MembersInformation MemberNew = new MembersInformation(quote.MembershipType, strFirstName.ToUpper(), strLastName.ToUpper(), quote.StartDate.ToShortDateString(), quote.EndDate.ToShortDateString(), quote.SubTotal, quote.AdditionalFeatures_Training, quote.AdditionalFeatures_LockerRental, quote.TotalCost, strPhone, strEmail.ToUpper(), strGender, intAge, intWeight, strCCType, strCCNum, chbAthPer.IsChecked.Value, chbOverHealth.IsChecked.Value, chbST.IsChecked.Value, chbWeightLoss.IsChecked.Value, chbWeightMgmt.IsChecked.Value);
+            //alternative way to call new member incase it doesn't work ^^
+
+            //call new member to write into json
             MembersInformation MemberNew = new MembersInformation(strMemType, strFirstName.ToUpper(), strLastName.ToUpper(),datStartDate.ToShortDateString(), datEndDate.ToShortDateString(), dblSubTotal, addfeat_tr, addfeat_lr, dblTotal, strPhone, strEmail.ToUpper(), strGender, intAge, intWeight, strCCType, strCCNum, chbAthPer.IsChecked.Value, chbOverHealth.IsChecked.Value, chbST.IsChecked.Value, chbWeightLoss.IsChecked.Value, chbWeightMgmt.IsChecked.Value);
 
             //Add the new member to the member list
