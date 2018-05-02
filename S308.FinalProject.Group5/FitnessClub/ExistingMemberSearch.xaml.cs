@@ -24,11 +24,11 @@ namespace FitnessClub
         //Establish list to store member information
         List<MembersInformation> memberIndex;
         //Reference quote data
-        Quote q;
-
-        public ExistingMemberSearch()
+        Quote quote;
+        public ExistingMemberSearch(Quote q)
         {
             InitializeComponent();
+            quote = q;
             //Loading data to our member index
             memberIndex = LoadData();
         }
@@ -112,7 +112,7 @@ namespace FitnessClub
                     //Pulling the information of the existing user to pull to the next window
                     MembersInformation info = new MembersInformation(m.Type, m.FirstName.ToUpper(), m.LastName.ToUpper(), m.StartDate, m.EndDate, m.SubTotal, m.Additional_Features_Training, m.Additional_Features_LockerRental, m.TotalCost, m.PhoneNumber, m.Email, m.Gender, m.Age, m.Weight,m.Credit_Card_Type, m.Credit_Card_Number, m.PFG_AthleticPerformance, m.PFG_OverallHealth, m.PFG_StrengthTraining, m.PFG_WeightLoss, m.PFG_WeightManagment);
 
-                    MembershipRegistration next = new MembershipRegistration(info, q);
+                    MembershipRegistration next = new MembershipRegistration(info, quote);
 
                     next.Show();
 

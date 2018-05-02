@@ -39,7 +39,18 @@ namespace FitnessClub
             quote = q;
             InfoFromPrevWindow = info;
             InitializeComponent();
+            string strMemType;
+            bool addfeat_tr, addfeat_lr;
+            double dblSubTotal, dblTotal;
+            DateTime datStartDate, datEndDate;
 
+            strMemType = quote.MembershipType;
+            addfeat_lr = quote.AdditionalFeatures_LockerRental;
+            addfeat_tr = quote.AdditionalFeatures_Training;
+            dblSubTotal = quote.SubTotal;
+            dblTotal = quote.TotalCost;
+            datStartDate = quote.StartDate;
+            datEndDate = quote.EndDate;
             DoSomethingWithInfo();
 
         }
@@ -56,7 +67,8 @@ namespace FitnessClub
             txtEmail.Text = InfoFromPrevWindow.Email;
             txtAge.Text = InfoFromPrevWindow.Age.ToString(); 
             txtWeight.Text = InfoFromPrevWindow.Weight.ToString();
-            strGender = InfoFromPrevWindow.Gender; 
+            strGender = InfoFromPrevWindow.Gender;
+            
 
             //Checking correct radio button based upon the members gender 
             if (strGender == "Male")
@@ -134,11 +146,27 @@ namespace FitnessClub
             MemberShipSalesWindow.Show();
             this.Close();
         }
+        //User opens the existing member search window
+        private void btnExistingCustomer_Click(object sender, RoutedEventArgs e)
+        {
+            Quote q;
 
+            q = quote;
+            string strMemType;
+
+            strMemType = quote.MembershipType;
+
+
+            ExistingMemberSearch ExistingMemberWindow = new ExistingMemberSearch(q);
+            ExistingMemberWindow.Show();
+            this.Close();
+        }
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
+           
+            
             //declare variables to store first name, last name, email, cc number, phone, gender, age, and weight
-            string strFirstName, strLastName, strEmail, strCCNum, strPhone, strGender, strCCType;
+            string strFirstName, strLastName, strEmail, strCCNum, strPhone, strGender, strCCType,strMemType;
             int intAge, intWeight;
 
             //place inputs into variables
@@ -151,6 +179,24 @@ namespace FitnessClub
             strGender = "";
             intAge = 0;
             intWeight = 0;
+
+           
+            bool addfeat_tr, addfeat_lr;
+            double dblSubTotal, dblTotal;
+            DateTime datStartDate, datEndDate;
+
+           
+            strMemType = quote.MembershipType;
+            
+            
+            addfeat_lr = quote.AdditionalFeatures_LockerRental;
+            addfeat_tr = quote.AdditionalFeatures_Training;
+            dblSubTotal = quote.SubTotal;
+            dblTotal = quote.TotalCost;
+            datStartDate = quote.StartDate;
+            datEndDate = quote.EndDate;
+
+
 
             //validate the user provided a first name
             if (strFirstName == "")
@@ -346,7 +392,11 @@ namespace FitnessClub
             DateTime datRegistration = DateTime.Now;
 
             //Add new member using the established signature
-            MembersInformation MemberNew = new MembersInformation(quote.MembershipType, strFirstName.ToUpper(), strLastName.ToUpper(), quote.StartDate.ToShortDateString(), quote.EndDate.ToShortDateString(), quote.SubTotal, quote.AdditionalFeatures_Training, quote.AdditionalFeatures_LockerRental, quote.TotalCost, strPhone, strEmail.ToUpper(), strGender, intAge, intWeight, strCCType, strCCNum, chbAthPer.IsChecked.Value, chbOverHealth.IsChecked.Value, chbST.IsChecked.Value, chbWeightLoss.IsChecked.Value, chbWeightMgmt.IsChecked.Value);
+
+            
+           // MembersInformation MemberNew = new MembersInformation(quote.MembershipType, strFirstName.ToUpper(), strLastName.ToUpper(), quote.StartDate.ToShortDateString(), quote.EndDate.ToShortDateString(), quote.SubTotal, quote.AdditionalFeatures_Training, quote.AdditionalFeatures_LockerRental, quote.TotalCost, strPhone, strEmail.ToUpper(), strGender, intAge, intWeight, strCCType, strCCNum, chbAthPer.IsChecked.Value, chbOverHealth.IsChecked.Value, chbST.IsChecked.Value, chbWeightLoss.IsChecked.Value, chbWeightMgmt.IsChecked.Value);
+
+            MembersInformation MemberNew = new MembersInformation(strMemType, strFirstName.ToUpper(), strLastName.ToUpper(),datStartDate.ToShortDateString(), datEndDate.ToShortDateString(), dblSubTotal, addfeat_tr, addfeat_lr, dblTotal, strPhone, strEmail.ToUpper(), strGender, intAge, intWeight, strCCType, strCCNum, chbAthPer.IsChecked.Value, chbOverHealth.IsChecked.Value, chbST.IsChecked.Value, chbWeightLoss.IsChecked.Value, chbWeightMgmt.IsChecked.Value);
 
             //Add the new member to the member list
             MemberList.Add(MemberNew);
@@ -366,13 +416,7 @@ namespace FitnessClub
             MessageBox.Show("Customer Added!" + Environment.NewLine + MemberNew.ToString());
 
         }
-        //User opens the existing member search window
-        private void btnExistingCustomer_Click(object sender, RoutedEventArgs e)
-        {
-            ExistingMemberSearch ExistingMemberWindow = new ExistingMemberSearch();
-            ExistingMemberWindow.Show();
-            this.Close();
-        }
+      
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
